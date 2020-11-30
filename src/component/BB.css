@@ -1,0 +1,26 @@
+.get-started {
+    position: static;
+    width: 196px;
+    height: 62px;
+    left: 0px;
+    top: 308px;
+  
+    /* Brand / Purple */
+  
+    background: #8c30f5;
+    border-radius: 8px;
+    color: #fff;
+  
+    /* Inside Auto Layout */
+  
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 0px 32px;
+  }
+  
+  .get-started:hover {
+    background: #5f1eaa;
+    color: #fff;
+  }

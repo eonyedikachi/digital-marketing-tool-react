@@ -1,0 +1,97 @@
+footer {
+    background: #0b0d17 !important;
+    color: #fff !important;
+  }
+  
+  footer .container {
+    max-width: 1400px !important;
+  }
+  
+  footer a {
+    color: #fff !important;
+  }
+  
+  footer .container .footer-content .company-info h1 {
+    color: #8c30f5 !important;
+  }
+  
+  footer ul {
+    list-style: none !important;
+  }
+  
+  footer ul a {
+    color: #fff!important;
+    font-family: "Rubik", sans-serif !important;
+  }
+  
+  footer a:hover {
+    color: #8c30f5 !important;
+  }
+  
+  footer .container .footer-content .links p {
+    color: #8c30f5 !important;
+    font-size: 20px !important;
+  }
+  
+  footer .container .footer-content .company {
+    width: 100% !important;
+  }
+  
+  footer .container .footer-content .support {
+    width: 100% !important;
+  }
+  
+  footer .container .footer-content .newsletter {
+    width: 100% !important;
+  }
+  
+  footer .container .footer-content .newsletter .subscribe {
+    background: #474a57 !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+  }
+  
+  footer .container .footer-content .newsletter .subscribe input {
+    background: none !important;
+    color: #fff !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  footer .container .footer-content .newsletter .subscribe button {
+    background: none !important;
+    color: #fff !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .newsletter .subscribe input[type="email"]:focus,
+  .newsletter .subscribe input[type="email"]:active {
+    background: none !important;
+    color: #fff !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  /* Back Button Footer */
+  .back-footer {
+    height: 70px !important;
+    color: #fff !important;
+    width: 70% !important;
+    margin: auto!important;
+  }
+  
+  .back-footer i {
+    color: #fff !important;
+  }
+  
+  .back-footer .back-button {
+    padding: 1rem 0 !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 1.3rem !important;
+    color: #fff !important;
+  }
+  
