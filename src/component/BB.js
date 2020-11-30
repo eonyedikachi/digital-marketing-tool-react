@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import BB from './BB.css';
+// import PropTypes from 'prop-types';
+import  './BB.css';
 import {Link} from 'react-router-dom'
 
 function BBtn(){

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import LPtextcss from './LP-text.css'
+// import PropTypes from 'prop-types';
+import './LP-text.css'
 
 function LPtext(){
    return (

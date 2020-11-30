@@ -1,7 +1,7 @@
 import  'bootstrap/dist/css/bootstrap.min.css';
-import Contacts from './component/contact/Contacts';
+// import Contacts from './component/contact/Contacts';
 import { Provider } from './component/Context'
-import AddContact from './component/Addcontact';
+// import AddContact from './component/Addcontact';
 import Header from './component/layout/Header';
 import {HashRouter as Router,Route, Switch} from 'react-router-dom';
 import './App.css';

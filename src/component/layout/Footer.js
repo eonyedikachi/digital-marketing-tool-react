@@ -10,7 +10,7 @@ function Footer(){
     <div class="footer-content d-flex justify-content-around">
       <div class="company-info d-flex flex-column my-5">
         <div class="footer-logo mb-4">
-          <img class ="logo-nav mb-4" src={logos}/>
+          <img class ="logo-nav mb-4" src={logos} alt="logo"/>
           <p>
             We help small and medium business to grow their audience reach.
           </p>
