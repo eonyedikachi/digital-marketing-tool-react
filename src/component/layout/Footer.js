@@ -6,23 +6,23 @@ import logos from './logo.png';
 function Footer(){
    return(
        <footer>
-       <div class="container">
-    <div class="footer-content d-flex justify-content-around">
-      <div class="company-info d-flex flex-column my-5">
-        <div class="footer-logo mb-4">
-          <img class ="logo-nav mb-4" src={logos} alt="logo"/>
+       <div className="container">
+    <div className="footer-content d-flex justify-content-around">
+      <div className="company-info d-flex flex-column my-5">
+        <div className="footer-logo mb-4">
+          <img className ="logo-nav mb-4" src={logos} alt="logo"/>
           <p>
             We help small and medium business to grow their audience reach.
           </p>
         </div>
-        <div class="copyright mb-3">
+        <div className="copyright mb-3">
           <p className="font-weight-lighter">MartReach &copy; 2020, All Rights Reserved.</p>
         </div>
         <div className="socials">
-          <a className="mr-4" href="#"><i class="fas fa-phone-alt"></i></a>
-          <a class="mr-4" href="#"><i class="far fa-envelope"></i></a>
-          <a class="mr-4" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="mr-4" href="#"><i class="fab fa-instagram"></i></a>
+          <a className="mr-4" href="#"><i className="fas fa-phone-alt"></i></a>
+          <a className="mr-4" href="#"><i className="far fa-envelope"></i></a>
+          <a className="mr-4" href="#"><i class="fab fa-twitter"></i></a>
+          <a className="mr-4" href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>

@@ -6,7 +6,7 @@ import hero from '../Images/hero.png';
 
 function LPimg(){
     return(
-        <div class="main-img">
+        <div className="main-img">
         <img src={hero} alt="hero" />
       </div>
     )

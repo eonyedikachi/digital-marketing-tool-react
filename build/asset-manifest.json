@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/css/main.21501cf2.chunk.css",
+    "main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/main.f5fe2d41.chunk.js",
+    "main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/main.f5fe2d41.chunk.js.map",
+    "runtime-main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/runtime-main.eb7daf34.js",
+    "runtime-main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/runtime-main.eb7daf34.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.f016254b.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/2.f016254b.chunk.js",
+    "static/js/2.f016254b.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/2.f016254b.chunk.js.map",
+    "static/js/3.82afcc5e.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/3.82afcc5e.chunk.js",
+    "static/js/3.82afcc5e.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/3.82afcc5e.chunk.js.map",
+    "index.html": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.21501cf2.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/css/main.21501cf2.chunk.css.map",
+    "static/js/2.f016254b.chunk.js.LICENSE.txt": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/js/2.f016254b.chunk.js.LICENSE.txt",
+    "static/media/hero.80986d48.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/media/hero.80986d48.png",
+    "static/media/logo.8a689d12.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION/static/media/logo.8a689d12.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb7daf34.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.f016254b.chunk.js",
+    "static/css/main.21501cf2.chunk.css",
+    "static/js/main.f5fe2d41.chunk.js"
+  ]
+}
