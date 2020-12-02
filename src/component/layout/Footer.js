@@ -19,47 +19,47 @@ function Footer(){
           <p className="font-weight-lighter">MartReach &copy; 2020, All Rights Reserved.</p>
         </div>
         <div className="socials">
-          <a className="mr-4" href="#"><i className="fas fa-phone-alt"></i></a>
-          <a className="mr-4" href="#"><i className="far fa-envelope"></i></a>
-          <a className="mr-4" href="#"><i class="fab fa-twitter"></i></a>
-          <a className="mr-4" href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a className="mr-4" to="#"><i className="fas fa-phone-alt"></i></a>
+          <a className="mr-4" to="#"><i className="far fa-envelope"></i></a>
+          <a className="mr-4" to="#"><i className="fab fa-twitter"></i></a>
+          <a className="mr-4" to="#"><i className="fab fa-instagram"></i></a>
+          <a to="#"><i className="fab fa-facebook-f"></i></a>
         </div>
       </div>
-        <div class="links d-flex my-5 justify-content-around">
-          <div class="company mr-5">
-          <p class="font-weight-bold">Company</p>
+        <div className="links d-flex my-5 justify-content-around">
+          <div className="company mr-5">
+          <p className="font-weight-bold">Company</p>
           <ul>
-            <li class="my-4">
-              <a href="../about.html">About Us</a>
+            <li className="my-4">
+              <a to="../about.html">About Us</a>
             </li>
-            <li class="my-4">
-              <a href="../contact.html">Contact Us</a>
+            <li className="my-4">
+              <a to="../contact.html">Contact Us</a>
             </li>
-            <li class="my-4">
-              <a href="pricing.html">Pricing</a>
+            <li className="my-4">
+              <a to="pricing.html">Pricing</a>
             </li>
             <li>
-              <a href="services.html">Services</a>
+              <a to="services.html">Services</a>
             </li>
           </ul>
         </div>
-        <div class="support mr-5">
-          <p class="font-weight-bold">Support</p>
+        <div className="support mr-5">
+          <p className="font-weight-bold">Support</p>
           <ul>
-            <li class="my-4">
-              <a href="./support.html">Support</a>
+            <li className="my-4">
+              <a to="./support.html">Support</a>
             </li>
             <li>
-              <a href="FAQ.html">FAQ</a>
+              <a to="FAQ.html">FAQ</a>
             </li>
           </ul>
         </div>
-        <div class="newsletter">
-        <p class="font-weight-bold">Stay up to date</p>
-        <form class="subscribe" name="subscribe" method="POST" data-netlify="true">
+        <div className="newsletter">
+        <p className="font-weight-bold">Stay up to date</p>
+        <form className="subscribe" name="subscribe" method="POST" data-netlify="true">
           <input type="email" name="email" id="footerEmail" placeholder="Enter Email Address" required />
-          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          <button type="submit"><i className="fas fa-paper-plane"></i></button>
         </form>
         </div>        
         </div>

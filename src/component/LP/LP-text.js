@@ -9,7 +9,7 @@ function LPtext(){
       Boost your Sale <br />
       with <span style={{color:"#8c30f5"}}>MartReach</span>
     </h3>
-    <p class="text-second">
+    <p className="text-second">
       We help small and medium business to grow their audience reach.
     </p>
     </div>
