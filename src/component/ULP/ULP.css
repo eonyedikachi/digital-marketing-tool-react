@@ -18,23 +18,4 @@
   top: 0 !important;
   bottom: 22.76% !important;
 }
-.main-hero .main-img {
-  display: none;
-}
-.container2 {
-  width: 100%;
-  height: 60vh;
-  /* background-color: red; */
-}
-
-.container2 .main-text h3 {
-  font-size: 30px;
-  width: 100%;
-}
-.container2 .main-text p {
-  font-size: 30px;
-  width: 100%;
-  /* background-color: red; */
-  margin-bottom: 70px;
-}
 
