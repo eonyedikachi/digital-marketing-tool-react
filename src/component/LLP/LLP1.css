@@ -1,0 +1,9 @@
+ .right {
+    background-image: url("../Images/audience.png");
+    background-size: cover;
+    height: 350px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 50px;
+  }
+  

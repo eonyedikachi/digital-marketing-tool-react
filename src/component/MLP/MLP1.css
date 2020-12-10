@@ -1,0 +1,17 @@
+ .top {
+    display: flex !important;
+    flex-direction: column  !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 1rem;
+  }
+  .top p:nth-child(1) {
+    font-size: 40px !important;
+    font-weight: bold !important;
+  }
+  .top p:nth-child(2) {
+    font-size: 20px !important;
+  }
+  .top p:nth-child(3) {
+    font-size: 20px !important;
+  }

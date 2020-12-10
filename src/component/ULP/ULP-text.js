@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import './LP-text.css'
+import './ULP-text.css';
+import BBtn from '../BB';
 
 function LPtext(){
    return (
@@ -12,6 +13,8 @@ function LPtext(){
     <p className="text-second">
       We help small and medium business to grow their audience reach.
     </p>
+
+    <BBtn/>
     </div>
    )
 };

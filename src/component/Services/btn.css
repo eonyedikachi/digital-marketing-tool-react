@@ -1,0 +1,17 @@
+.service-btn {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #8c30f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #576975;
+    margin-top: 10px;
+  }
+  .service-btn:hover {
+    background-color: #8c30f5;
+    border: 1px solid #8c30f5;
+    color: #ffffff;
+    transition: all ease 0.3s;
+  }

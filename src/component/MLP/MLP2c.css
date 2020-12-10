@@ -1,0 +1,12 @@
+.growth {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #8c30f5;
+    margin: 0px 10px 0px 10px;
+    width: 95%;
+    height: unset;
+    color: var(--primary-color);
+    border-radius: 10px;
+    padding-top: -500px;
+  }

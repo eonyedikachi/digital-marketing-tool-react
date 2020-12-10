@@ -19,10 +19,6 @@ function App() {
   return (
 <Router>
       <Header/>
-
-      {/* <h1 >My Contact</h1> */}
-    {/* <div>  <AddContact/> </div> */}
-      {/* <div className="container"><Contacts></div> */}
      <Switch>
        <Route exact path="/" component= {LP}/>
        <Route exact path="/about" component= {About }/>

@@ -1,0 +1,10 @@
+.left p:nth-child(1) {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.6;
+  }
+  
+  .audience .left a {
+    text-decoration: underline;
+    color: #8c30f5;
+  }

@@ -2,13 +2,14 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://MD-ameenu.github.io/DIGITAL-MARKETING-TOOL-REACT-MIGRATION",
+  "homepage": "https://MD-ameenu.github.io/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.5.1",
     "gh-pages": "^3.1.0",
+    "jquery": "^3.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -17,7 +18,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "deploy":"npm run build&&gh-pages -d buid", 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

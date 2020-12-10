@@ -1,19 +1,18 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import './LP.css';
-import LPimgmain from '../component/LP/LP-img';
-import LPtextmain from '../component/LP/LP-text';
-import BBtn from '../component/BB';
+import ULP from './ULP/ULP';
+import MLP from './MLP/MLP2c';
+import LLP from './LLP/LLP';
 
-function LPmain(){
+function LPmaine(){
     return(
-        <div className='main-hero container'>
-            <div><LPtextmain/>
-             <BBtn/></div> 
-     
-          <LPimgmain/>
-
+        <div>
+            <ULP/>
+            <MLP/>
+            <LLP/>
+           
         </div>
+        
     )
 };
-export default LPmain;
+export default LPmaine;

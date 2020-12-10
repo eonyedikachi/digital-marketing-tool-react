@@ -1,9 +1,12 @@
 import React from 'react'
+import './pricing.css'
 
  function Pricing() {
     return (
-        <div>
-            <h1> Pricing Page| Mart-reach</h1>
+        <div className="pricing">
+            <div className="containeri">
+            <h1>CHOOSE FROM ANY OF OUR AMAZING PLANS</h1>
+            </div>
         </div>
     )
 }
