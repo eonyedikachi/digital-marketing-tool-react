@@ -3,7 +3,7 @@ import Servicecontainer from './Card-comp'
 // import {Link} from 'react-router-dom';
 import img1 from '../Images/boost-jet.png'
 import img2 from '../Images/email-marketing-1.png'
-import img3 from '../Images/boost-jet.png'
+import img3 from '../Images/seo-purple.jpg'
 import './Container.css';
 
 

@@ -6,7 +6,7 @@ import Btn from './btn'
     return (
         <div className="s-box">
         <div className="s-bar"></div>
-          <div> {props.image} </div>
+        <img src={props.image} alt="1"/>
         <h1> {props.service}</h1>
         <p>  {props.servicedetails}</p>
         <Btn/>
