@@ -43,6 +43,9 @@ footer {
   footer .container .footer-content .newsletter {
     width: 100% !important;
   }
+  .bottomlogo{
+    width:300px!important;
+  }
   
   footer .container .footer-content .newsletter .subscribe {
     background: #474a57 !important;

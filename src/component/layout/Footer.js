@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import './Footer.css'
-import logos from '../Images/logo.png';
+import logos from '../Images/MartReach logo dark.png';
 import {Link} from 'react-router-dom';
 
 function Footer(){
@@ -11,7 +11,7 @@ function Footer(){
     <div className="footer-content d-flex justify-content-around">
       <div className="company-info d-flex flex-column my-5">
         <div className="footer-logo mb-4">
-          <img className ="logo-nav mb-4" src={logos} alt=""/>
+        <img  className ="logo-nav mb-4 bottomlogo" src={logos}/>
           <p>
             We help small and medium business to grow their audience reach.
           </p>
