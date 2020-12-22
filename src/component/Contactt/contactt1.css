@@ -1,0 +1,27 @@
+.container-contact .contactInfo .box-contact {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+  }
+  .container-contact .contactInfo .box-contact .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+  }
+  .container-contact .contactInfo .box-contact .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+  }
+  .container-contact .contactInfo .box-contact .text h3 {
+    font-weight: 500;
+    color: #8C30F5;
+  }

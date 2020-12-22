@@ -1,0 +1,28 @@
+
+.Abtusimage img {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    margin: 30px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 30%;
+  }
+  .Abtus-name{
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .Abtus-name-description{
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+  }

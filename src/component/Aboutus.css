@@ -1,0 +1,23 @@
+.About {
+    width: 85vw;
+    border-radius: 0px;
+    /* background-color:#8C30F5; */
+    background-color: #f1e4ff;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.Aboutheading{
+    font-family: Manrope;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 64px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding-top: 60px;
+}
+.abtusscontainer{
+    display: flex;
+    flex-direction: column;
+}

@@ -17,3 +17,18 @@
     margin: 5px;
     text-align: center;
   }
+  @media (max-width: 1050px) {
+    .s-box-container {
+      flex-wrap: wrap;
+    }
+    .services {
+      height: auto;
+    }
+    .s-heading {
+      margin: 15px;
+    }
+    .s-box {
+      flex-grow: 1;
+    }
+  }
+  

@@ -1,33 +1,53 @@
+
+.yellow-circle {
+  position: absolute !important;
+  width: 72px !important;
+  height: 72px !important;
+  left: 562px !important;
+  top: 383px !important;
+  /* Brand / Orange 800 */
+  background: #ffc278 !important;
+  border-radius: 50% !important;
+}
+
+.main-hero {
+  display: flex !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 11.97% !important;
+  top: 12.53% !important;
+  bottom: 22.76% !important;
+}
 .text-first {
-    position: static !important;
-    width: 540px !important;
-    height: 196px !important;
-    left: 0px !important;
-    top: 0px !important;
-  
-    /* Heading / H1 */
-  
-    font-family: Manrope !important;
-    font-style: normal !important;
-    font-weight: 800 !important;
-    font-size: 72px !important;
-    line-height: 98px !important;
-    /* or 136% */
-  
-    font-feature-settings: "liga" off !important;
-  
-    /* Text / Gray 900 */
-  
-    color: #18191f !important;
-  
-    /* Inside Auto Layout */
-  
-    flex: none !important;
-    order: 0 !important;
-    align-self: flex-start !important;
-    flex-grow: 0 !important;
-    margin: 0px 16px !important;
-  }
+  position: static !important;
+  width: 540px !important;
+  height: 196px !important;
+  left: 0px !important;
+  top: 0px !important;
+
+  /* Heading / H1 */
+
+  font-family: Manrope !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  font-size: 72px !important;
+  line-height: 98px !important;
+  /* or 136% */
+
+  font-feature-settings: "liga" off !important;
+
+  /* Text / Gray 900 */
+
+  color: #18191f !important;
+
+  /* Inside Auto Layout */
+
+  flex: none !important;
+  order: 0 !important;
+  align-self: flex-start !important;
+  flex-grow: 0 !important;
+  margin: 0px 16px !important;
+}
   
   .text-second {
     position: static !important;
@@ -59,3 +79,4 @@
     flex-grow: 0 !important;
     margin: 0px 16px !important;
   }
+

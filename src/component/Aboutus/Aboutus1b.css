@@ -1,0 +1,21 @@
+.Abtuscard {
+    padding: 5%;
+    min-width: 200px;
+    /* flex-wrap: wrap; */
+    border-radius: 10px;
+    margin: 20px 50px;
+    background-color: white;
+    color: black;
+}
+.margin-bottom {
+    margin-bottom: 30px !important;
+}
+.mission{
+    font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+}

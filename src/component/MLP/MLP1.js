@@ -5,7 +5,7 @@ import "./MLP1.css"
     return (
         <div className="top">
       <p>How we help you on growth</p>
-      <p>
+      <p className="p2">
         We provide best service to grow your sales and reach out to more target
         audience and have control over your designs
       </p>

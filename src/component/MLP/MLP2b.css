@@ -1,22 +1,20 @@
 
-.box i {
+.lpicon {
     font-size: 50px !important;
   }
-  .growth .bottom {
+   .bottom {
     display: flex;
     padding: 2rem;
     height: 200px;
   }
-   .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 1rem 0;
-    padding: 1rem;
-  }
-  .box:hover {
-    background-color: #fff;
-    color: #8c30f5;
-    border-radius: 10px;
+    .boxxx {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      margin: 3px;
+      text-align: justify;
+      border-radius: 50px;
+      background: #ffffff;
   }

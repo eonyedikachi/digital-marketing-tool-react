@@ -1,15 +1,12 @@
 import  'bootstrap/dist/css/bootstrap.min.css';
-// import Contacts from './component/contact/Contacts';
-// import { Provider } from './component/Context'
-// import AddContact from './component/Addcontact';
 import Header from './component/layout/Header';
 import {HashRouter as Router,Route, Switch} from 'react-router-dom';
 import './App.css';
 import Footer from './component/layout/Footer';
+import Pricing from './component/Pricing'
 import LP from './component/LP'
 import About from './component/About'
 import Login from './component/Login'
-import Pricing from './component/Pricing'
 import Signup from './component/Signup'
 import Services from './component/Services'
 import Contactt from './component/Contactt'

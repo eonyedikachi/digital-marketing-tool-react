@@ -3,9 +3,9 @@ import './LLP1.css';
 
  function LLP1() {
     return (
-        <div>
+        <React.Fragment>
             <div className="right"></div>
-        </div>
+        </React.Fragment>
     )
 }
 export default LLP1;

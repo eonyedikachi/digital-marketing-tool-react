@@ -1,95 +1,314 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap ");
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap ");
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap") ;
 
 *,
-::before,
+/* ::before,
 ::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0 ;
-}
+  box-sizing: border-box!important;
+  padding: 0!important;
+  margin: 0!important;
+} */
 
 :root {
-  --primary-color: #fff !important;
-  --secondary-color: #8c30f5 !important;
+  --primary-color: #fff!important;
+  --secondary-color: #8c30f5!important;
 }
 
 body {
-  font-family: "Manrope", sans-serif !important;
-}
-a{
-    font-size: larger;
+  font-family: "Manrope", sans-serif!important;
 }
 
 header {
-  background: #fff !important;
+
+  background: #fff!important;
 }
 
 button {
-  border-radius: 5px !important;
-  font-family: "Rubik", sans-serif !important;
-  font-weight: bold !important;
+  border-radius: 5px!important;
+  font-family: "Rubik", sans-serif!important;
+  font-weight: bold!important;
 }
-
-a {
+ a {
   text-decoration: none!important;
-  border-radius: 5px !important;
-  cursor: pointer !important;
-}
+  border-radius: 5px!important;
+  cursor: pointer!important;
+} 
 
 header {
-  border-bottom: 1px solid black !important;
+  border-bottom: 1px solid black!important;
 }
 
 #usersname111 {
-  color: #8c30f5 !important;
-  text-align: center !important;
+  color: #8c30f5!important;
+  text-align: center!important;
 }
 
+/* Modal Styles */
+.modal-header {
+  background: #0b0d17!important;
+  color: #fff!important;
+}
+
+.modal-header h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bolder!important;
+}
+
+.modal-header button,
+.modal-header button:hover {
+  color: #fff!important;
+}
+
+/* Sticky Note */
+.sticky-note {
+  height: 300px!important;
+  width: 90%!important;
+  background: #8c30f5!important;
+  color: #fff!important;
+}
+
+/* Navbar */
 .logo-nav {
-    width: 138px !important;
-  }
-  
- .navbar {
-font-weight: 700 !important;
-  }
-  
-  .navbar .navbar-brand {
-    color: #8c30f5 !important;
-  }
-  
-  .navbar .navbar-brand:hover {
-    color: #560ea8 !important;
-  }
-  
+  width: 138px!important;
+}
+
+.navbar {
+  font-weight: 700!important;
+}
+
+.navbar .navbar-brand {
+  color: #8c30f5!important;
+}
+
+.navbar .navbar-brand:hover {
+  color: #560ea8!important;
+}
+
+.right-nav {
+  display: flex!important;
+  align-items: center!important;
+  padding: 0px!important;
+}
+
+.right-nav .btn {
+  font-size: 14px!important;
+  border-radius: 8px!important;
+  width: 74px!important;
+}
+
+.right-nav .btn:first-child {
+  background: #f1e4ff!important;
+  color: #8c30f5!important;
+}
+
+.right-nav .btn:first-child:hover {
+  background: #c0a7db!important;
+  color: #fff!important;
+}
+
+.right-nav .btn:last-child {
+  background: #8c30f5!important;
+  color: #fff!important;
+}
+
+.right-nav .btn:last-child:hover {
+  background: #5f1eaa!important;
+}
+
+/* Footer */
+footer {
+  background: #0b0d17!important;
+  color: #fff!important;
+}
+
+footer .container {
+  max-width: 1400px!important;
+}
+
+footer a {
+  color: #fff!important;
+}
+
+footer .container .footer-content .company-info h1 {
+  color: #8c30f5!important;
+}
+
+footer ul {
+  list-style: none!important;
+}
+
+footer ul a {
+  color: #fff!important;
+  font-family: "Rubik", sans-serif!important;
+}
+
+footer a:hover {
+  color: #8c30f5!important;
+}
+
+footer .container .footer-content .links p {
+  color: #8c30f5!important;
+  font-size: 20px!important;
+}
+
+footer .container .footer-content .company {
+  width: 100%!important;
+}
+
+footer .container .footer-content .support {
+  width: 100%!important;
+}
+
+footer .container .footer-content .newsletter {
+  width: 100%!important;
+}
+
+footer .container .footer-content .newsletter .subscribe {
+  background: #474a57!important;
+  border-radius: 8px!important;
+  padding: 0.5rem!important;
+  display: flex!important;
+}
+
+footer .container .footer-content .newsletter .subscribe input {
+  background: none!important;
+  color: #fff!important;
+  outline: none!important;
+  border: none!important;
+}
+
+footer .container .footer-content .newsletter .subscribe button {
+  background: none!important;
+  color: #fff!important;
+  outline: none!important;
+  border: none!important;
+}
+
+.newsletter .subscribe input[type="email"]:focus,
+.newsletter .subscribe input[type="email"]:active {
+  background: none!important;
+  color: #fff!important;
+  outline: none!important;
+  border: none!important;
+}
+
+/* Back Button Footer */
+.back-footer {
+  height: 70px!important;
+  color: #fff!important;
+  width: 70%!important;
+  margin: auto!important;
+}
+
+.back-footer i {
+  color: #fff!important;
+}
+
+.back-footer .back-button {
+  padding: 1rem 0!important;
+  background: none!important;
+  border: none!important;
+  outline: none!important;
+  font-size: 1.3rem!important;
+  color: #fff!important;
+}
+
+/* Sign In */
+#error {
+  color: red!important;
+  text-align: center!important;
+}
+
+.txt_field .fa {
+  position: absolute!important;
+  top: 50%!important;
+  right: 8%!important;
+  display: none!important;
+}
+.fa.times {
+  color: red!important;
+}
+.fa-check {
+  color: green!important;
+}
+
+.signup_link {
+  margin: 30px 0!important;
+  text-align: center!important;
+  font-size: 16px!important;
+}
+
+.login-btn {
+  background: #8c30f5 !important;
+  color: #fff !important;
+}
+
+.login-btn:hover {
+  background: #5f1eaa !important;
+  color: #fff !important;
+}
+
+.login-title span {
+  color: #8c30f5!important;
+}
+
+.center-form a {
+  color: #8c30f5!important;
+  text-decoration: none!important;
+}
+.center-form a:hover {
+  text-decoration: underline!important;
+  color: #8c30f5!important;
+}
+.center-form a::after {
+  color: #8c30f5!important;
+}
+
+@media screen and (max-width: 767px) {
+  /* Navbar */
   .right-nav {
-    display: flex !important;
-    align-items: center !important;
-    padding: 0px !important;
+    flex-direction: column!important;
+    align-items: flex-start!important;
   }
-  
+
   .right-nav .btn {
-    font-size: 15px !important;
-    border-radius: 8px !important;
-    width: 80px !important;
+    margin: 0.5rem 0!important;
   }
-  
-  .right-nav .btn:first-child {
-    background: #f1e4ff !important;
-    color: #8c30f5 !important;
+
+  /* Footer */
+  footer .container .footer-content {
+    flex-direction: column!important;
+    align-items: center!important;
+    text-align: center!important;
   }
-  
-  .right-nav .btn:first-child:hover {
-    background: #c0a7db !important;
-    color: #fff !important;
+
+  footer .container .footer-content .company {
+    margin-bottom: 2rem!important;
   }
-  
-  .right-nav .btn:last-child {
-    background: #8c30f5 !important;
-    color: #fff !important;
+
+  footer .container .footer-content .support {
+    margin-bottom: 2rem!important;
   }
-  
-  .right-nav .btn:last-child:hover {
-    background: #5f1eaa !important;
+
+  footer .container .footer-content .links {
+    flex-direction: column!important;
   }
-  
+
+  footer .container .footer-content .footer-logo {
+    flex-direction: column!important;
+  }
+
+  footer .container .footer-content .footer-logo > p {
+    padding: 0.2rem!important;
+    text-align: center!important;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .register {
+    padding: 0 !important;
+  }
+}

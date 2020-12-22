@@ -1,0 +1,7 @@
+.who-we-are {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}

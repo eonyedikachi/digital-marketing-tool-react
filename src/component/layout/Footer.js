@@ -35,13 +35,13 @@ function Footer(){
               <Link to="/about">About Us</Link>
             </li>
             <li className="my-4">
-              <Link to="../contact.html">Contact Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
             <li className="my-4">
-              <Link to="pricing.html">Pricing</Link>
+              <Link to="/pricing">Pricing</Link>
             </li>
             <li>
-              <Link to="services.html">Services</Link>
+              <Link to="/services">Services</Link>
             </li>
           </ul>
         </div>
@@ -49,10 +49,10 @@ function Footer(){
           <p className="font-weight-bold">Support</p>
           <ul>
             <li className="my-4">
-              <Link to="./support.html">Support</Link>
+              <Link to="#">Support</Link>
             </li>
             <li>
-              <Link to="FAQ.html">FAQ</Link>
+              <Link to="#">FAQ</Link>
             </li>
           </ul>
         </div>

@@ -1,0 +1,68 @@
+.box {
+    padding: 0rem 1rem 5rem;
+  }
+  .pricingcard {
+    border-radius: 10px;
+    background-color: #f1e4ff;
+  }
+  .card-header {
+    text-align: center;
+    background: #8c30f5;
+    color: white;
+  }
+  .btn {
+    background: #8c30f5;
+    border-color: #8c30f5;
+  }
+  .btn:hover {
+    background: white;
+    border-color: #8c30f5;
+    color: #8c30f5;
+  }
+  
+  .btn-one {
+    border-color: #8c30f5;
+    background: white;
+  }
+  .btn-one:hover {
+    background: #8c30f5;
+    border-color: #8c30f5;
+    color: white;
+  }
+  .faspricing{
+    color: #8c30f5;
+  }
+  
+  .card-body h3 {
+    text-align: center;
+  }
+  .btn-one a {
+    text-decoration: none;
+    color: #8c30f5;
+  }
+  .btn-one a:hover {
+    color: white;
+  }
+  
+  .containeri {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .containeri h1 {
+    font-weight: 800;
+    color: #8c30f5;
+  }
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @media screen and (max-width: 767px) {
+    .containeri {
+      padding: 3% 10% 2%;
+    }
+    .containeri h1 {
+      font-size: 1.7rem;
+      line-height: 1.5;
+    }
+  }
+  
