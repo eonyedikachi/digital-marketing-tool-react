@@ -34,7 +34,7 @@ function Header() {
       </ul>
       <div className="right-nav">
         <Link  to="#"className="btn mr-4" data-toggle="modal" data-target="#signIn">Login</Link>
-        <Link to="#" className="btn">Sign up</Link>
+        <Link to="/signup" className="btn">Sign up</Link>
       </div>
     </div>
   </nav>
