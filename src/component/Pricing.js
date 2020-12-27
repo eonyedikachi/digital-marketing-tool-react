@@ -7,7 +7,7 @@ import Pricing2 from './pricing/pricing2'
     return (
         <div className="pricing">
             <div className="containeri">
-            <h1>CHOOSE FROM ANY OF OUR AMAZING PLANS</h1>
+            <h1>TRY OUR PREMIUM SERVICES FOR ONE MONTH FREE!!</h1>
             </div>
             <Pricing2/>
         </div>

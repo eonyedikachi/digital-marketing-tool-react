@@ -6,7 +6,6 @@ import Footer from './component/layout/Footer';
 import Pricing from './component/Pricing'
 import LP from './component/LP'
 import About from './component/About'
-import Login from './component/Login'
 import Signup from './component/Signup'
 import Services from './component/Services'
 import Contactt from './component/Contactt'
@@ -22,7 +21,6 @@ function App() {
        <Route exact path="/pricing" component= {Pricing }/>
        <Route exact path="/contact" component= {Contactt }/>
        <Route exact path="/signup" component= {Signup }/>
-       <Route exact path="/login" component= {Login}/>
        <Route exact path="/services" component= {Services }/>
      </Switch>
        <Footer/>

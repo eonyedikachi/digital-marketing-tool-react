@@ -1,13 +1,21 @@
-    import React from 'react';
+import React, { useState } from 'react'
 // import PropTypes from 'prop-types';
 import './Header.css';
 import {Link} from 'react-router-dom';
 import logo from '../Images/logo.png';
+import {Login} from '../Login'
+
 
 function Header() {
+  const [show , setShow  ] = useState(false)
+
+  const close =()=> setShow(false)
   return (
     <React.Fragment>
-    <header className="header sticky-top">
+    {show ? <div className="back-drop"></div> : null}
+    <header className="header sticky-top"> 
+    {show ? <div className="back-drop"></div> : null}
+    
     <div className="container">
   <nav className="navbar navbar-expand-md navbar-light p-2">
     <Link className="navbar-brand" to="/"><img className ="logo-nav" src={logo}/></Link>
@@ -33,14 +41,19 @@ function Header() {
         </li>
       </ul>
       <div className="right-nav">
-        <Link  to="#"className="btn mr-4" data-toggle="modal" data-target="#signIn">Login</Link>
+        <Link onClick={() => setShow(true)} className="btn mr-4" data-toggle="modal" data-target="#signIn" onClick={()=> setShow(true)}>Login</Link>
+
         <Link to="/signup" className="btn">Sign up</Link>
       </div>
     </div>
   </nav>
 </div>
 </header>
+<Login
+show ={show}
+close={close}/>
 </React.Fragment>
+
   )
 };
 
