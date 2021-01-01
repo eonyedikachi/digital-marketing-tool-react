@@ -5,28 +5,28 @@ import MLP2a from "./MLP2a"
  function MLP2b() {
     return (
     <div className='bottom'>
-        <div className="box boxxx">
+        <div className="boxxx">
       <i className="fas fa-chart-bar lpicon"></i>
       <MLP2a
       services="Sales Growth"
       welcomeinfo=" We help you reach more audience and grow your sales very fast and
       effectively"/>
      </div>
-        <div className="box">
+        <div className="boxxx">
         <i className="fas fa-cog lpicon"></i>
       <MLP2a
       services="Site Optimizing"
       welcomeinfo="We provide best service to grow your sales and reach out to more target
       audience and have control over your designs"/>
      </div>
-        <div className="box">
+        <div className="boxxx">
         <i className="fas fa-volume-up lpicon"></i>
       <MLP2a
       services="Marketing"
       welcomeinfo=" With our tools and strategy your audience are ever close to your
       business than ever"/>
      </div>
-        <div className="box">
+        <div className="boxxx">
         <i className="fas fa-headset lpicon"></i>
       <MLP2a
       services="Support"

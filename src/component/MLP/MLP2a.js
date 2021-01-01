@@ -2,12 +2,12 @@ import React from 'react'
 
  function MLP2a(props) {
     return (
-        <div className="box">
+    <React.Fragment> 
 
         <p>{props.services}</p>
         <p>{props.welcomeinfo}</p>
     
-        </div>
+        </React.Fragment>
     )
 }
 export default MLP2a;

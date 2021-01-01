@@ -9,10 +9,13 @@ import About from './component/About'
 import Signup from './component/Signup'
 import Services from './component/Services'
 import Contactt from './component/Contactt'
+import { Provider } from 'react-redux';
+import store from './component/store'
 
 
 function App() {
   return (
+<Provider store={store} >
 <Router>
       <Header/>
      <Switch>
@@ -25,6 +28,7 @@ function App() {
      </Switch>
        <Footer/>
        </Router>
+       </Provider>
   );
 }
 export default App;
