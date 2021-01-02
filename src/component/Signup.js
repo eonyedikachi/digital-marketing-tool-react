@@ -7,7 +7,8 @@ import FormField from "./FormField";
 import {SignUp} from "./actions/types";
 import {useDispatch } from 'react-redux'
 import Errror from './error'
-import Socials from "./Socials"
+// import Socials from "./Socials"
+import axios from 'axios'
 
 
 
@@ -106,10 +107,13 @@ export default function Signup() {
       onSubmit=
       {(values, { setSubmitting , resetForm}) => 
           {
-            dispatch(SignUp(values))
+            dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
+            
+            
             
 
             setTimeout(()=>{
+
                alert(JSON.stringify(values, null, 2));
                resetForm();
                setSubmitting(false)
