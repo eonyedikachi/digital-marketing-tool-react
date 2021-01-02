@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
  function btn() {
     return (
         <React.Fragment>
-        <Link to="#" className="service-btn">More</Link>
+        <Link to="/signup" className="service-btn">More</Link>
         </React.Fragment>
     )
 }

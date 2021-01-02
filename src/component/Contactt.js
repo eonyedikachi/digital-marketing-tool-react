@@ -1,6 +1,9 @@
 import React from 'react'
 import './Contactt.css'
 import Contact1 from './Contactt/contact1'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
+import FormField from './FormField'
 
  function Contactt() {
     return (
@@ -31,10 +34,16 @@ import Contact1 from './Contactt/contact1'
       />
       </div>
       <div className="contactForm">
-        <form>
+        <Formik>
+        {({values, errors, touched, handleChange, handleBlur, handleSubmit,isSubmitting})=>(
+          <form>
           <h2>Send Message</h2>
           <div className="inputBox">
-            <input type="text" name="" required="required" />
+            <FormField
+            type="text"
+            name="name"
+            required="required"/>
+            <input    />
             <span>Full Name</span>
           </div>
           <div className="inputBox">
@@ -52,7 +61,9 @@ import Contact1 from './Contactt/contact1'
           <div className="inputBox">
             <input type="submit" name="" value="Send" />
           </div>
-        </form>
+        </form>)}
+        </Formik>
+        
       </div>
     </div>
   </div>

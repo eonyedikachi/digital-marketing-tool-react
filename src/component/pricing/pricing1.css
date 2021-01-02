@@ -10,6 +10,11 @@
     background: #8c30f5 !important;
     color: white !important;
   }
+  .main-container{
+    margin-left: 
+      10%
+    ;
+  }
   .btn {
     background: #8c30f5 !important;
     border-color: #8c30f5 !important;

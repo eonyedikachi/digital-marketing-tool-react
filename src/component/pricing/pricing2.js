@@ -18,6 +18,7 @@ import Pricingbtn from './pricingbtn'
        <p><i className="fas circleicon fa-check-circle"></i> Create business landing page</p>
        <p><i className="fas circleicon fa-check-circle"></i> Delivery optimization tool</p>
        <p><i className="fas circleicon fa-check-circle"></i> Dynamic template editor </p>
+       <p><i className="fas circleicon fa-check-circle"></i> Sticky notes </p>
        </React.Fragment>
        }
        btn={<button className="btn btn-outline-dark btn-lg btn-block btn-one"><Link to="#">SIGN UP</Link></button>}
@@ -37,9 +38,10 @@ import Pricingbtn from './pricingbtn'
             <p><i className="fas circleicon fa-check-circle"></i> Delivery optimization tool</p>
             <p><i className="fas circleicon fa-check-circle"></i> Dynamic template editor </p>
             <p><i className="fas circleicon fa-check-circle"></i> Chat support</p>         
-            <p><i className="fas circleicon fa-check-circle"></i>Insightful analytics </p>
+            <p><i className="fas circleicon fa-check-circle"></i>Create campaign </p>
             <p><i className="fas circleicon fa-check-circle"></i>Prioritized support</p>
             <p><i className="fas circleicon fa-check-circle"></i>Phone chat</p>
+            <p><i className="fas circleicon fa-check-circle"></i>Form builder feature</p>
             
        </React.Fragment>
        }

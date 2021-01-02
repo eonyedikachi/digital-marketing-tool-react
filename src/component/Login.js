@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
  export const  Login =({show, close}) => {
-
+  useEffect(() => {
+    document.title = "MartReach | Boost your Digital Awareness"
+});
     return (
         <React.Fragment>
     

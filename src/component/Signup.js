@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import styled from 'styled-components'
 import styled from "styled-components";
 import { Formik } from 'formik';
@@ -87,6 +87,9 @@ const validationSchema = Yup.object().shape({
 
 // definig dispatch function
 export default function Signup() {
+  useEffect(() => {
+    document.title = "MartReach | Boost your Digital Awareness"
+});
    const dispatch=useDispatch()
 
   return (

@@ -6,7 +6,7 @@ import Button from './genbutton'
 
 function BBtn(){
     return(
-        <Link to="/login">< Button  className="btn get-started my-4"
+        <Link to="/signup">< Button  className="btn get-started my-4"
                           content="Get Started"/></Link >
     )
 }
