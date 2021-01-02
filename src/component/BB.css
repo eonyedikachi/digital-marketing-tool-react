@@ -1,26 +1,26 @@
 .get-started {
-    position: static;
-    width: 196px;
-    height: 62px;
-    left: 0px;
-    top: 308px;
+    position: static !important;
+    width: 196px !important;
+    height: 62px !important;
+    left: 0px !important;
+    top: 308px !important;
   
     /* Brand / Purple */
   
-    background: #8c30f5;
-    border-radius: 8px;
-    color: #fff;
+    background: #8c30f5 !important;
+    border-radius: 8px !important;
+    color: #fff !important;
   
     /* Inside Auto Layout */
   
-    flex: none;
-    order: 1;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 0px 32px;
+    flex: none !important;
+    order: 1 !important;
+    align-self: flex-start !important;
+    flex-grow: 0 !important;
+    margin: 0px 32px !important;
   }
   
   .get-started:hover {
-    background: #5f1eaa;
-    color: #fff;
+    background: #5f1eaa !important;
+    color: #fff !important;
   }

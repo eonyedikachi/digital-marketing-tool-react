@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Button = props => {
-  const { type, className } = props;
+  const { type, className, content, ...rest } = props;
     return (
       <button 
         type={type}
         className={className}
+        {...rest}
       >
-        {/* <i className={props.icon}></i> 
-        {label} */}
+      { content}
       </button>  
     )
 }

@@ -5,7 +5,7 @@ import './pricing1.css';
 
  function Pricing(props) {
     return (
-      <div className="col-lg-6 col-md-6 col-sm-12 box">
+      <div className="col-lg-4 col-md-6 col-sm-6 box">
         <div className="card pricingcard p-c">
            <div className="card-header h-one c-h">
             <h2>{props.package}</h2>

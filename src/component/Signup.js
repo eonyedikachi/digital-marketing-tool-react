@@ -51,10 +51,10 @@ background: #8c30f5;
 const initialValues = {
     firstName: "",
     lastName: "",
-    userName: "",
+    username: "",
     email: "",
     password: "",
-    confirmPassword: "",
+   
 };
 const validationSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -65,7 +65,7 @@ const validationSchema = Yup.object().shape({
         .min(3, 'Must be at least 3 characters')
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
-    userName: Yup.string()
+    username: Yup.string()
         .min(3, 'Must be at least 3 characters')
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
@@ -76,13 +76,13 @@ const validationSchema = Yup.object().shape({
         .required('Password is required')
         .min(8, 'Password is too short - should be 8 chars minimum.')
         .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, "Password must contain at least 8 characters, one uppercase, one number and one special case character"),
-    confirmPassword: Yup.string()
-        .required("Please confirm your password")
-        .when("password", {
-            is: password => (password && password.length > 0 ? true : false),
-            then: Yup.string().oneOf([Yup.ref("password")], "Password doesn't match"),
+    // confirmPassword: Yup.string()
+    //     .required("Please confirm your password")
+    //     .when("password", {
+    //         is: password => (password && password.length > 0 ? true : false),
+    //         then: Yup.string().oneOf([Yup.ref("password")], "Password doesn't match"),
                  
-        })
+    //     })
 });
 
 // definig dispatch function
@@ -107,6 +107,8 @@ export default function Signup() {
       onSubmit=
       {(values, { setSubmitting , resetForm}) => 
           {
+            alert(JSON.stringify(values, null, 2));
+            resetForm();
             dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
             
             
@@ -114,8 +116,8 @@ export default function Signup() {
 
             setTimeout(()=>{
 
-               alert(JSON.stringify(values, null, 2));
-               resetForm();
+              
+              
                setSubmitting(false)
             },1000)
           }
@@ -162,16 +164,16 @@ export default function Signup() {
 
         <FormField
          type="text"
-          name="userName"
+          name="username"
           placeholder="enter your username"
           onChange={handleChange}
-          value={values.userName}
+          value={values.username}
           onBlur={handleBlur}
-          className={touched.userName && errors.userName ? "has-error" : "" }
+          className={touched.username && errors.username ? "has-error" : "" }
        />
        <Errror
-        touched={touched.userName}
-        message={errors.userName}/>
+        touched={touched.username}
+        message={errors.username}/>
 
         <FormField
          type="text"
@@ -204,7 +206,7 @@ export default function Signup() {
           name="confirmPassword"
           placeholder="confirm password"
           onChange={handleChange}
-          value={values.confirmPassword}
+          // value={values.confirmPassword}
           onBlur={handleBlur}
           className={touched.confirmPassword && errors.confirmPassword ? "has-error" : "" }
        />
@@ -261,11 +263,11 @@ export default function Signup() {
 //              <FormField
 //                placeholder="User Name"
 //                type="text"
-//                name="userName"
-//                {...userNameProps}
+//                name="username"
+//                {...usernameProps}
 //              />
-//              {formik.touched.userName && formik.errors.userName ? (
-//                <Error>{formik.errors.userName}</Error>
+//              {formik.touched.username && formik.errors.username ? (
+//                <Error>{formik.errors.username}</Error>
 //              ) : null}
 //              <FormField
 //                placeholder="Email"
