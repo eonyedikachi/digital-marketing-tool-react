@@ -1,11 +1,50 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 // import styled from 'styled-components'
+import styled from "styled-components";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import FormField from "./FormField";
 import {SignUp} from "./actions/types";
 import {useDispatch } from 'react-redux'
 import Errror from './error'
+import Socials from "./Socials"
+
+
+
+
+
+
+
+
+
+const Register = styled.div`
+  width: 70%;
+  border-radius: 10px;
+  background: #ffffff;
+`;
+const Signin = styled.div`
+  color: #8c30f5;
+`;
+const Error = styled.div`
+  color: red;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  font-weight: 900;
+`;
+const Main = styled.main`
+  background: #8c30f51a;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+`;
+const Button = styled.button`
+background: #8c30f5;
+  color: #fff;
+  align-self: center;
+  width: 40%;
+`;
+
+
 
 
 const initialValues = {
@@ -50,6 +89,18 @@ export default function Signup() {
    const dispatch=useDispatch()
 
   return (
+    <Main>
+       <div className="container d-flex justify-content-center .align-items-center">
+         <Register className="register d-flex flex-column .align-items-center p-5">
+           <Signin className="d-flex justify-content-end align-items-center my-3">
+             Already have an account?
+             <Button>Sign in</Button>
+           </Signin>
+           <h1 class="font-weight-bold">
+             Welcome to <span
+               style={{ color: "#8c30f5" }}>MartReach!</span>
+           </h1>
+           <h5>Register your account</h5>
       <Formik initialValues={initialValues}
       validationSchema = {validationSchema}
       onSubmit=
@@ -67,6 +118,18 @@ export default function Signup() {
       }>
 
 {({values, errors, touched, handleChange, handleBlur, handleSubmit,isSubmitting})=>(
+  // <Main>
+  // <div className="container d-flex justify-content-center .align-items-center">
+  //   <Register className="register d-flex flex-column .align-items-center p-5">
+  //     <Signin className="d-flex justify-content-end align-items-center my-3">
+  //       Already have an account?
+  //       <Button>Sign in</Button>
+  //     </Signin>
+  //     <h1 class="font-weight-bold">
+  //       Welcome to <span
+  //         style={{ color: "#8c30f5" }}>MartReach!</span>
+  //     </h1>
+  //     <h5>Register your account</h5>
      <form onSubmit={handleSubmit}>
         <FormField
          type="text"
@@ -92,7 +155,7 @@ export default function Signup() {
        <Errror
         touched={touched.lastName}
         message={errors.lastName}/>
-    
+
         <FormField
          type="text"
           name="userName"
@@ -152,8 +215,14 @@ export default function Signup() {
          </div>
          
      </form>
+    //  </Register>
+    //    </div>
+    //  </Main>
      )}
         </Formik>
+        </Register>
+       </div>
+     </Main>
   )
 };
  
@@ -165,104 +234,76 @@ export default function Signup() {
 
 
 
+     
+//            <form onSubmit={formik.handleSubmit}>
+//              <FormField
+//                placeholder="First Name"
+//                type="text"
+//                name="firstName"
+//                {...firstNameProps}
+//              />
+//              {formik.touched.firstName && formik.errors.firstName ? (
+//                <Error>{formik.errors.firstName}</Error>
+//              ) : null}
+//              <FormField
+//                placeholder="Last Name"
+//                type="text"
+//                name="lastName"
+//                {...lastNameProps}
+//              />
+//              {formik.touched.lastName && formik.errors.lastName ? (
+//                <Error>{formik.errors.lastName}</Error>
+//              ) : null}
+//              <FormField
+//                placeholder="User Name"
+//                type="text"
+//                name="userName"
+//                {...userNameProps}
+//              />
+//              {formik.touched.userName && formik.errors.userName ? (
+//                <Error>{formik.errors.userName}</Error>
+//              ) : null}
+//              <FormField
+//                placeholder="Email"
+//                type="email"
+//                name="email"
+//                {...emailProps}
+//              />
+//              {formik.touched.email && formik.errors.email ? (
+//                <Error>{formik.errors.email}</Error>
+//              ) : null}
+//              <FormField
+//                placeholder="Password"
+//                type="password"
+//                name="password"
+//                {...passwordProps}
+//              />
+//              {formik.touched.password && formik.errors.password ? (
+//                <Error>{formik.errors.password}</Error>
+//              ) : null}
+//              <FormField
+//                placeholder="Confirm Password"
+//                type="password"
+//                name="confirmPassword"
+//                {...confirmPasswordProps}
+//              />
+//              {formik.touched.confirmPassword &&
+//              formik.errors.confirmPassword ? (
+//                <Error>{formik.errors.confirmPassword}</Error>
+//              ) : null}
+//              <Button
+//                className="btn my-3"
+//                type="submit"
+//                disabled={!(formik.isValid && formik.dirty)}
+//              >
+//                Submit
+//              </Button>
+//              <Socials />
+//            </form>
+         
+//    );
+//  }
 
-
-
-//  export default function formik() {
-//   return (
-//       <Formik initialValues={initialValues}
-//       validationSchema = {validationSchema}
-//       onSubmit=
-//       {(values, { setSubmitting , resetForm}) => 
-//           {
-//             setSubmitting(true)
-
-//             setTimeout(()=>{
-//                alert(JSON.stringify(values, null, 2));
-//                resetForm();
-//                setSubmitting(false)
-//             },1000)
-//           }
-//       }>
-
-//       {({values, errors, touched, handleChange, handleBlur, handleSubmit,isSubmitting})=>(
-//        <form onSubmit={handleSubmit}>
-//        <div className="input-row">
-//        <label htmlFor="name">name</label>
-//        <input
-//        type="text"
-//        name="name"
-//        id="name"
-//        placeholder="enter your name"
-//        onChange={handleChange}
-//        value={values.name}
-//        onBlur={handleBlur}
-//        className={touched.name && errors.name ? "has-error" : "greatq" }
-//        />
-//        <Errror
-//        touched={touched.name}
-//        message={errors.name}/>
-//        </div>
-
-
-
-
-/* <form onSubmit={formik.handleSubmit}> */
-
-
-
-
-
-
-       /* <FormField
-         label="Last Name"
-         type="text"
-         name="lastName"
-         {...lastNameProps}
-       />
-       {formik.touched.lastName && formik.errors.lastName ? (
-         <div>{formik.errors.lastName}</div>
-       ) : null}
-       <FormField
-         label="User Name"
-         type="text"
-         name="userName"
-         {...userNameProps}
-       />
-       {formik.touched.userName && formik.errors.userName ? (
-         <div>{formik.errors.userName}</div>
-       ) : null}
-       <FormField
-         label="Email"
-         type="email"
-         placeholder="Please Enter your email"
-         {...emailProps}
-       />
-       {formik.touched.email && formik.errors.email ? (
-         <div>{formik.errors.email}</div>
-       ) : null}
-       <FormField
-         label="Password"
-         type="password"
-         placeholder="Please Enter your password"
-         {...passwordProps}
-       />
-       {formik.touched.password && formik.errors.password ? (
-         <div>{formik.errors.password}</div>
-       ) : null}
-       <FormField
-         label="Confirm Password"
-         type="password"
-         placeholder="Please Confirm your password"
-         {...confirmPasswordProps}
-       />
-       {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-         <div>{formik.errors.confirmPassword}</div>
-       ) : null}
-       <button type="submit" disabled={!(formik.isValid && formik.dirty)}>
-         Submit
-       </button>
-     </form> */
 
 
 

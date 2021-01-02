@@ -1,68 +1,68 @@
 .box {
-    padding: 0rem 1rem 5rem;
+    padding: 0rem 1rem 5rem !important;
   }
-  .pricingcard {
-    border-radius: 10px;
-    background-color: #f1e4ff;
+  .p-c {
+    border-radius: 10px !important;
+    background-color: #f1e4ff !important;
   }
-  .card-header {
-    text-align: center;
-    background: #8c30f5;
-    color: white;
+  .c-h {
+    text-align: center !important;
+    background: #8c30f5 !important;
+    color: white !important;
   }
   .btn {
-    background: #8c30f5;
-    border-color: #8c30f5;
+    background: #8c30f5 !important;
+    border-color: #8c30f5 !important;
   }
   .btn:hover {
-    background: white;
-    border-color: #8c30f5;
-    color: #8c30f5;
+    background: white !important;
+    border-color: #8c30f5 !important;
+    color: #8c30f5 !important;
   }
   
   .btn-one {
-    border-color: #8c30f5;
-    background: white;
+    border-color: #8c30f5 !important;
+    background: white !important;
   }
   .btn-one:hover {
-    background: #8c30f5;
-    border-color: #8c30f5;
-    color: white;
+    background: #8c30f5 !important;
+    border-color: #8c30f5 !important;
+    color: white !important;
   }
   .faspricing{
-    color: #8c30f5;
+    color: #8c30f5 !important;
   }
   
   .card-body h3 {
-    text-align: center;
+    text-align: center !important;
   }
   .btn-one a {
-    text-decoration: none;
-    color: #8c30f5;
+    text-decoration: none !important;
+    color: #8c30f5 !important;
   }
   .btn-one a:hover {
-    color: white;
+    color: white !important;
   }
   
   .containeri {
-    text-align: center;
-    padding: 3rem 0;
+    text-align: center !important;
+    padding: 3rem 0 !important;
   }
   .containeri h1 {
-    font-weight: 800;
-    color: #8c30f5;
+    font-weight: 800 !important;
+    color: #8c30f5 !important;
   }
   .row {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
   @media screen and (max-width: 767px) {
     .containeri {
-      padding: 3% 10% 2%;
+      padding: 3% 10% 2% !important;
     }
     .containeri h1 {
-      font-size: 1.7rem;
-      line-height: 1.5;
+      font-size: 1.7rem !important;
+      line-height: 1.5 !important;
     }
   }
   
