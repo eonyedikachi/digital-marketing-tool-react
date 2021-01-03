@@ -3,13 +3,14 @@
   }
   .s-heading h1 {
     text-align: center;
+    
   }
   .s-heading h1 {
     color: #8c30f5;
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 1px;
-    margin: 0px;
+    margin-top: 2%;
   }
   .s-heading p {
     color: rgba(87, 105, 117, 0.6);

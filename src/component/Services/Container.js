@@ -17,11 +17,11 @@ import './Container.css';
           <Servicecontainer
           image={img1}
           service='Brand Boostings and Brand Awareness'
-          servicedetails='We provide brand boosting tools to our registered customers.'/>
+          servicedetails='We provide brand boosting tools like our digital campaign feature to our registered users to help grow their Audience.'/>
           <Servicecontainer
-          image={img3}
-          service='SEO Analytics'
-          servicedetails=' Have a good track of your ROI by using some analytical tools embedded on your business.'/>
+          image='https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/05/What_is_digital_design_jpg_4vA_K_bM-700x410.jpg?auto=format&q=60&fit=max&w=930'
+          service='Template Editors'
+          servicedetails='We provide dynamic and user friendly template editors to help produce appealing and compeling designs '/>
        </div>
     )
 }

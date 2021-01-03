@@ -16,7 +16,6 @@ import Pricingbtn from './pricingbtn'
        {<React.Fragment>
         <p><i className="fas circleicon fa-check-circle"></i> Create email template</p>
        <p><i className="fas circleicon fa-check-circle"></i> Create business landing page</p>
-       <p><i className="fas circleicon fa-check-circle"></i> Delivery optimization tool</p>
        <p><i className="fas circleicon fa-check-circle"></i> Dynamic template editor </p>
        <p><i className="fas circleicon fa-check-circle"></i> Sticky notes </p>
        </React.Fragment>
@@ -35,12 +34,13 @@ import Pricingbtn from './pricingbtn'
        {<React.Fragment>
         <p><i className="fas circleicon fa-check-circle"></i> Create email template</p>
             <p><i className="fas circleicon fa-check-circle"></i> Create business landing page</p>
-            <p><i className="fas circleicon fa-check-circle"></i> Delivery optimization tool</p>
             <p><i className="fas circleicon fa-check-circle"></i> Dynamic template editor </p>
+            <p><i className="fas circleicon fa-check-circle"></i> Sticky notes </p>
             <p><i className="fas circleicon fa-check-circle"></i> Chat support</p>         
-            <p><i className="fas circleicon fa-check-circle"></i>Create campaign </p>
+            <p><i className="fas circleicon fa-check-circle"></i>Create digital product campaign </p>
             <p><i className="fas circleicon fa-check-circle"></i>Prioritized support</p>
             <p><i className="fas circleicon fa-check-circle"></i>Phone chat</p>
+            <p><i className="fas circleicon fa-check-circle"></i> Sticky notes </p>
             <p><i className="fas circleicon fa-check-circle"></i>Form builder feature</p>
             
        </React.Fragment>

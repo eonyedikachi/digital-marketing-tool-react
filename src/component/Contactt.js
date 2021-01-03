@@ -43,19 +43,27 @@ import FormField from './FormField'
             type="text"
             name="name"
             required="required"/>
-            <input    />
             <span>Full Name</span>
           </div>
           <div className="inputBox">
-            <input type="text" name="" required="required" />
+          <FormField
+            type="text"
+            name="name"
+            required="required"/>
             <span>Email</span>
           </div>
           <div className="inputBox">
-            <input type="text" name="" required="required" />
+          <FormField
+            type="text"
+            name="name"
+            required="required"/>
             <span>Phone</span>
           </div>
           <div className="inputBox">
-            <textarea required="required"></textarea>
+          <FormField
+            type="text"
+            name="name"
+            required="required"/>
             <span>Type your Message...</span>
           </div>
           <div className="inputBox">
