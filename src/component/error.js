@@ -10,6 +10,6 @@ const Errror =({touched,message})=>{
         return(<div className='form-message invalid' style={{color:'red'}}>{message}</div>)
     
     }
-        return(<div className='form-message invalid'>all-good</div>)
+        return(<div style={{color:'green'}} className='form-message invalid'>All-good</div>)
     }
     export default Errror;
