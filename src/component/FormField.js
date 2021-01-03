@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.css";
-import { BsFillEyeFill, BsFillEyeSlashFill, } from "react-icons/bs";
 
 // const Input = styled.input`
 //   border: none;

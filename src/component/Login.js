@@ -1,12 +1,33 @@
 import React, {useEffect} from 'react'
+import { Formik, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import Formfield from './FormField';
+import Errror from './error';
+import {useSelector} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {useDispatch } from 'react-redux';
+import axios from 'axios';
+import {isLoggedin} from './actions/types';
 
  export const  Login =({show, close}) => {
   useEffect(() => {
     document.title = "MartReach | Boost your Digital Awareness"
 });
+
+
+ const isLogged=useSelector(state=>state.islogged); 
+ const dispatch=useDispatch()
+
+ if (isLogged) {
+  return <Redirect to='/' />
+}
+
+ 
     return (
+      
         <React.Fragment>
-    
+   
+
      <div 
      style={{
          transform: show ? "translateY(0vh)" : "translateY(-100vh)",
@@ -44,36 +65,105 @@ import React, {useEffect} from 'react'
                      <div className="register d-flex flex-column .align-items-center p-4">
                        <div className="signin d-flex justify-content-end align-items-center my-3">
                           Don't have an account yet?
-                         <a className="ml-2" href="./register.html">Sign Up</a>
+                         <a className="ml-2" to="/">Sign Up</a>
                        </div>
-                       <h1 className="login-title font-weight-bold">Welcome back to <span>MartReach!</span></h1>
-                       <form className="d-flex flex-column" onsubmit="validate()">
+                       <h1 className="login-title font-weight-bold">Welcome back to <span >MartReach!</span></h1>
+
+
+              <Formik
+              initialValues={{
+                username:'',
+                password:''
+              }}
+              onSubmit=
+              {(values, { setSubmitting , resetForm}) => 
+                  {
+                    alert(JSON.stringify(values, null, 2));
+                    resetForm();
+                    dispatch(isLoggedin())
+                    dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
+                    
+                    
+                    
+        
+                   
+                  }
+              }
+
+
+                validationSchema = {Yup.object().shape({
+                username: Yup.string()
+                      .min(3, 'Must be at least 3 characters')
+                      .max(15, 'Must be 15 characters or less')
+                      .required('Required'),
+              password: Yup.string()
+              .required('password is required')
+              .min(8, 'password is too short - should be 8 chars minimum.')
+              .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, "password must contain at least 8 characters, one uppercase, one number and one special case character"),
+              })}>
+
+{({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) => (
+              <form className="d-flex flex-column" onSubmit={handleSubmit}>
                           <p id="error" />
                             <div className="input-field my-4"><span>
-                               <input placeholder="Username" className="d-block w-100" type="text" id="use" />
+
+                            <Formfield
+                            placeholder="username"
+                            className="d-block w-100"
+                            type="text"
+                            onChange={handleChange}
+                            value={values.username}
+                            name='username'   
+                           />
+                      <Errror
+                            touched={touched.username}
+                            message={errors.username}/>
                                </span>
                             </div>
                             <div className="input-field my-4"><span>
-                               <input placeholder="Password" className="d-block w-100" type="password" id="pass" />
+                            <Formfield
+                            placeholder="password"
+                            className="d-block w-100"
+                            type="password"
+                            name='password'
+                            onChange={handleChange}
+                            value={values.password}
+                            />
+                            <Errror
+                            touched={touched.password}
+                            message={errors.password}/>
+                               {/* <input placeholder="password" className="d-block w-100" type="password" id="pass" /> */}
                                 </span>
                                </div>
                             <div className="pass">
-                              <a href="forgotpassword.html"> Forgot Password?</a>
+                              <a to="/"> Forgot password?</a>
                             </div>
-                            <input className="login-btn btn my-3" type="submit" id="Login" defaultValue="Login" />
-                            <div className="signup_link">
-                              Not a member? <a href="./register.html">Signup</a>
+                            <Formfield
+                            // placeholder="password"
+                            className="login-btn btn my-3"
+                            type="submit"
+                            id="Login"
+                            defaultValue="Login"
+                            
+                            />
+                            
+                            {/* <input className="login-btn btn my-3" type="submit" id="Login"  /> */}
+                            <div  className="signup_link">
+                              Not a member? <a to="/">Signup</a>
                               <div className="create d-flex align-items-center mt-4">
                                 Sign in with:
                                  <div className="socials d-flex align-items-center">
-                                <a className="mx-3" href="#"><i className="fab fa-google" /></a>
-                                <a className="mx-3" href="#"><i className="fab fa-facebook-f" /></a>
-                                <a className="mx-3" href="#"><i className="fab fa-linkedin-in" /></a>
-                                <a className="mx-3" href="#"><i className="fab fa-twitter" /></a>
+                                <a className="mx-3" to="/"><i className="fab fa-google" /></a>
+                                <a className="mx-3" to="/"><i className="fab fa-facebook-f" /></a>
+                                <a className="mx-3" to="/"><i className="fab fa-linkedin-in" /></a>
+                                <a className="mx-3" to="/"><i className="fab fa-twitter" /></a>
                             </div>
                             </div>
                         </div>
                         </form>
+                 )}
+              </Formik>
+                       
                     </div>
                     </div>
                 </div>

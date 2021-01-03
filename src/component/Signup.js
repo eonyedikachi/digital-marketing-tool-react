@@ -65,10 +65,10 @@ const validationSchema = Yup.object().shape({
         .min(3, 'Must be at least 3 characters')
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
-    username: Yup.string()
-        .min(3, 'Must be at least 3 characters')
-        .max(15, 'Must be 15 characters or less')
-        .required('Required'),
+  username: Yup.string()
+      .min(3, 'Must be at least 3 characters')
+      .max(15, 'Must be 15 characters or less')
+      .required('Required'),
     email: Yup.string()
         .email('Invalid email address')
         .required('Required'),
@@ -205,17 +205,17 @@ export default function Signup() {
         message={errors.password}/>
 
 
-        <FormField
+        {/* <FormField
           name="confirmPassword"
           placeholder="confirm password"
           onChange={handleChange}
-          // value={values.confirmPassword}
+          value={values.confirmPassword}
           onBlur={handleBlur}
           className={touched.confirmPassword && errors.confirmPassword ? "has-error" : "" }
        />
        <Errror
         touched={touched.confirmPassword}
-        message={errors.confirmPassword}/>
+        message={errors.confirmPassword}/> */}
 
     
        
