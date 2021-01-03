@@ -95,7 +95,7 @@ import {isLoggedin} from './actions/types';
                 username: Yup.string()
                       .min(3, 'Must be at least 3 characters')
                       .max(15, 'Must be 15 characters or less')
-                      .required('Required'),
+                      .required(' Username is required'),
               password: Yup.string()
               .required('password is required')
               .min(8, 'password is too short - should be 8 chars minimum.')
