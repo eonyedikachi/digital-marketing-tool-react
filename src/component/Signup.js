@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 // import styled from 'styled-components'
+import SubmitButton from './SubmitButton';
 import styled from "styled-components";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -25,25 +26,19 @@ const Register = styled.div`
   background: #ffffff;
 `;
 const Signin = styled.div`
-  color: #8c30f5;
+  color: black;
 `;
-const Error = styled.div`
-  color: red;
-  text-align: center;
-  justify-items: center;
-  align-items: center;
-  font-weight: 900;
-`;
+
 const Main = styled.main`
   background: #8c30f51a;
   padding-top: 4rem;
   padding-bottom: 10rem;
 `;
 const Button = styled.button`
-background: #8c30f5;
-  color: #fff;
-  align-self: center;
-  width: 40%;
+color: #8c30f5;
+  background: transparent;
+  border: 0;
+
 `;
 
 
@@ -91,6 +86,7 @@ export default function Signup() {
 
   return (
     <Main>
+
        <div className="container d-flex justify-content-center .align-items-center">
          <Register className="register d-flex flex-column .align-items-center p-5">
            <Signin className="d-flex justify-content-end align-items-center my-3">
@@ -204,6 +200,126 @@ export default function Signup() {
 
 
         {/* <FormField
+=======
+      <div className="container d-flex justify-content-center .align-items-center">
+        <Register className="register d-flex flex-column .align-items-center p-5">
+          <Signin className="d-flex justify-content-end align-items-center my-3">
+            Already have an account?
+            <Button>Sign in</Button>
+          </Signin>
+          <h1 class="font-weight-bold">
+            Welcome to <span style={{ color: "#8c30f5" }}>MartReach</span>!
+          </h1>
+          <h5>Register your account</h5>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              alert(JSON.stringify(values, null, 2));
+              resetForm();
+              dispatch(
+                axios.post(
+                  "https://martreach.herokuapp.com/api/users/signup",
+                  values
+                )
+              );
+
+              setTimeout(() => {
+                setSubmitting(false);
+              }, 1000);
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              // <Main>
+              // <div className="container d-flex justify-content-center .align-items-center">
+              //   <Register className="register d-flex flex-column .align-items-center p-5">
+              //     <Signin className="d-flex justify-content-end align-items-center my-3">
+              //       Already have an account?
+              //       <Button>Sign in</Button>
+              //     </Signin>
+              //     <h1 class="font-weight-bold">
+              //       Welcome to <span
+              //         style={{ color: "#8c30f5" }}>MartReach!</span>
+              //     </h1>
+              //     <h5>Register your account</h5>
+              <form
+                style={{ display: "flex", flexDirection:'column' }}
+                Submit={handleSubmit}
+              >
+                <FormField
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={handleChange}
+                  value={values.firstName}
+                  onBlur={handleBlur}
+                  className={
+                    touched.firstName && errors.firstName ? "has-error" : ""
+                  }
+                />
+                <Errror
+                  touched={touched.firstName}
+                  message={errors.firstName}
+                />
+                <FormField
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={handleChange}
+                  value={values.lastName}
+                  onBlur={handleBlur}
+                  className={
+                    touched.lastName && errors.lastName ? "has-error" : ""
+                  }
+                />
+                <Errror touched={touched.lastName} message={errors.lastName} />
+
+                <FormField
+                  type="text"
+                  name="username"
+                  placeholder="User Name"
+                  onChange={handleChange}
+                  value={values.username}
+                  onBlur={handleBlur}
+                  className={
+                    touched.username && errors.username ? "has-error" : ""
+                  }
+                />
+                <Errror touched={touched.username} message={errors.username} />
+
+                <FormField
+                  type="text"
+                  name="email"
+                  placeholder="email@example.com"
+                  onChange={handleChange}
+                  value={values.email}
+                  onBlur={handleBlur}
+                  className={touched.email && errors.email ? "has-error" : ""}
+                />
+                <Errror touched={touched.email} message={errors.email} />
+
+                <FormField
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  value={values.password}
+                  onBlur={handleBlur}
+                  className={
+                    touched.password && errors.password ? "has-error" : ""
+                  }
+                />
+                <Errror touched={touched.password} message={errors.password} />
+
+                {/* <FormField
+
           name="confirmPassword"
           placeholder="confirm password"
           onChange={handleChange}
@@ -215,22 +331,25 @@ export default function Signup() {
         touched={touched.confirmPassword}
         message={errors.confirmPassword}/> */}
 
-    
-       
-       <div className="input-row">
-             <button type="Submit" disabled={isSubmitting}>Submit</button>
-         </div>
-         
-     </form>
-    //  </Register>
-    //    </div>
-    //  </Main>
-     )}
-        </Formik>
+                <div
+                  style={{ display: "flex", width:'100%', height:'auto'}}
+                  className="input-row"
+                >
+                  <SubmitButton
+                    buttonProperties='type="Submit" disabled={isSubmitting}'
+                    buttonName="Submit"
+                  />
+                </div>
+              </form>
+              //  </Register>
+              //    </div>
+              //  </Main>
+            )}
+          </Formik>
         </Register>
-       </div>
-     </Main>
-  )
+      </div>
+    </Main>
+  );
 };
  
 
