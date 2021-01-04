@@ -9,6 +9,7 @@ import {useDispatch } from 'react-redux'
 import Errror from './error'
 // import Socials from "./Socials"
 import axios from 'axios'
+import {Redirect} from 'react-router-dom';
 
 
 
@@ -80,6 +81,9 @@ const validationSchema = Yup.object().shape({
 
 // definig dispatch function
 export default function Signup() {
+
+
+  
   useEffect(() => {
     document.title = "MartReach | Boost your Digital Awareness"
 });
@@ -105,6 +109,7 @@ export default function Signup() {
           {
             alert(JSON.stringify(values, null, 2));
             resetForm();
+            
             dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
             
             

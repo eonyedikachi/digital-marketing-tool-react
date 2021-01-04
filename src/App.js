@@ -12,6 +12,8 @@ import Contactt from './component/Contactt'
 import { Provider } from 'react-redux';
 import store from './component/store'
 import Allreducers from '../src/component/reducers'
+import Dashboard from './component/Dashboard';
+import Mailbox from './component/Mailbox';
 
 
 
@@ -27,6 +29,8 @@ function App() {
        <Route exact path="/contact" component= {Contactt }/>
        <Route exact path="/signup" component= {Signup }/>
        <Route exact path="/services" component= {Services }/>
+       <Route  path="/dashboard" component= {Dashboard }/>
+       <Route  path="/Mailbox" component= {Mailbox }/>
      </Switch>
        <Footer/>
        </Router>

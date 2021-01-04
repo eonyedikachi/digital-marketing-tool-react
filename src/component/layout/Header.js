@@ -12,6 +12,8 @@ function Header() {
   // const isshow=useSelector(state=>state.show) 
 
   const close =()=> setShow(false)
+  const pd=(event)=>{
+  event.preventDefault()}
   return (
     <React.Fragment>
    
@@ -42,7 +44,7 @@ function Header() {
         </li>
       </ul>
       <div className="right-nav">
-        <Link onClick={() => setShow(true)} className="btn mr-4" data-toggle="modal" data-target="#signIn" onClick={()=> setShow(true)}>Login</Link>
+        <Link onClick={() => {setShow(true)}} className="btn mr-4" data-toggle="modal" data-target="#signIn" onClick={()=> setShow(true)}>Login</Link>
 
         <Link to="/signup" className="btn">Sign up</Link>
       </div>

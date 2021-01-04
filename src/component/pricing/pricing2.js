@@ -7,7 +7,7 @@ import Pricingbtn from './pricingbtn'
 
  function Pricing2() {
     return (
-        <div className="row p-3">
+        <div className="row p-3 roww">
        <Pricing1
        package="FREE"
        amount="₦0"

@@ -22,7 +22,7 @@ import {Modal} from 'react-bootstrap'
  const dispatch=useDispatch()
 
  if (isLogged) {
-  return <Redirect to='/' />
+  return <Redirect to='/dashboard' />
 }
 
  

@@ -1,0 +1,15 @@
+.flex a {
+    color: #c4c4c4 !important;
+  }
+  .nav-item .active {
+    color: #18191f !important;
+  }
+
+.dashboardrow {
+    margin-left: unset;
+    margin-right: unset;
+  }
+.user-profile {
+    top: 0;
+    right: 0;
+  }
