@@ -254,6 +254,7 @@ export default function Signup() {
                 style={{ display: "flex", flexDirection:'column' }}
                 Submit={handleSubmit}
               >
+                <div className="my-4">
                 <FormField
                   type="text"
                   name="firstName"
@@ -265,10 +266,12 @@ export default function Signup() {
                     touched.firstName && errors.firstName ? "has-error" : ""
                   }
                 />
+                </div>
                 <Errror
                   touched={touched.firstName}
                   message={errors.firstName}
                 />
+                <div className="my-4">
                 <FormField
                   type="text"
                   name="lastName"
@@ -279,9 +282,9 @@ export default function Signup() {
                   className={
                     touched.lastName && errors.lastName ? "has-error" : ""
                   }
-                />
+                /></div>
                 <Errror touched={touched.lastName} message={errors.lastName} />
-
+                <div className="my-4">
                 <FormField
                   type="text"
                   name="username"
@@ -292,9 +295,9 @@ export default function Signup() {
                   className={
                     touched.username && errors.username ? "has-error" : ""
                   }
-                />
+                /></div>
                 <Errror touched={touched.username} message={errors.username} />
-
+                <div className="my-4">
                 <FormField
                   type="text"
                   name="email"
@@ -303,9 +306,10 @@ export default function Signup() {
                   value={values.email}
                   onBlur={handleBlur}
                   className={touched.email && errors.email ? "has-error" : ""}
-                />
+                /></div>
                 <Errror touched={touched.email} message={errors.email} />
-
+                
+                <div className="my-4">
                 <FormField
                   name="password"
                   placeholder="Password"
@@ -315,7 +319,7 @@ export default function Signup() {
                   className={
                     touched.password && errors.password ? "has-error" : ""
                   }
-                />
+                /></div>
                 <Errror touched={touched.password} message={errors.password} />
 
                 {/* <FormField
