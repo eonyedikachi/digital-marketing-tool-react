@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, } from 'formik';
 import * as Yup from 'yup';
 import Formfield from './FormField';
 import Errror from './error';
@@ -104,7 +104,7 @@ import {Modal} from 'react-bootstrap'
               password: Yup.string()
               .required('password is required')
               .min(8, 'password is too short - should be 8 chars minimum.')
-              .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, "password must contain at least 8 characters, one uppercase, one number and one special case character"),
+              .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, "Invalid Password"),
               })}>
 
 {({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) => (
