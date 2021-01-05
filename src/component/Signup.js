@@ -335,15 +335,12 @@ export default function Signup() {
         touched={touched.confirmPassword}
         message={errors.confirmPassword}/> */}
 
-                <div
-                  style={{ display: "flex", width:'100%', height:'auto'}}
-                  className="input-row"
-                >
+                {/* git */}
                   <SubmitButton
                     buttonProperties='type="Submit" disabled={isSubmitting}'
                     buttonName="Submit"
                   />
-                </div>
+                {/* </div> */}
               </form>
               //  </Register>
               //    </div>

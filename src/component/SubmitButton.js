@@ -9,6 +9,12 @@ const ThisButton = styled.button`
   margin-top: 15px;
   padding: 6px 12px;
   align-self: center;
+
+  background: #8c30f5;
+  color: #fff;
+  align-self: center;
+  width: 40%;
+  
 `;
 
 function SubmitButton (props) {
