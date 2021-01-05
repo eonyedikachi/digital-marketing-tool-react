@@ -86,7 +86,7 @@ export default function Signup() {
 
   return (
     <Main>
-
+{/* <<<<<<< HEAD
        <div className="container d-flex justify-content-center .align-items-center">
          <Register className="register d-flex flex-column .align-items-center p-5">
            <Signin className="d-flex justify-content-end align-items-center my-3">
@@ -200,7 +200,7 @@ export default function Signup() {
 
 
         {/* <FormField
-=======
+======= */}
       <div className="container d-flex justify-content-center .align-items-center">
         <Register className="register d-flex flex-column .align-items-center p-5">
           <Signin className="d-flex justify-content-end align-items-center my-3">
@@ -319,7 +319,7 @@ export default function Signup() {
                 <Errror touched={touched.password} message={errors.password} />
 
                 {/* <FormField
-
+>>>>>>> 265ffb9099187c638ee52ee9bba4faac498a4b45
           name="confirmPassword"
           placeholder="confirm password"
           onChange={handleChange}

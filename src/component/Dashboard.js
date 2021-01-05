@@ -1,11 +1,14 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import './Dashboard.css';
+import Pricing from '../component/Pricing'
+import Contactt from '../component/Contactt'
+import {HashRouter as Router,Route, Switch} from 'react-router-dom';
 
 
 export default function Dashboard() {
     return (
-        
+  <Router>    
   <div style={{height:"100vh"}}>
   <div className="d-flex" style={{height: "100%"}}>
     <div className="position-fixed" style={{backgroundColor: "white",height: "100vh", width: "20%"}}>
@@ -19,7 +22,7 @@ export default function Dashboard() {
         <li className="nav-item flex">
           <Link className="nav-link" to="#">
             <i className="fas fa-home"></i>
-            <Link to="/dashboard">Landing page</Link>
+            <Link to="/Templateeditor">Landing page</Link>
           </Link>
         </li>
         <li className="nav-item flex">
@@ -66,7 +69,15 @@ export default function Dashboard() {
 
       </ul>
     </div>
-    <div style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
+
+
+
+
+
+
+    <Switch>
+    <Router>
+    {/* <div style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
 
       <div className="row p-4 dashboardrow">
         <div className="col">
@@ -74,7 +85,7 @@ export default function Dashboard() {
         </div>
         {/* <div className="col" id="date" style={{fontSize: 12, margin: 10}}>
         </div> */}
-      </div>
+      {/* </div>
       <div className="row p-4">
         <div className="col card">
           <h6>Total Contact</h6>
@@ -98,7 +109,17 @@ export default function Dashboard() {
 </canvas>
         </div>
       </div>
-    </div>
+    </div>  */}
+    <Route  path="/landingpage" component= {Pricing }/>
+       <Route exact path="/contact" component= {Contactt }/>
+    </Router>
+  </Switch>
+
+
+
+
+
+
     <div className="user-profile position-fixed" style={{backgroundColor: '#fff', height: '100vh', width: '20%'}}>
 
       <div className="container">
@@ -133,6 +154,6 @@ Sign Out</Link>
     </div>
   </div>
 </div>
-// </div>
+</Router>
     )
 }

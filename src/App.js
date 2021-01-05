@@ -14,6 +14,7 @@ import store from './component/store'
 import Allreducers from '../src/component/reducers'
 import Dashboard from './component/Dashboard';
 import Mailbox from './component/Mailbox';
+import Templateeditor from './component/templateeditor';
 
 
 
@@ -31,6 +32,7 @@ function App() {
        <Route exact path="/services" component= {Services }/>
        <Route  path="/dashboard" component= {Dashboard }/>
        <Route  path="/Mailbox" component= {Mailbox }/>
+       <Route  path="/Templateeditor" component= { Templateeditor }/>
      </Switch>
        <Footer/>
        </Router>
