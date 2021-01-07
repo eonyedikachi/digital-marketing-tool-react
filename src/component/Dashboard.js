@@ -4,6 +4,8 @@ import './Dashboard.css';
 import Left from './User-Dasboard/User-dasbord1'
 import Middle from './User-Dasboard/User-dasboard2'
 import Right from './User-Dasboard/User-dahboard3'
+import {HashRouter as Router,Route, Switch} from 'react-router-dom';
+import Services from '../component/Services'
 
 
 export default function Dashboard() {
@@ -13,7 +15,13 @@ export default function Dashboard() {
   <div className="d-flex" style={{height: "100%"}}>
     
         <Left/>
-        <Middle/>
+        <Router>
+        <Switch>
+        <Route  path="/dashboard/" component= {Middle }/>
+        <Route exact path="/services" component= {Services }/>
+
+        </Switch>
+        </Router>
         <Right/>
 
   </div>

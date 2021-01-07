@@ -1,8 +1,6 @@
 import  'bootstrap/dist/css/bootstrap.min.css';
-import Header from './component/layout/Header';
 import {HashRouter as Router,Route, Switch} from 'react-router-dom';
 import './App.css';
-import Footer from './component/layout/Footer';
 import Pricing from './component/Pricing'
 import LP from './component/LP'
 import About from './component/About'
@@ -22,7 +20,6 @@ function App() {
   return (
 <Provider store={store} >
 <Router>
-      <Header/>
      <Switch>
        <Route exact path="/" component= {LP}/>
        <Route exact path="/about" component= {About }/>
@@ -34,7 +31,6 @@ function App() {
        <Route  path="/Mailbox" component= {Mailbox }/>
        <Route  path="/Templateeditor" component= { Templateeditor }/>
      </Switch>
-       <Footer/>
        </Router>
        </Provider>
   );

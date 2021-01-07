@@ -11,9 +11,11 @@ import {isLoggedin} from './actions/types';
 import {Modal} from 'react-bootstrap'
 
 
+
  export const  Login =({show, close}) => {
   useEffect(() => {
     document.title = "MartReach | Boost your Digital Awareness"
+
 });
 
 
@@ -87,6 +89,10 @@ import {Modal} from 'react-bootstrap'
                     dispatch(isLoggedin())
                     setSubmitting(false)
                     dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
+                    .then(res => {
+                      console.log(res) 
+                      console.log(res.data) 
+                    })
                     
                     
                     

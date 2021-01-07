@@ -11,6 +11,8 @@ import Errror from './error'
 // import Socials from "./Socials"
 import axios from 'axios'
 import {Redirect} from 'react-router-dom';
+import Header from '../component/layout/Header';
+import Footer from '../component/layout/Footer';
 
 
 
@@ -85,6 +87,8 @@ export default function Signup() {
    const dispatch=useDispatch()
 
   return (
+    <>
+    <Header/>
     <Main>
 {/* <<<<<<< HEAD
        <div className="container d-flex justify-content-center .align-items-center">
@@ -350,6 +354,8 @@ export default function Signup() {
         </Register>
       </div>
     </Main>
+    <Footer/>
+    </>
   );
 };
  

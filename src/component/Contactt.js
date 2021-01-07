@@ -7,11 +7,15 @@ import FormField from './FormField'
 import Errror from './error'
 import axios from 'axios'
 import {useDispatch } from 'react-redux';
+import Header from '../component/layout/Header';
+import Footer from '../component/layout/Footer';
 
 
  function Contactt() {
   const dispatch=useDispatch()
     return (
+      <>
+      <Header/>
         <div className="contact">
     <div className="content-contact">
       <h2>Contact Us</h2>
@@ -116,7 +120,8 @@ import {useDispatch } from 'react-redux';
       </div>
     </div>
   </div>
-
+  <Footer/>
+</>
     )
 }
 export default Contactt;
