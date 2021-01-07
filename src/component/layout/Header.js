@@ -4,17 +4,18 @@ import './Header.css';
 import {Link} from 'react-router-dom';
 import logo from '../Images/logo.png';
 import {Login} from '../Login'
+import {useSelector} from 'react-redux';
 
 
 function Header() {
   const [show , setShow  ] = useState(false)
+  // const isshow=useSelector(state=>state.show) 
 
   const close =()=> setShow(false)
   return (
     <React.Fragment>
-    {show ? <div className="back-drop"></div> : null}
+   
     <header className="header sticky-top"> 
-    {show ? <div className="back-drop"></div> : null}
     
     <div className="container">
   <nav className="navbar navbar-expand-md navbar-light p-2">

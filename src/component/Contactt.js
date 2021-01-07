@@ -4,8 +4,13 @@ import Contact1 from './Contactt/contact1'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import FormField from './FormField'
+import Errror from './error'
+import axios from 'axios'
+import {useDispatch } from 'react-redux';
+
 
  function Contactt() {
+  const dispatch=useDispatch()
     return (
         <div className="contact">
     <div className="content-contact">
@@ -34,40 +39,76 @@ import FormField from './FormField'
       />
       </div>
       <div className="contactForm">
-        <Formik>
-        {({values, errors, touched, handleChange, handleBlur, handleSubmit,isSubmitting})=>(
-          <form>
+        <Formik
+        initialValues={{
+          name:'',
+          email:'',
+          tel:'',
+          message:''
+
+        }}
+
+        onSubmit=
+              {(values, { setSubmitting , resetForm}) => 
+                  {
+                    alert(JSON.stringify(values, null, 2));
+                    dispatch(axios.post('https://martreach.herokuapp.com/api/contactUs',values),)
+                    
+                  }}
+
+
+        validationSchema = {Yup.object().shape({
+          email: Yup.string()
+          .email('Invalid email address')
+          .required('Required'),
+        })}
+        >
+        {({values, errors, touched, handleChange, handleSubmit,isSubmitting})=>(
+          <form onSubmit={handleSubmit}>
           <h2>Send Message</h2>
           <div className="inputBox">
             <FormField
             type="text"
+            onChange={handleChange}
             name="name"
-            required="required"/>
-            <span>Full Name</span>
+            value={values.name}
+            placeholder='Full Name'/>
+          </div>
+          <div className="inputBox">
+          <FormField
+            type="email"
+            onChange={handleChange}
+            name="email"
+            value={values.email}
+            placeholder='Email'/>
+          </div>
+          <Errror
+          touched={touched.email}
+          message={errors.email}/>
+
+          <div className="inputBox">
+          <FormField
+            type="text"
+            onChange={handleChange}
+            name="tel"
+            value={values.tel}
+            placeholder='phone'/>
           </div>
           <div className="inputBox">
           <FormField
             type="text"
-            name="name"
-            required="required"/>
-            <span>Email</span>
+            name="message"
+            onChange={handleChange}
+            value={values.message}
+            placeholder='Type your Message...'/>
+            
           </div>
           <div className="inputBox">
           <FormField
-            type="text"
+            type="submit"
             name="name"
-            required="required"/>
-            <span>Phone</span>
-          </div>
-          <div className="inputBox">
-          <FormField
-            type="text"
-            name="name"
-            required="required"/>
-            <span>Type your Message...</span>
-          </div>
-          <div className="inputBox">
-            <input type="submit" name="" value="Send" />
+            value="Send"
+            />
           </div>
         </form>)}
         </Formik>

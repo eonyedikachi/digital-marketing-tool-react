@@ -11,6 +11,8 @@ import Services from './component/Services'
 import Contactt from './component/Contactt'
 import { Provider } from 'react-redux';
 import store from './component/store'
+import Allreducers from '../src/component/reducers'
+
 
 
 function App() {

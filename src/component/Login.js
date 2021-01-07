@@ -8,6 +8,8 @@ import {Redirect} from 'react-router-dom';
 import {useDispatch } from 'react-redux';
 import axios from 'axios';
 import {isLoggedin} from './actions/types';
+import {Modal} from 'react-bootstrap'
+
 
  export const  Login =({show, close}) => {
   useEffect(() => {
@@ -16,6 +18,7 @@ import {isLoggedin} from './actions/types';
 
 
  const isLogged=useSelector(state=>state.islogged); 
+ const isshow=useSelector(state=>state.show) 
  const dispatch=useDispatch()
 
  if (isLogged) {
@@ -28,7 +31,7 @@ import {isLoggedin} from './actions/types';
         <React.Fragment>
    
 
-     <div 
+     {/* <div 
      style={{
          transform: show ? "translateY(0vh)" : "translateY(-100vh)",
          opacity: show ? '1': '0',
@@ -47,15 +50,16 @@ import {isLoggedin} from './actions/types';
         
      }}
      className="model-wrapper modal-fade" role="dialog" tabIndex="-1" aria-labelledby="signInLabel"
-     aria-modal="true">
-          <div className="modal-dialog">
+     aria-modal="true"> */}
+          {/* <div className="modal-dialog">
             <div style={{
                   width:"93%",
                   height:"100vh"
-              }} className="modal-content">
+              }} className="modal-content"> */}
+              <Modal show={show}>
               <div className="login-modal-header modal-header">
                 <h5 className="modal-title">Sign In</h5>
-                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <button onClick={close} type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span onClick={close} aria-hidden="true">×</span>
                   </button>
                </div>
@@ -81,6 +85,7 @@ import {isLoggedin} from './actions/types';
                     alert(JSON.stringify(values, null, 2));
                     resetForm();
                     dispatch(isLoggedin())
+                    setSubmitting(false)
                     dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
                     
                     
@@ -95,7 +100,7 @@ import {isLoggedin} from './actions/types';
                 username: Yup.string()
                       .min(3, 'Must be at least 3 characters')
                       .max(15, 'Must be 15 characters or less')
-                      .required('Required'),
+                      .required(' Username is required'),
               password: Yup.string()
               .required('password is required')
               .min(8, 'password is too short - should be 8 chars minimum.')
@@ -167,11 +172,14 @@ import {isLoggedin} from './actions/types';
                     </div>
                     </div>
                 </div>
-                </div>
-            </div>
-        </div>
+               
+                {/* </div>
+            </div> */}
+        {/* </div> */}
     {/* </div> */}
 </div>
+</Modal>
+
 
 
         

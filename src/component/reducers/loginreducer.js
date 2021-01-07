@@ -8,7 +8,7 @@ import {Log_in} from '../actions/types';
 //   ]
 // }
 
- const reducer=(state=false , action)=>{
+ const Login=(state=false, action)=>{
   switch (action.type) {
   case Log_in:
     return !state
@@ -16,4 +16,4 @@ import {Log_in} from '../actions/types';
          return state;
   }
 }
-export default reducer;
+export default Login;
