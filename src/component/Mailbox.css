@@ -1,0 +1,27 @@
+.cmbody{
+    height:100vh
+}
+.cmimagecon{
+    display: flex;
+}
+
+.cmimagecon img{
+    margin-top: 50rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3rem;
+}
+
+
+.cmiconcon{
+    text-align: center;
+    margin-top: 5%;
+}
+.cmiconcon i{
+    font-size: 10rem;
+    color: white;
+text-align: center;
+}
+.cmiconcon h3{
+    text-align: center;
+}

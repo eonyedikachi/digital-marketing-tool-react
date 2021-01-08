@@ -12,6 +12,7 @@ import Errror from './error'
 import axios from 'axios'
 import Header from '../component/layout/Header';
 import Footer from '../component/layout/Footer';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -85,7 +86,7 @@ const validationSchema = Yup.object().shape({
 // definig dispatch function
 export default function Signup() {
    const dispatch=useDispatch()
-
+   const history = useHistory()
   return (
     <>
     <Header/>
@@ -108,6 +109,7 @@ export default function Signup() {
           {
             resetForm()
             setSubmitting(false)
+            history.push("/Mailbox")
             dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
             
             
@@ -147,10 +149,13 @@ export default function Signup() {
           className={touched.firstName && errors.firstName ? "has-error" : "" }
        /></div>
 
-<div className="input-field my-4">
+
        <Errror
         touched={touched.firstName}
         message={errors.firstName}/>
+
+
+        <div className="input-field my-4">
         <FormField
          type="text"
           name="lastName"
@@ -208,7 +213,7 @@ export default function Signup() {
 
 <div className="input-field my-4 ">
        <div className="input-row registerbtncont ">
-             <button className='registerbtn'  type="Submit" disabled={isSubmitting}>Register</button>
+             <button className='registerbtn'  type="Submit" >Register</button>
          </div></div>
          
      </form>
