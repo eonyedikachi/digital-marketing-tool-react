@@ -3,6 +3,7 @@ import React from 'react';
 import './Footer.css'
 import logos from '../Images/MartReach logo dark.png';
 import {Link} from 'react-router-dom';
+import Emailsub from '../Emailsub';
 
 function Footer(){
    return(
@@ -58,10 +59,11 @@ function Footer(){
         </div>
         <div className="newsletter">
         <p className="font-weight-bold">Stay up to date</p>
-        <form className="subscribe" name="subscribe" method="POST" data-netlify="true">
+        {/* <form className="subscribe" name="subscribe" method="POST" data-netlify="true">
           <input type="email" name="email" id="footerEmail" placeholder="Enter Email Address" required />
           <button type="submit"><i className="fas fa-paper-plane"></i></button>
-        </form>
+        </form> */}
+        <Emailsub/>
         </div>        
         </div>
       </div>

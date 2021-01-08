@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { render } from 'react-dom';
 import { savetemplate } from './actions/types';
 import {useDispatch } from 'react-redux'
+import {useHistory } from 'react-router'
 
 
 import EmailEditor from 'react-email-editor';
@@ -9,6 +9,7 @@ import EmailEditor from 'react-email-editor';
     const Appp = (props) => {
         const emailEditorRef = useRef(null);
         const dispatch=useDispatch()
+        const history=useHistory()
       
         const exportHtml = () => {
           emailEditorRef.current.editor.exportHtml((data) => {
@@ -38,16 +39,16 @@ import EmailEditor from 'react-email-editor';
         />
         <footer>
         <div className="container">
-            <div className="footer">
-                <div className="back-footer">
+            <div className="footer .dash-footer">
+                <div onClick={()=> history.push("/dashboard/")}>
                     <i className="fas fa-chevron-left"></i>
                     <input type="button"  value="Back"
                         className="back-button"/>
                 </div>
 
-                <div>
-                    <input type="button" value="View saved templates" data-toggle="modal" data-target="#exampleModal"
-                        className="button"/>
+                <div onClick={()=> history.push("/dashboard/savedlp")}>
+                    <input type="button" value="View saved templates"
+                        className=""/>
                     <i className="fas fa-chevron-right"></i>
                 </div>
                 </div>

@@ -178,11 +178,6 @@ import {Modal} from 'react-bootstrap'
                     </div>
                     </div>
                 </div>
-               
-                {/* </div>
-            </div> */}
-        {/* </div> */}
-    {/* </div> */}
 </div>
 </Modal>
 
