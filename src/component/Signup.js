@@ -204,6 +204,7 @@ export default function Signup() {
           onChange={handleChange}
           value={values.password}
           onBlur={handleBlur}
+          type="password"
           className={touched.password && errors.password ? "has-error" : "" }
        />
        <Errror

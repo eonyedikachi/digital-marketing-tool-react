@@ -55,7 +55,8 @@ import Footer from '../component/layout/Footer';
         onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                    alert(JSON.stringify(values, null, 2));
+                    alert('Thank you for contacting us');
+                    resetForm()
                     dispatch(axios.post('https://martreach.herokuapp.com/api/contactUs',values),)
                     
                   }}
