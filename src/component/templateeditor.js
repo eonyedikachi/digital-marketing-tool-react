@@ -14,8 +14,9 @@ import EmailEditor from 'react-email-editor';
         const exportHtml = () => {
           emailEditorRef.current.editor.exportHtml((data) => {
             const { design, html } = data;
-            dispatch(savetemplate)
-            console.log( html);
+
+            dispatch(savetemplate(design))
+            // console.log( html);
           });
         };
       

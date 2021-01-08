@@ -6,6 +6,7 @@ import Middle from './User-Dasboard/User-dasboard2'
 import Right from './User-Dasboard/User-dahboard3'
 import {HashRouter as Router,Route, Switch} from 'react-router-dom';
 import savedlp from '../component/User-Dasboard/viewlandingeditor'
+import createet from '../component/createemailTep/createemailTemp1'
 
 
 export default function Dashboard() {
@@ -19,6 +20,7 @@ export default function Dashboard() {
         <Switch>
         <Route exact path="/dashboard/" component= {Middle }/>
         <Route exact path="/dashboard/savedlp" component= {savedlp}/>
+        <Route exact path="/dashboard/createet" component= {createet}/>
 
         </Switch>
         </Router>

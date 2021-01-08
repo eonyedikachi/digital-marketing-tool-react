@@ -21,7 +21,7 @@ export default function Userdasbord1() {
           <li className="nav-item flex">
             <Link className="nav-link" to="#">
               <i style={{margin:'0 7px'}} className="fas fa-envelope-open-text"></i>
-              <Link to="/dashboard">Email Template</Link>
+              <Link to="/dashboard/createet">Email Template</Link>
             </Link>
           </li>
           <li className="nav-item flex">

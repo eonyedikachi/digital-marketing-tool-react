@@ -13,6 +13,7 @@ import Allreducers from '../src/component/reducers'
 import Dashboard from './component/Dashboard';
 import Mailbox from './component/Mailbox';
 import Appp from './component/templateeditor';
+import selectTemp from './component/createemailTep/createemailTem2';
 
 
 
@@ -31,6 +32,7 @@ function App() {
        <Route  path="/dashboard" component= {Dashboard }/>
        <Route  path="/Mailbox" component= {Mailbox }/>
        <Route  path="/Templateeditor" component= { Appp }/>
+       <Route  path="/selecttemp" component= { selectTemp }/>
      </Switch>
        </Router>
        </Provider>

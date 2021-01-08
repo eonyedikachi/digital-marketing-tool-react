@@ -1,21 +1,22 @@
 import {save_template} from '../actions/types';
 
 const initialState ={
-  Templates:
-    {
-      Test:"test"
-    }
+ templates:[
+   {
+    Test:"test"
+   }
+ ]
 }
 
- const template=(state=initialState , action)=>{
+ const Temreducer=(state=initialState , action)=>{
   switch (action.type) {
   case save_template:
     return{
       ...state,
-      Templates:[action.payload,...state.Templates]
+      templates:[action.payload,...state.templates]
     }
       default:
          return state;
   }
 }
-export default template;
+export default Temreducer;

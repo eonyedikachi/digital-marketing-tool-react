@@ -24,9 +24,9 @@ export const show= ()=>{
     };
 }
 
-export const savetemplate= template =>{
+export const savetemplate= Templates =>{
     return{
      type: save_template,
-    payload: template
+    payload: Templates
     };
 }

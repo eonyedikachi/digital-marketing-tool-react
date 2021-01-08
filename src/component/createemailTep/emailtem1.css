@@ -1,0 +1,161 @@
+.templates {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .templates h1 {
+    font-weight: 700;
+    color: #8c30f5;
+  }
+  .templates a {
+    background: #8c30f5;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.7rem;
+    width: 150px;
+    text-align: center;
+  }
+  .email_temp {
+    padding: 1rem;
+}
+.email_temp .search {
+    width: 500px;
+    height: 36px;
+}
+.email_temp .search input {
+    width: 80%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border: 1px solid grey;
+}
+
+.email_temp .search button {
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 9%;
+    border: 1px solid grey;
+    background: none;
+    background: white
+}
+.template_list {
+    margin-top: 2rem;
+}
+
+.template_list .temp {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    padding: 1rem 0;
+}
+/*  
+*/
+
+.template_list .temp .description {
+    display: flex;
+    align-items: center;
+}
+
+.template_list .temp .description .image {
+    width: 120px;
+    margin: 0 1rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.template_list .temp .description .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.template_list .temp .description .info {
+    margin: 0 1rem;
+}
+
+.template_list .temp .edit button {
+    width: 80px;
+    padding: 0.5rem;
+    border: none;
+    margin: 0 0.5rem;
+    background:#8c30f5;
+    color: #fff; 
+}
+
+.template_list .temp .edit button:last-child {
+    background: red;
+    color: #fff;
+}
+
+.template_list .temp .edit button {
+    width: 80px;
+    padding: 0.5rem;
+    border: none;
+    margin: 0 0.5rem;
+    background: #8c30f5;
+    color: #fff;
+}
+
+.template_list .temp .description .info .template-name {
+    color: #8c30f5;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+    border: none;
+    background: none;
+}
+
+.select h1 {
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #8c30f5;
+  }
+
+  .container .select a {
+    float: right;
+    color: #8c30f5;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.layout,
+.themes,
+.codeYourOwn {
+  padding: 1rem;
+}
+
+.themes h2 {
+    margin-top: 1rem;
+}
+
+.emailTemp {
+    background: #f9f9f9;
+    color: #000;
+    min-height: 100vh;
+}
+
+.featured {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured .feature-box {
+    width: 225px;
+    height: 300px;
+    text-align: center;
+    margin: 20px;
+}
+
+.featured .feature-box img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(238, 232, 232);
+    background: #fff;
+}
