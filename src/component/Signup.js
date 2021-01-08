@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import './Signup.css'
 // import styled from 'styled-components'
-import SubmitButton from './SubmitButton';
 import styled from "styled-components";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -10,9 +10,9 @@ import {useDispatch } from 'react-redux'
 import Errror from './error'
 // import Socials from "./Socials"
 import axios from 'axios'
-import {Redirect} from 'react-router-dom';
 import Header from '../component/layout/Header';
 import Footer from '../component/layout/Footer';
+
 
 
 
@@ -28,19 +28,25 @@ const Register = styled.div`
   background: #ffffff;
 `;
 const Signin = styled.div`
-  color: black;
+  color: #8c30f5;
 `;
-
+const Error = styled.div`
+  color: red;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  font-weight: 900;
+`;
 const Main = styled.main`
   background: #8c30f51a;
   padding-top: 4rem;
   padding-bottom: 10rem;
 `;
 const Button = styled.button`
-color: #8c30f5;
-  background: transparent;
-  border: 0;
-
+background: #8c30f5;
+  color: #fff;
+  align-self: center;
+  width: 40%;
 `;
 
 
@@ -52,7 +58,6 @@ const initialValues = {
     username: "",
     email: "",
     password: "",
-   
 };
 const validationSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -63,10 +68,10 @@ const validationSchema = Yup.object().shape({
         .min(3, 'Must be at least 3 characters')
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
-  username: Yup.string()
-      .min(3, 'Must be at least 3 characters')
-      .max(15, 'Must be 15 characters or less')
-      .required('Required'),
+    username: Yup.string()
+        .min(3, 'Must be at least 3 characters')
+        .max(15, 'Must be 15 characters or less')
+        .required('Required'),
     email: Yup.string()
         .email('Invalid email address')
         .required('Required'),
@@ -74,30 +79,24 @@ const validationSchema = Yup.object().shape({
         .required('Password is required')
         .min(8, 'Password is too short - should be 8 chars minimum.')
         .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, "Password must contain at least 8 characters, one uppercase, one number and one special case character"),
+    
 });
 
 // definig dispatch function
 export default function Signup() {
-
-
-  
-  useEffect(() => {
-    document.title = "MartReach | Boost your Digital Awareness"
-});
    const dispatch=useDispatch()
 
   return (
     <>
     <Header/>
     <Main>
-{/* <<<<<<< HEAD
        <div className="container d-flex justify-content-center .align-items-center">
          <Register className="register d-flex flex-column .align-items-center p-5">
            <Signin className="d-flex justify-content-end align-items-center my-3">
              Already have an account?
-             <Button>Sign in</Button>
+             <a className="SIGNIN">..Sign In</a>
            </Signin>
-           <h1 class="font-weight-bold">
+           <h1 className="font-weight-bold">
              Welcome to <span
                style={{ color: "#8c30f5" }}>MartReach!</span>
            </h1>
@@ -107,9 +106,8 @@ export default function Signup() {
       onSubmit=
       {(values, { setSubmitting , resetForm}) => 
           {
-            alert(JSON.stringify(values, null, 2));
-            resetForm();
-            
+            resetForm()
+            setSubmitting(false)
             dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
             
             
@@ -117,8 +115,8 @@ export default function Signup() {
 
             setTimeout(()=>{
 
-              
-              
+               alert(JSON.stringify(values, null, 2));
+               resetForm();
                setSubmitting(false)
             },1000)
           }
@@ -132,28 +130,31 @@ export default function Signup() {
   //       Already have an account?
   //       <Button>Sign in</Button>
   //     </Signin>
-  //     <h1 class="font-weight-bold">
+  //     <h1 className="font-weight-bold">
   //       Welcome to <span
   //         style={{ color: "#8c30f5" }}>MartReach!</span>
   //     </h1>
   //     <h5>Register your account</h5>
      <form onSubmit={handleSubmit}>
+       <div className="input-field my-4">
         <FormField
          type="text"
           name="firstName"
-          placeholder="enter your first name"
+          placeholder=" First name"
           onChange={handleChange}
           value={values.firstName}
           onBlur={handleBlur}
           className={touched.firstName && errors.firstName ? "has-error" : "" }
-       />
+       /></div>
+
+<div className="input-field my-4">
        <Errror
         touched={touched.firstName}
         message={errors.firstName}/>
         <FormField
          type="text"
           name="lastName"
-          placeholder="enter your last name"
+          placeholder="Last name"
           onChange={handleChange}
           value={values.lastName}
           onBlur={handleBlur}
@@ -161,12 +162,12 @@ export default function Signup() {
        />
        <Errror
         touched={touched.lastName}
-        message={errors.lastName}/>
+        message={errors.lastName}/></div>
 
         <FormField
          type="text"
           name="username"
-          placeholder="enter your username"
+          placeholder="Username"
           onChange={handleChange}
           value={values.username}
           onBlur={handleBlur}
@@ -176,10 +177,12 @@ export default function Signup() {
         touched={touched.username}
         message={errors.username}/>
 
+
+        <div className="input-field my-4">
         <FormField
          type="text"
           name="email"
-          placeholder="enter your email"
+          placeholder="example@email.com"
           onChange={handleChange}
           value={values.email}
           onBlur={handleBlur}
@@ -187,12 +190,12 @@ export default function Signup() {
        />
        <Errror
         touched={touched.email}
-        message={errors.email}/>
+        message={errors.email}/></div>
 
-
+<div className="input-field my-4">
         <FormField
           name="password"
-          placeholder="enter your password"
+          placeholder="Password"
           onChange={handleChange}
           value={values.password}
           onBlur={handleBlur}
@@ -200,285 +203,31 @@ export default function Signup() {
        />
        <Errror
         touched={touched.password}
-        message={errors.password}/>
+        message={errors.password}/></div>
 
 
-        {/* <FormField
-======= */}
-      <div className="container d-flex justify-content-center .align-items-center">
-        <Register className="register d-flex flex-column .align-items-center p-5">
-          <Signin className="d-flex justify-content-end align-items-center my-3">
-            Already have an account?
-            <Button>Sign in</Button>
-          </Signin>
-          <h1 class="font-weight-bold">
-            Welcome to <span style={{ color: "#8c30f5" }}>MartReach</span>!
-          </h1>
-          <h5>Register your account</h5>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting, resetForm }) => {
-              alert(JSON.stringify(values, null, 2));
-              resetForm();
-              dispatch(
-                axios.post(
-                  "https://martreach.herokuapp.com/api/users/signup",
-                  values
-                )
-              );
-
-              setTimeout(() => {
-                setSubmitting(false);
-              }, 1000);
-            }}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              // <Main>
-              // <div className="container d-flex justify-content-center .align-items-center">
-              //   <Register className="register d-flex flex-column .align-items-center p-5">
-              //     <Signin className="d-flex justify-content-end align-items-center my-3">
-              //       Already have an account?
-              //       <Button>Sign in</Button>
-              //     </Signin>
-              //     <h1 class="font-weight-bold">
-              //       Welcome to <span
-              //         style={{ color: "#8c30f5" }}>MartReach!</span>
-              //     </h1>
-              //     <h5>Register your account</h5>
-              <form
-                style={{ display: "flex", flexDirection:'column' }}
-                Submit={handleSubmit}
-              >
-                <div className="my-4">
-                <FormField
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={handleChange}
-                  value={values.firstName}
-                  onBlur={handleBlur}
-                  className={
-                    touched.firstName && errors.firstName ? "has-error" : ""
-                  }
-                />
-                </div>
-                <Errror
-                  touched={touched.firstName}
-                  message={errors.firstName}
-                />
-                <div className="my-4">
-                <FormField
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  onChange={handleChange}
-                  value={values.lastName}
-                  onBlur={handleBlur}
-                  className={
-                    touched.lastName && errors.lastName ? "has-error" : ""
-                  }
-                /></div>
-                <Errror touched={touched.lastName} message={errors.lastName} />
-                <div className="my-4">
-                <FormField
-                  type="text"
-                  name="username"
-                  placeholder="User Name"
-                  onChange={handleChange}
-                  value={values.username}
-                  onBlur={handleBlur}
-                  className={
-                    touched.username && errors.username ? "has-error" : ""
-                  }
-                /></div>
-                <Errror touched={touched.username} message={errors.username} />
-                <div className="my-4">
-                <FormField
-                  type="text"
-                  name="email"
-                  placeholder="email@example.com"
-                  onChange={handleChange}
-                  value={values.email}
-                  onBlur={handleBlur}
-                  className={touched.email && errors.email ? "has-error" : ""}
-                /></div>
-                <Errror touched={touched.email} message={errors.email} />
-                
-                <div className="my-4">
-                <FormField
-                  name="password"
-                  placeholder="Password"
-                  onChange={handleChange}
-                  value={values.password}
-                  onBlur={handleBlur}
-                  className={
-                    touched.password && errors.password ? "has-error" : ""
-                  }
-                /></div>
-                <Errror touched={touched.password} message={errors.password} />
-
-                {/* <FormField
->>>>>>> 265ffb9099187c638ee52ee9bba4faac498a4b45
-          name="confirmPassword"
-          placeholder="confirm password"
-          onChange={handleChange}
-          value={values.confirmPassword}
-          onBlur={handleBlur}
-          className={touched.confirmPassword && errors.confirmPassword ? "has-error" : "" }
-       />
-       <Errror
-        touched={touched.confirmPassword}
-        message={errors.confirmPassword}/> */}
-
-                {/* git */}
-                  <SubmitButton
-                    buttonProperties='type="Submit" disabled={isSubmitting}'
-                    buttonName="Submit"
-                  />
-                {/* </div> */}
-              </form>
-              //  </Register>
-              //    </div>
-              //  </Main>
-            )}
-          </Formik>
-        </Register>
-      </div>
-    </Main>
-    <Footer/>
-    </>
-  );
-};
- 
-
-
-
-
-
-
-
-
-     
-//            <form onSubmit={formik.handleSubmit}>
-//              <FormField
-//                placeholder="First Name"
-//                type="text"
-//                name="firstName"
-//                {...firstNameProps}
-//              />
-//              {formik.touched.firstName && formik.errors.firstName ? (
-//                <Error>{formik.errors.firstName}</Error>
-//              ) : null}
-//              <FormField
-//                placeholder="Last Name"
-//                type="text"
-//                name="lastName"
-//                {...lastNameProps}
-//              />
-//              {formik.touched.lastName && formik.errors.lastName ? (
-//                <Error>{formik.errors.lastName}</Error>
-//              ) : null}
-//              <FormField
-//                placeholder="User Name"
-//                type="text"
-//                name="username"
-//                {...usernameProps}
-//              />
-//              {formik.touched.username && formik.errors.username ? (
-//                <Error>{formik.errors.username}</Error>
-//              ) : null}
-//              <FormField
-//                placeholder="Email"
-//                type="email"
-//                name="email"
-//                {...emailProps}
-//              />
-//              {formik.touched.email && formik.errors.email ? (
-//                <Error>{formik.errors.email}</Error>
-//              ) : null}
-//              <FormField
-//                placeholder="Password"
-//                type="password"
-//                name="password"
-//                {...passwordProps}
-//              />
-//              {formik.touched.password && formik.errors.password ? (
-//                <Error>{formik.errors.password}</Error>
-//              ) : null}
-//              <FormField
-//                placeholder="Confirm Password"
-//                type="password"
-//                name="confirmPassword"
-//                {...confirmPasswordProps}
-//              />
-//              {formik.touched.confirmPassword &&
-//              formik.errors.confirmPassword ? (
-//                <Error>{formik.errors.confirmPassword}</Error>
-//              ) : null}
-//              <Button
-//                className="btn my-3"
-//                type="submit"
-//                disabled={!(formik.isValid && formik.dirty)}
-//              >
-//                Submit
-//              </Button>
-//              <Socials />
-//            </form>
+<div className="input-field my-4 ">
+       <div className="input-row registerbtncont ">
+             <button className='registerbtn'  type="Submit" disabled={isSubmitting}>Register</button>
+         </div></div>
          
-//    );
-//  }
-
-
-
-
-
-
-        /* <div className="input-row">
-        <label htmlFor="name">email</label>
-        <input */
-//        type="text"
-//        name="email"
-//        id="email"
-//        placeholder="enter your email"
-//        onChange={handleChange}
-//        value={values.email}
-//        onBlur={handleBlur}
-//        className={touched.email && errors.email ? "has-error" : "null" }
-//        />
-//        <Errror
-//        touched={touched.email}
-//        message={errors.email}/>
-//        </div>
-//        <style>
-//           {
-//               `
-//               .has-error
-//               {
-//                   border-color:red;
-//               }
-                      
-//               `
-
-              
-//           }
-//        </style>
-
-//        <div className="input-row">
-//            <button type="Submit" disabled={isSubmitting}>Submit</button>
-//        </div>
-       
-//    </form>
-//       )}
-//       </Formik>
-//   );
-// }
-    
+     </form>
+     )}
+        </Formik>
+        <div className="create d-flex align-items-center mt-4">
+          Create account with:
+          <div className="socials d-flex align-items-center">
+            <a className="mx-3" href="#"><i className="fab fa-google"></i></a>
+            <a className="mx-3" href="#"><i className="fab fa-facebook-f"></i></a>
+            <a className="mx-3" href="#"><i className="fab fa-linkedin-in"></i></a>
+            <a className="mx-3" href="#"><i className="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        </Register>
+        
+       </div>
+     </Main>
+     <Footer/>
+     </>
+  )
+};

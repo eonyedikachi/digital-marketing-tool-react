@@ -30,7 +30,7 @@ function Footer(){
         <div className="links d-flex my-5 justify-content-around">
           <div className="company mr-5">
           <p className="font-weight-bold">Company</p>
-          <ul>
+          <ul className="misalignment">
             <li className="my-4">
               <Link to="/about">About Us</Link>
             </li>
@@ -47,7 +47,7 @@ function Footer(){
         </div>
         <div className="support mr-5">
           <p className="font-weight-bold">Support</p>
-          <ul>
+          <ul className="misalignment">
             <li className="my-4">
               <Link to="#">Support</Link>
             </li>

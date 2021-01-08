@@ -2,6 +2,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Stickynote from '../Images/post-it.svg'
+import profilePic from '../Images/caricature1.svg'
 
 export default function Userdasbord3() {
     return (
@@ -15,7 +16,7 @@ Sign Out</Link>
 
       </div>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', color: '#c4c4c4'}}>
-        <img src="images/caricature1.svg" id="profilePic" alt="image" height={100} width={100} style={{borderRadius: '50%'}} />
+        <img src={profilePic} id="profilePic" alt="image" height={100} width={100} style={{borderRadius: '50%'}} />
 
         <h3 id="usersname111">Malik Mukhtar</h3>
 

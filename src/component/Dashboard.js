@@ -5,7 +5,7 @@ import Left from './User-Dasboard/User-dasbord1'
 import Middle from './User-Dasboard/User-dasboard2'
 import Right from './User-Dasboard/User-dahboard3'
 import {HashRouter as Router,Route, Switch} from 'react-router-dom';
-import Services from '../component/Services'
+import savedlp from '../component/User-Dasboard/viewlandingeditor'
 
 
 export default function Dashboard() {
@@ -17,8 +17,8 @@ export default function Dashboard() {
         <Left/>
         <Router>
         <Switch>
-        <Route  path="/dashboard/" component= {Middle }/>
-        <Route exact path="/services" component= {Services }/>
+        <Route exact path="/dashboard/" component= {Middle }/>
+        <Route exact path="/dashboard/savedlp" component= {savedlp}/>
 
         </Switch>
         </Router>

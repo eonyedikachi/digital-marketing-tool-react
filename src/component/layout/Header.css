@@ -320,3 +320,6 @@ footer .container .footer-content .newsletter .subscribe button {
   transition: opacity .15s linear;
   width: 100%;
 }
+.misalignment{
+  padding-inline-start: 0px;
+}
