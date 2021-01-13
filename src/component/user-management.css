@@ -1,0 +1,21 @@
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.main{
+    display: flex;
+    flex: 8;
+    background-color: #F4F5F7;
+    flex-direction: column;
+}
+.title{
+    color:#8C30F5;
+}
+.btn{
+    color: #F4F5F7;
+}
