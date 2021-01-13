@@ -27,7 +27,7 @@ export default function Userdasbord1() {
           <li className="nav-item flex">
             <Link className="nav-link" to="#">
               <i style={{margin:'0 7px'}} className="fas fa-id-card-alt"></i>
-              <Link to="/dashboard">Create Audience</Link>
+              <Link to="/dashboard/Audiencepage">Create Audience</Link>
             </Link>
           </li>
           <li className="nav-item flex">
