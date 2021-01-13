@@ -9,10 +9,12 @@ import {useDispatch } from 'react-redux';
 import axios from 'axios';
 import {isLoggedin} from './actions/types';
 import {Modal} from 'react-bootstrap'
+import {useHistory } from 'react-router'
 
 
 
  export const  Login =({show, close}) => {
+  
   useEffect(() => {
     document.title = "MartReach | Boost your Digital Awareness"
 
@@ -21,10 +23,12 @@ import {Modal} from 'react-bootstrap'
 
  const isLogged=useSelector(state=>state.islogged); 
  const isshow=useSelector(state=>state.show) 
- const dispatch=useDispatch()
+//  const dispatch=useDispatch()
+ const history=useHistory
+   
 
  if (isLogged) {
-  return <Redirect to='/dashboard' />
+  // return <Redirect to='/dashboard' />
 }
 
  
@@ -86,15 +90,18 @@ import {Modal} from 'react-bootstrap'
                   {
                     alert(JSON.stringify(values, null, 2));
                     resetForm();
-                    dispatch(isLoggedin())
+                    // dispatch(isLoggedin())
                     setSubmitting(false)
-                    dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
-                    .then(res => {
-                     
-                      console.log(res.data) 
-                      console.log("why?") 
-
+                   axios.post('https://martreach.herokuapp.com/api/users/login',values)
+                    .then((response) => {
+                      // setUsers(response.data);
+                      history.push("/dashboard")
+                      // console.log(response)
                     })
+                    .catch((err) => {
+                      // console.log(err);
+                      alert(JSON.stringify(err.response.data))
+                    });
                     
                     
                     
