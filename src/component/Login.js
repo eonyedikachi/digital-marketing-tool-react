@@ -90,8 +90,10 @@ import {Modal} from 'react-bootstrap'
                     setSubmitting(false)
                     dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
                     .then(res => {
-                      console.log(res) 
+                     
                       console.log(res.data) 
+                      console.log("why?") 
+
                     })
                     
                     
