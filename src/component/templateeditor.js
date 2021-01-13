@@ -10,14 +10,69 @@ import EmailEditor from 'react-email-editor';
         const emailEditorRef = useRef(null);
         const dispatch=useDispatch()
         const history=useHistory()
+        
       
         const exportHtml = () => {
           emailEditorRef.current.editor.exportHtml((data) => {
+            
             const { design, html } = data;
 
-            dispatch(savetemplate(design))
+            // dispatch(savetemplate(design))
             // console.log( html);
+            // IQQY9yYHEO4BQZG7cDu00qownOld7LNkhDi7CkPGJrr4zpizjF5xwKUQp6Nj7CBi
+            
+
+            const token = Buffer.from("IQQY9yYHEO4BQZG7cDu00qownOld7LNkhDi7CkPGJrr4zpizjF5xwKUQp6Nj7CBi:").toString('base64');
+
+            // fetch("https://api.unlayer.com/v2/export/image", {
+            //   method: "POST",
+            //   headers: {
+            //     "Content-Type": "application/json", Authorization: `Basic ${token}`
+            //   },
+            //   body:JSON.stringify( { 
+            //     displayMode: 'email',
+            //     design:{design}
+            //     // mergeTags:{first_name:John,last_name:Doe}}
+            //   })
+            // })
+            // .then(response => {
+            //   console.log(response);
+            // })
+            // .catch(err => {
+            //   console.error(err);
+            // });
+
+
+            // const fetch = require('node-fetch');
+
+let url = 'https://api.unlayer.com/v2/export/image';
+
+let options = {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json', Authorization: `Basic ${token}`},
+  body: JSON.stringify({
+    displayMode: 'email',
+    design: design, // json of your design
+    // mergeTags: {first_name: 'John', last_name: 'Doe'}
+  })
+};
+
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('error:' + err));
+
+
+
+
+
+
+
+
+
+
           });
+
         };
       
         const onLoad = () => {
