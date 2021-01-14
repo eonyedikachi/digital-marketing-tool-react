@@ -95,14 +95,22 @@ import {useHistory } from 'react-router'
                    axios.post('https://martreach.herokuapp.com/api/users/login',values)
                     .then((response) => {
                       // setUsers(response.data)
-                      history.push("/dashboard")
+                      console.log(response.data.data.roleId)
+
+                      if(response.data.data.roleId=2){
+                        history.push("/dashboard")
+                      }
+                      else if(response.data.data.roleId=3){
+                        history.push("/admin/dashboard")
+                      }
+                      
                       localStorage.setItem("Token", `${response.data.accessToken}`)
                       
 
                     })
                     .catch((err) => {
                       // console.log(err);
-                      alert(err)
+                      alert(err.response)
                     });
                     
                     

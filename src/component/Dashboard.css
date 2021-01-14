@@ -29,22 +29,25 @@ color: #8c30f5
   }
 
   .viewedit{
-    height: 300px;
-    width: 250px;
+    height: 200px;
+    width: 100px;
     border: 3px #8c30f5 solid;
     border-radius: 10%;
     margin-left: 2rem;
     margin-right: 60%;
+    margin-bottom: 5%;
 
   }
 
-  .viewedit{
+  .viewedit img{
     width:100%;
     height: 100%;
+    object-fit: contain
   }
 
   .SIcont{
        display: flex;
+       border-bottom: 3px solid white!important;
 
   }
 
@@ -65,4 +68,5 @@ color: #8c30f5
     background-color:white;
     color:  red;
   }
+
   

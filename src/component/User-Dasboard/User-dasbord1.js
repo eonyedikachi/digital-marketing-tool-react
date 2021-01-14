@@ -28,7 +28,7 @@ export default function Userdasbord1() {
               style={{ margin: '0 7px' }}
               className="fas fa-envelope-open-text"
             ></i>
-            <Link to="/dashboard/createet">Email Template</Link>
+            <Link to="/selecttemp">Email Template</Link>
           </Link>
         </li>
         <li className="nav-item flex">

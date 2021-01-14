@@ -19,7 +19,7 @@ export default function Dashboard() {
           <Switch>
             <Route exact path="/dashboard/" component={Middle} />
             <Route exact path="/dashboard/savedlp" component={savedlp} />
-            <Route exact path="/dashboard/createet" component={createet} />
+            {/* <Route exact path="/dashboard/createet" component={createet} /> */}
             <Route path="/dashboard/Audiencepage" component={Audiencepage} />
             <Route
               path="/dashboard/Subscriptionpage"
