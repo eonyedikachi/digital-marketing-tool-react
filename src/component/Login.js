@@ -24,7 +24,7 @@ import {useHistory } from 'react-router'
  const isLogged=useSelector(state=>state.islogged); 
  const isshow=useSelector(state=>state.show) 
 //  const dispatch=useDispatch()
- const history=useHistory
+ const history=useHistory()
    
 
  if (isLogged) {
@@ -94,14 +94,15 @@ import {useHistory } from 'react-router'
                     setSubmitting(false)
                    axios.post('https://martreach.herokuapp.com/api/users/login',values)
                     .then((response) => {
-                      // setUsers(response.data);
-                      // history.push("/dashboard")
-                      console.log(response)
+                      // setUsers(response.data)
+                      history.push("/dashboard")
+                      localStorage.setItem("Token", `${response.data.accessToken}`)
+                      
 
                     })
                     .catch((err) => {
                       // console.log(err);
-                      alert(JSON.stringify(err.response.data))
+                      alert(err)
                     });
                     
                     

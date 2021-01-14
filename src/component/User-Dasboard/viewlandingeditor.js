@@ -1,21 +1,26 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
-// import {designToHtml} from 'react-email-editor';
+import React ,{useState} from 'react'
+// import {useSelector} from 'react-redux'
+import axios from "axios";
+
 
 
 export default function Viewlandingeditor() {
 
- const   design = useSelector(state=> state.save_template.templates[0])
-    console.log(design)
+
+// 
+
 
 
     return (
-        <div style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
-          <h3>View saved template </h3> 
-
+        <div  style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
+          <h2 className='editorh2'>View saved template </h2> 
+          
+          <div className="SIcont">
           <div className='viewedit'>
-               
-              </div> 
-        </div>
+               <img src=""/>
+            </div> 
+          <button>Delete</button>
+            </div>
+            </div>
     )
 }
