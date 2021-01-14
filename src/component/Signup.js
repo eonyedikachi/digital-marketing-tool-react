@@ -114,7 +114,8 @@ export default function Signup() {
             .then((response) => {
               // setUsers(response.data);
               history.push("/Mailbox")
-              // console.log(response)
+              console.log(response)
+              console.log(response.data)
             })
             .catch((err) => {
               // console.log(err);

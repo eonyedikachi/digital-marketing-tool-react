@@ -95,8 +95,9 @@ import {useHistory } from 'react-router'
                    axios.post('https://martreach.herokuapp.com/api/users/login',values)
                     .then((response) => {
                       // setUsers(response.data);
-                      history.push("/dashboard")
-                      // console.log(response)
+                      // history.push("/dashboard")
+                      console.log(response)
+
                     })
                     .catch((err) => {
                       // console.log(err);
