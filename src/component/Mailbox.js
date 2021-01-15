@@ -10,7 +10,7 @@ export default function Mailbox() {
         </div>
         <div className='cmiconcon' >
         <i class="fas fa-envelope"></i>
-        <h3>please cheack your mail</h3>
+        <h3>please check your mail</h3>
         <p>We’ve sent an email to you with a link to confirm your account.</p>
         </div>
         
