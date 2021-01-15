@@ -88,7 +88,35 @@ function AdminUserDashboard() {
           </div>
         </div>
       </div>
-      <div className="sidebar">Shut up</div>
+      <div className="sidebar">
+        
+
+
+<div className="user-profile position-fixed" style={{backgroundColor: '#fff', height: '100vh', width: '20%'}}>
+  <div className="container">
+    <div style={{display: 'flex', justifyContent: 'flex-end', padding: 10, fontSize: 10}}>
+      <a href="./index.html" onclick="signOut()" style={{border: '1px solid #01081e', borderRadius: 4, color: '#8c30f5', padding: 3}}>Sign
+        Out</a>
+    </div>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly'}}>
+      <img src="images/caricature1.svg" id="profilePic" alt="image" height={100} width={100} style={{borderRadius: '50%'}} />
+      <h3 id="usersname111">Malik Mukhtar</h3>
+    </div>
+    <div className="w-100 my-4" style={{height: 30}}>
+      <img src="./images/post-it.svg" className="float-right mr-4" style={{width: 30, height: '100%', cursor: 'pointer'}} alt="post-it" onclick="openNote()" />
+    </div>
+    {/* Sticky Note */}
+    <div className="sticky-note p-2 m-auto overflow-auto" id="stickyNote" style={{display: 'none'}} contentEditable="true" onkeyup="saveNote()">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+      </div>
     </div>
   );
 }
