@@ -37,31 +37,6 @@ import {useHistory } from 'react-router'
         <React.Fragment>
    
 
-     {/* <div 
-     style={{
-         transform: show ? "translateY(0vh)" : "translateY(-100vh)",
-         opacity: show ? '1': '0',
-         display: show ? 'block': 'none',
-         position: show ? 'fixed': "",
-         top: "0",
-         left:'0',
-         width:'100%',
-         height:'100%',
-         paddingRight:"19px",
-        zIndex:"100000",
-        overflowX: "hidden",
-        overflowY: "auto",
-        marginTop:"-1%",
-        paddingRight:"19px",
-        
-     }}
-     className="model-wrapper modal-fade" role="dialog" tabIndex="-1" aria-labelledby="signInLabel"
-     aria-modal="true"> */}
-          {/* <div className="modal-dialog">
-            <div style={{
-                  width:"93%",
-                  height:"100vh"
-              }} className="modal-content"> */}
               <Modal show={show}>
               <div className="login-modal-header modal-header">
                 <h5 className="modal-title">Sign In</h5>
@@ -88,29 +63,30 @@ import {useHistory } from 'react-router'
               onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                    alert(JSON.stringify(values, null, 2));
+
                     resetForm();
                     // dispatch(isLoggedin())
                     setSubmitting(false)
                    axios.post('https://martreach.herokuapp.com/api/users/login',values)
                     .then((response) => {
-                      // setUsers(response.data)
-                      console.log(response.data.data.roleId)
-
-                      if(response.data.data.roleId=2){
+                      
+                      if(response.data.data.roleId==2){
                         history.push("/dashboard")
                       }
-                      else if(response.data.data.roleId=3){
+                      else if(response.data.data.roleId==3){
                         history.push("/admin/dashboard")
                       }
                       
                       localStorage.setItem("Token", `${response.data.accessToken}`)
+                      localStorage.setItem("firstName", `${response.data.data.firstName}`)
+                      localStorage.setItem("lastName", `${response.data.data.lastName}`)
+                      localStorage.setItem("email", `${response.data.data.email}`)
                       
 
                     })
                     .catch((err) => {
-                      // console.log(err);
-                      alert(err.response)
+                
+                      alert(JSON.stringify(err.response.data))
                     });
                     
                     

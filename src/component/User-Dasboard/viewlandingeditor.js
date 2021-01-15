@@ -6,7 +6,10 @@ import axios from "axios";
 
 export default function Viewlandingeditor() {
 
-    const Token = localStorage.getItem("Token");
+    const Token = localStorage.getItem("Token")
+    const firstName = localStorage.getItem("firstName")
+    const lastName = localStorage.getItem("lastName")
+    const email = localStorage.getItem("email")
 
     const [url, setUrl] = useState([]);
   useEffect(() => {
@@ -19,13 +22,14 @@ export default function Viewlandingeditor() {
       })
       .then((response) => {
         setUrl(response.data);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+  // console.log(`${url[0].id}`)
 
-// 
 
 
 
@@ -38,7 +42,47 @@ export default function Viewlandingeditor() {
           <div className='viewedit'>
                <img src={url.image}/>
             </div> 
-          <button>Delete</button>
+          <button onClick={()=> {if(window.confirm('Delete the item?'))(
+            axios({
+              method: 'delete',
+              url: `https://martreach.herokuapp.com/api/emailTemplates/${url.id}`,
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${Token}`,
+              }
+            })
+           
+
+          )}}>Delete</button>
+
+          <a className="Dpdf" href={url.pdf}>Download pdf</a>
+          <button onClick={()=> {
+ 
+  axios({
+        method: 'post',
+        url: 'https://martreach.herokuapp.com/api/emailTemplates/testMail',
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Token}`,
+        },
+        data:  {
+          senderName: firstName ,
+          email: email,
+          html: url.html
+        }
+         
+      })
+      .then((response) => {
+        alert('SAMPLE TEST SENT PLEASE CHECK YOUR MAIL')
+        
+  
+      })
+      .catch((err) => {
+      alert("SENDING UNSUCCESSFUL")
+      });
+  
+             
+          }} className="teste">Test email</button>
           
          </div> <hr/></div> ) )}
           </div>

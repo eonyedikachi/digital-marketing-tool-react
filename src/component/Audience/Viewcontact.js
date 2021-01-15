@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 // import './Audiencepage.css'
 import {Link} from 'react-router-dom';
 import '../layout/Header.css';
@@ -10,7 +10,30 @@ import {useDispatch} from 'react-redux';
 
 export default function Viewcontact() {
     const dispatch = useDispatch()
+    const Token = localStorage.getItem("Token");
     const [show, setShow] = useState(false);
+    const [audience, setAudience] = useState([]);
+
+
+    useEffect(() => {
+      axios
+        .get("https://martreach.herokuapp.com/api/audience", {
+          headers: {
+            Authorization:
+              `Bearer ${Token}`,
+          },
+        })
+        .then((response) => {
+          setAudience(response.data);
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+
+
+console.log(audience)
     return (
         <>
         <div style={{width: '100%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
@@ -84,11 +107,11 @@ export default function Viewcontact() {
                 email:'',
                 firstName:'',
                 lastName:'',
-                phoneNo:'',
+                tel:'',
                 country:'',
                 state:'',
                 city:'',
-                Birthday:'',
+                birthday:'',
 
               }}
                     onSubmit=
@@ -97,9 +120,51 @@ export default function Viewcontact() {
                     // alert('You have successfully added a New Subscriber');
                     alert(JSON.stringify(values))
                     resetForm();
-                    dispatch(axios.post('https://martreach.herokuapp.com/api/audience',values),)  
+                     
                     
-                    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJmaXJzdE5hbWUiOiJFa2VzbyIsImxhc3ROYW1lIjoiTG9uZ2UiLCJ1c2VybmFtZSI6ImVrZXNvbG9uZ2UiLCJ0ZWwiOiIwODA2MzgzODc0NSIsImVtYWlsIjoiYnVoYXJpQGdtYWlsLmNvbSIsIndlYnNpdGUiOiJ3d3cuZWtlc29sb25nZS5jb20iLCJwaWN0dXJlIjoidXBsb2Fkcy9pbWFnZXMvMTYwNzk0ODkyNjA1OS5qcGciLCJvdHAiOiIiLCJpc0VuYWJsZWQiOiJ0cnVlIiwiZGF0ZUNyZWF0ZWQiOiIyMDIwLTEyLTE1VDEwOjIyOjIxLjAwMFoiLCJyb2xlSWQiOjMsInVzZXJJZCI6MTEsInBlcm1pc3Npb25zIjpbeyJwZXJtaXNzaW9uTmFtZSI6ImFkZF91c2VyIiwiZ3JvdXBOYW1lIjoidXNlcl9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6ImVkaXRfdXNlciIsImdyb3VwTmFtZSI6InVzZXJfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJ2aWV3X3VzZXIiLCJncm91cE5hbWUiOiJ1c2VyX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiZGVsZXRlX3VzZXIiLCJncm91cE5hbWUiOiJ1c2VyX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiYWRkX3JvbGUiLCJncm91cE5hbWUiOiJyb2xlX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiZWRpdF9yb2xlIiwiZ3JvdXBOYW1lIjoicm9sZV9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6InZpZXdfcm9sZSIsImdyb3VwTmFtZSI6InJvbGVfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJkZWxldGVfcm9sZSIsImdyb3VwTmFtZSI6InJvbGVfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJhZGRfcGVybWlzc2lvbiIsImdyb3VwTmFtZSI6InBlcm1pc3Npb25fbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJlZGl0X3Blcm1pc3Npb24iLCJncm91cE5hbWUiOiJwZXJtaXNzaW9uX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoidmlld19wZXJtaXNzaW9uIiwiZ3JvdXBOYW1lIjoicGVybWlzc2lvbl9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6ImRlbGV0ZV9wZXJtaXNzaW9uIiwiZ3JvdXBOYW1lIjoicGVybWlzc2lvbl9tYW5hZ2VtZW50In1dfSwiaWF0IjoxNjEwNTQ1MTQ3LCJleHAiOjE2MTA1NDg3NDd9.5tPck6vZTD-5C0hkwdjGg65CBXUkamnQa0-F2B9PuZU
+                    axios({
+                      method: 'post',
+                      url: 'https://martreach.herokuapp.com/api/audience',
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${Token}`,
+                      },
+                      data:  {
+                        firstName: values.firstName,
+                        lastName: values.lastName,
+                        email: values.email,
+                        tel: values.tel,
+                        country: values.country,
+                        state: values.state,
+                        city: values.city,
+                        birthday: values.birthday,
+                      }
+                       
+                    })
+                    .then((response) => {
+                      alert('SUBSCRIBER ADDED')
+                      
+                
+                    })
+                    .catch((err) => {
+                    alert(" UNSUCCESSFUL")
+                    // alert(values.firstName)
+                    });
+
+
+      axios({
+        method: 'post',
+        url: 'https://martreach.herokuapp.com/api/audience',
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Token}`,
+        }
+
+      });
+
+      
+  
+
 
 
                   }
@@ -133,10 +198,10 @@ export default function Viewcontact() {
     <div className="input-field my-4">
     <Formfield
         placeholder="Phone Number"
-        name='phoneNo'
+        name='tel'
         type="text"
         onChange={handleChange}
-        value={values.phoneNo}/>
+        value={values.tel}/>
    </div>
     <div className="input-field my-4">
     <Formfield
@@ -164,11 +229,11 @@ export default function Viewcontact() {
    </div>
     <div className="input-field my-4">
     <Formfield
-        placeholder="Birthday"
-        name='Birthday'
+        placeholder="birthday"
+        name='birthday'
         type="text"
         onChange={handleChange}
-        value={values.Birthday}/>
+        value={values.birthday}/>
    </div>
     <div className="input-field my-4">
     <Formfield

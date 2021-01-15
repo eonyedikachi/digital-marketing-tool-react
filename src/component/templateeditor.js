@@ -25,15 +25,12 @@ const Appp = (props) => {
       const { design, html } = data;
       console.log("exportHtml", design);
 
-      alert("saving");
-      alert(name);
+      alert("SAVING...");
       const image = {
         name,
         design,
         html,
       };
-      alert(JSON.stringify(image));
-
 
       axios({
         method: 'post',
@@ -48,7 +45,15 @@ const Appp = (props) => {
           html: html,
         }
          
-      });
+      })
+      .then((response) => {
+        alert("SAVED SUCCESSFULLY")
+        
+  
+      })
+      .catch((err) => {
+      alert("NOT SAVED")
+      });;
 
 
       
@@ -118,7 +123,7 @@ const Appp = (props) => {
               name: "",
             }}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              alert(JSON.stringify(values));
+              
               setName(values.name);
               setShow(!show);
             }}
