@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Users() {
+  
+  const token = localStorage.getItem("token");
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
       .get("https://martreach.herokuapp.com/api/users", {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJmaXJzdE5hbWUiOiJFa2VzbyIsImxhc3ROYW1lIjoiTG9uZ2UiLCJ1c2VybmFtZSI6ImVrZXNvbG9uZ2UiLCJ0ZWwiOiIwODA2MzgzODc0NSIsImVtYWlsIjoiYnVoYXJpQGdtYWlsLmNvbSIsIndlYnNpdGUiOiJ3d3cuZWtlc29sb25nZS5jb20iLCJwaWN0dXJlIjoidXBsb2Fkcy9pbWFnZXMvMTYwNzk0ODkyNjA1OS5qcGciLCJvdHAiOiIiLCJpc0VuYWJsZWQiOiJ0cnVlIiwiZGF0ZUNyZWF0ZWQiOiIyMDIwLTEyLTE1VDEwOjIyOjIxLjAwMFoiLCJyb2xlSWQiOjMsInVzZXJJZCI6MTEsInBlcm1pc3Npb25zIjpbeyJwZXJtaXNzaW9uTmFtZSI6ImFkZF91c2VyIiwiZ3JvdXBOYW1lIjoidXNlcl9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6ImVkaXRfdXNlciIsImdyb3VwTmFtZSI6InVzZXJfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJ2aWV3X3VzZXIiLCJncm91cE5hbWUiOiJ1c2VyX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiZGVsZXRlX3VzZXIiLCJncm91cE5hbWUiOiJ1c2VyX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiYWRkX3JvbGUiLCJncm91cE5hbWUiOiJyb2xlX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoiZWRpdF9yb2xlIiwiZ3JvdXBOYW1lIjoicm9sZV9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6InZpZXdfcm9sZSIsImdyb3VwTmFtZSI6InJvbGVfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJkZWxldGVfcm9sZSIsImdyb3VwTmFtZSI6InJvbGVfbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJhZGRfcGVybWlzc2lvbiIsImdyb3VwTmFtZSI6InBlcm1pc3Npb25fbWFuYWdlbWVudCJ9LHsicGVybWlzc2lvbk5hbWUiOiJlZGl0X3Blcm1pc3Npb24iLCJncm91cE5hbWUiOiJwZXJtaXNzaW9uX21hbmFnZW1lbnQifSx7InBlcm1pc3Npb25OYW1lIjoidmlld19wZXJtaXNzaW9uIiwiZ3JvdXBOYW1lIjoicGVybWlzc2lvbl9tYW5hZ2VtZW50In0seyJwZXJtaXNzaW9uTmFtZSI6ImRlbGV0ZV9wZXJtaXNzaW9uIiwiZ3JvdXBOYW1lIjoicGVybWlzc2lvbl9tYW5hZ2VtZW50In1dfSwiaWF0IjoxNjEwNTUzODUyLCJleHAiOjE2MTA1NTc0NTJ9.fRDxIIq1EjWSuX4ZXmSiElJ_p6hi_RhMwH8Wtv7_c74",
-        },
+            `Bearer ${token}`},
       })
       .then((response) => {
         setUsers(response.data);
@@ -20,6 +21,7 @@ function Users() {
         console.log(err);
       });
   }, []);
+
 
   console.log(users);
   return (
