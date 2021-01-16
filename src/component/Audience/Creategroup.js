@@ -16,6 +16,7 @@ export default function Creategroup() {
     const [showedit, setShowedit] = useState(false);
 
     const [group, setGroup] = useState([]);
+    const [groupid, setGroupid] = useState([]);
     useEffect(() => {
       axios
         .get("https://martreach.herokuapp.com/api/subscriberGroup", {
@@ -78,6 +79,24 @@ export default function Creategroup() {
       </ul>
       </div>
       <div className="col-md-4">
+
+
+
+      <i
+      onClick={()=> {if(window.confirm('Delete the item?'))(
+        axios({
+          method: 'delete',
+          url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Token}`,
+          }
+        })
+       
+
+      )}}
+      
+      className="fas fa-trash-alt groupdelete"></i>
       <button 
       
       onClick={()=> {if(window.confirm('Delete the item?'))(
@@ -94,9 +113,12 @@ export default function Creategroup() {
       )}}
       
       type="button" class="btn btn-danger groupdelete">Delete</button>
+
+
+<i className="fas fa-user-edit"></i>
       <button type="button" class="btn btn-primary groupedit" 
        
-      onClick={()=>(setShowedit(!showedit))}
+      onClick={()=>(setShowedit(!showedit), setGroupid(group.id))}
       >Edit</button>
       </div>
   </div>))}
@@ -194,7 +216,7 @@ export default function Creategroup() {
                     // resetForm();
                     axios({
                       method: 'put',
-                      url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
+                      url: `https://martreach.herokuapp.com/api/subscriberGroup/${groupid}`,
                       headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${Token}`,
@@ -205,12 +227,12 @@ export default function Creategroup() {
                     })
                     .then((response) => {
                       alert("SAVED SUCCESSFULLY")
-                      
+                      alert(groupid)
                 
                     })
                     .catch((err) => {
                     alert("NOT SAVED")
-                    alert(JSON.stringify(values))
+                    alert(groupid)
                     });;
                     // dispatch(axios.post('https://martreach.herokuapp.com/api/subscriberGroup',values),)     
                   }
