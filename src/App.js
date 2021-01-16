@@ -15,6 +15,9 @@ import Mailbox from './component/Mailbox';
 import Appp from './component/templateeditor';
 import Users from './component/user-management';
 import selectTemp from './component/createemailTep/createemailTem2';
+import emailtemp1 from './component/Emailtemp1';
+import emailtemp2 from './component/Emailtemp2';
+import emailtemp3 from './component/Emailtemp3';
 import Feedback from "./component/feedback";
 import AdminUserDashboard from './component/adminuserdashboard';
 
@@ -35,8 +38,11 @@ function App() {
           <Route path="/admin/users" component={Users} />
           <Route path="/Mailbox" component={Mailbox} />
           <Route path="/Templateeditor" component={Appp} />
+          <Route path="/emailtemp1" component={emailtemp1} />
+          <Route path="/emailtemp2" component={emailtemp2} /> 
+           <Route path="/emailtemp3" component={emailtemp3} />
           <Route path="/selecttemp" component={selectTemp} />
-          <Route path="/feedback" component={Feedback} />
+          <Route path="/admin/feedback" component={Feedback} />
           <Route path="/admin/dashboard" component={AdminUserDashboard} />
         </Switch>
       </Router>

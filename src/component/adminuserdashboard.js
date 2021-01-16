@@ -1,94 +1,69 @@
 import React  from "react";
-import { Link } from "react-router-dom";
+import AdminLeftSidebar from "./adminleftsidebar";
+import AdminRightSidebar from "./adminrightsidebar";
+import wave from "./Images/wave.svg";
+import wave2 from "./Images/wave2.svg";
+import wave3 from "./Images/wave3.svg";
+import website from "./Images/website.svg";
+import users from "./Images/users.svg";
+import breaking from "./Images/breaking.svg";
+import './user-management'
 
 function AdminUserDashboard() {
   return (
     <div className="wrapper">
-      <div className="sidebar">
-        <Link className="nav-item flex"></Link>
-        <Link className="nav-item flex"></Link>
-        <Link className="nav-item flex"></Link>
-      </div>
+      <AdminLeftSidebar />
       <div className="main">
-        <h1 className="active title">Suggestions</h1>
+        <h1 className="active title">Dashboard</h1>
 
-        <div>
-          <div
-            className="col"
-            id="date"
-            style={{ fontSize: 12, margin: 10 }}
-          ></div>
-          <div className="row my-5">
-            <div className="col">
-              <div className="stats">
-                <div className="stat-name">
-                  <div className="users">
-                    <img
-                      src="https://team2-digital-marketing-tool.netlify.app/images/users.svg"
-                      alt="users"
-                    />
-                  </div>
-                  <h2 className="ml-2 mt-2" id="registeredUsers">
-                    1
-                  </h2>
-                  <p className="ml-2">Registered Users</p>
-                </div>
-                <div className="stat-chart">
-                  <img
-                    src="https://team2-digital-marketing-tool.netlify.app/images/wave.svg"
-                    alt="wave"
-                  />
-                </div>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <div style={{ backgroundColor: "#D5D1FB" }} className="picd">
+                <img className="pic" src={users} alt="users" />
+              </div>
+              <div className="txt">
+                <h3 style={{ color: "#634CE6" }}>12</h3>
+                <p>Users</p>
+              </div>
+              <div className="wave">
+                <img className="waved" src={wave} alt="wave3" />
               </div>
             </div>
-            <div className="col">
-              <div className="stats">
-                <div className="stat-name">
-                  <div className="visits">
-                    <img
-                      src="https://team2-digital-marketing-tool.netlify.app/images/website.svg"
-                      alt="visits"
-                    />
-                  </div>
-                  <h2 className="ml-2 mt-2" id="pageVisits">
-                    1
-                  </h2>
-                  <p className="ml-2">Page Visits</p>
-                </div>
-                <div className="stat-chart">
-                  <img
-                    src="https://team2-digital-marketing-tool.netlify.app/images/wave2.svg"
-                    alt="wave2"
-                  />
-                </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div style={{ backgroundColor: "#b2ecc3" }} className="picd">
+                <img className="pic" src={website} alt="users" />
+              </div>
+              <div className="txt">
+                <h3 style={{ color: "#0aa236" }}>12</h3>
+                <p>Page Visits</p>
+              </div>
+              <div className="wave">
+                <img className="waved" src={wave2} alt="wave3" />
               </div>
             </div>
-            <div className="col">
-              <div className="stats">
-                <div className="stat-name">
-                  <div className="disabled">
-                    <img
-                      src="https://team2-digital-marketing-tool.netlify.app/images/breaking.svg"
-                      alt="disabledUsers"
-                    />
-                  </div>
-                  <h2 className="ml-2 mt-2" id="disabledUsers">
-                    1
-                  </h2>
-                  <p className="ml-2">Disabled Users</p>
-                </div>
-                <div className="stat-chart">
-                  <img
-                    src="https://team2-digital-marketing-tool.netlify.app/images/wave3.svg"
-                    alt="wave3"
-                  />
-                </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div style={{ backgroundColor: "#e6caca" }} className="picd">
+                <img className="pic" src={breaking} alt="users" />
+              </div>
+              <div className="txt">
+                <h3 style={{ color: "#ae1414" }}>12</h3>
+                <p>Disabled Users</p>
+              </div>
+              <div className="wave">
+                <img className="waved" src={wave3} alt="wave3" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="sidebar">Shut up</div>
+      <AdminRightSidebar />
     </div>
   );
 }

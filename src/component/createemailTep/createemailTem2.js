@@ -13,7 +13,7 @@ export default function createemailTem2() {
         <div className="container">
             <div className="select">
                 <h1>Select a starting point for your template</h1>
-                <Link to="./email_templates.html">Cancel</Link>
+                <Link to="/dashboard">Cancel</Link>
             </div>
             <section>
                 
@@ -21,19 +21,19 @@ export default function createemailTem2() {
                     <h2>Email Templates</h2>
                     <div className="featured">
                         <div className="feature-box 1">
-                            <Link to="/Templateeditor">
+                            <Link to="/emailtemp1">
                                 <img src={img1} alt=""/>
                             </Link>
                             <p>Theme 1</p>
                         </div>
                         <div className="feature-box 2">
-                            <Link to="/Templateeditor">
+                            <Link to="/emailtemp2">
                                 <img src={img2} alt=""/>
                             </Link>
                             <p>Theme 2</p>
                         </div>
                         <div className="feature-box 3">
-                            <Link to="/Templateeditor">
+                            <Link to="/emailtemp3">
                                 <img src={img3} alt=""/>
                             </Link>
                             <p>Theme 3</p>

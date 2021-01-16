@@ -20,7 +20,7 @@ import Pricingbtn from './pricingbtn'
        <p><i className="fas circleicon fa-check-circle"></i> Sticky notes </p>
        </React.Fragment>
        }
-       btn={<button className="btn btn-outline-dark btn-lg btn-block btn-one"><Link to="#">SIGN UP</Link></button>}
+       btn={<button className="btnn btn btn-outline-dark btn-lg btn-block btn-one"><Link to="#">SIGN UP</Link></button>}
        />
 
     

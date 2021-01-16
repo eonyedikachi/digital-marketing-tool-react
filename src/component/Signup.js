@@ -109,10 +109,18 @@ export default function Signup() {
           {
             resetForm()
             setSubmitting(false)
-            history.push("/Mailbox")
-            dispatch(axios.post('https://martreach.herokuapp.com/api/users/signup',values))
-            
-            
+          
+            axios.post('https://martreach.herokuapp.com/api/users/signup',values)
+            .then((response) => {
+              // setUsers(response.data);
+              history.push("/Mailbox")
+              console.log(response)
+              console.log(response.data)
+            })
+            .catch((err) => {
+              // console.log(err);
+              alert(JSON.stringify(err.response.data))
+            });
             
 
             setTimeout(()=>{

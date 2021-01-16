@@ -9,10 +9,12 @@ import {useDispatch } from 'react-redux';
 import axios from 'axios';
 import {isLoggedin} from './actions/types';
 import {Modal} from 'react-bootstrap'
+import {useHistory } from 'react-router'
 
 
 
  export const  Login =({show, close}) => {
+  
   useEffect(() => {
     document.title = "MartReach | Boost your Digital Awareness"
 
@@ -21,10 +23,12 @@ import {Modal} from 'react-bootstrap'
 
  const isLogged=useSelector(state=>state.islogged); 
  const isshow=useSelector(state=>state.show) 
- const dispatch=useDispatch()
+//  const dispatch=useDispatch()
+ const history=useHistory()
+   
 
  if (isLogged) {
-  return <Redirect to='/dashboard' />
+  // return <Redirect to='/dashboard' />
 }
 
  
@@ -33,31 +37,6 @@ import {Modal} from 'react-bootstrap'
         <React.Fragment>
    
 
-     {/* <div 
-     style={{
-         transform: show ? "translateY(0vh)" : "translateY(-100vh)",
-         opacity: show ? '1': '0',
-         display: show ? 'block': 'none',
-         position: show ? 'fixed': "",
-         top: "0",
-         left:'0',
-         width:'100%',
-         height:'100%',
-         paddingRight:"19px",
-        zIndex:"100000",
-        overflowX: "hidden",
-        overflowY: "auto",
-        marginTop:"-1%",
-        paddingRight:"19px",
-        
-     }}
-     className="model-wrapper modal-fade" role="dialog" tabIndex="-1" aria-labelledby="signInLabel"
-     aria-modal="true"> */}
-          {/* <div className="modal-dialog">
-            <div style={{
-                  width:"93%",
-                  height:"100vh"
-              }} className="modal-content"> */}
               <Modal show={show}>
               <div className="login-modal-header modal-header">
                 <h5 className="modal-title">Sign In</h5>
@@ -84,17 +63,31 @@ import {Modal} from 'react-bootstrap'
               onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                    alert(JSON.stringify(values, null, 2));
+
                     resetForm();
-                    dispatch(isLoggedin())
+                    // dispatch(isLoggedin())
                     setSubmitting(false)
-                    dispatch(axios.post('https://martreach.herokuapp.com/api/users/login',values),)
-                    .then(res => {
-                     
-                      console.log(res.data) 
-                      console.log("why?") 
+                   axios.post('https://martreach.herokuapp.com/api/users/login',values)
+                    .then((response) => {
+                      
+                      if(response.data.data.roleId==2){
+                        history.push("/dashboard")
+                      }
+                      else if(response.data.data.roleId==3){
+                        history.push("/admin/dashboard")
+                      }
+                      
+                      localStorage.setItem("Token", `${response.data.accessToken}`)
+                      localStorage.setItem("firstName", `${response.data.data.firstName}`)
+                      localStorage.setItem("lastName", `${response.data.data.lastName}`)
+                      localStorage.setItem("email", `${response.data.data.email}`)
+                      
 
                     })
+                    .catch((err) => {
+                
+                      alert(JSON.stringify(err.response.data))
+                    });
                     
                     
                     

@@ -5,6 +5,11 @@ import Stickynote from '../Images/post-it.svg'
 import profilePic from '../Images/caricature1.svg'
 
 export default function Userdasbord3() {
+
+  const firstName = localStorage.getItem("firstName")
+  const lastName = localStorage.getItem("lastName")
+  const email = localStorage.getItem("email")
+
     return (
         
     <div className="user-profile position-fixed" style={{backgroundColor: '#fff', height: '100vh', width: '20%'}}>
@@ -18,7 +23,7 @@ Sign Out</Link>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', color: '#c4c4c4'}}>
         <img src={profilePic} id="profilePic" alt="image" height={100} width={100} style={{borderRadius: '50%'}} />
 
-        <h3 id="usersname111">Malik Mukhtar</h3>
+        <h3 id="usersname111">{firstName} {lastName}</h3>
 
       </div>
       <div className="position-relative" style={{display: 'flex', justifyContent: 'space-evenly', padding: 10, color: '#c4c4c4'}}>

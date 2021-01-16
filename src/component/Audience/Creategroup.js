@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 // import './Audiencepage.css'
 import {Link} from 'react-router-dom'
 import '../layout/Header.css';
@@ -9,8 +9,32 @@ import axios from 'axios';
 import {useDispatch } from 'react-redux';
 
 export default function Creategroup() {
+
+  const Token = localStorage.getItem("Token");
     const dispatch = useDispatch()
     const [show, setShow] = useState(false);
+    const [showedit, setShowedit] = useState(false);
+
+    const [group, setGroup] = useState([]);
+    useEffect(() => {
+      axios
+        .get("https://martreach.herokuapp.com/api/subscriberGroup", {
+          headers: {
+            Authorization:  `Bearer ${Token}`
+              
+          },
+        })
+        .then((response) => {
+          setGroup(response.data);
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+
+   console.log(group)
+
     return (
         <>
         <div style={{width: '100%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
@@ -36,15 +60,47 @@ export default function Creategroup() {
   <div className="Jumbotron">
     <div className="card p-3">
       <div className="card-body overflow-auto">
-        <h5 className="card-title">Groups</h5>
+       
         <div className="row">
-          <div className="col-md-12 text-right">
+        <h5 style={{textAlign:"left"}}className="card-title col-md-4">Groups</h5>
+          <div className="col-md-8 text-right">
            <button onClick={()=> setShow(!show)} className="btn btn-primary  badge-pill" data-toggle="modal" data-target="#groups" style={{background: '#6920bd', width: '10rem'}}>Create Group</button>
 
           </div>
         </div>
         <br/>
       </div>
+
+      {group.map((group)=>(<div className="grouplist row">
+      <div className="col-md-8" >
+      <ul>
+      <li><i class="fas fa-users"></i>{group.name}</li>
+      </ul>
+      </div>
+      <div className="col-md-4">
+      <button 
+      
+      onClick={()=> {if(window.confirm('Delete the item?'))(
+        axios({
+          method: 'delete',
+          url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Token}`,
+          }
+        })
+       
+
+      )}}
+      
+      type="button" class="btn btn-danger groupdelete">Delete</button>
+      <button type="button" class="btn btn-primary groupedit" 
+       
+      onClick={()=>(setShowedit(!showedit))}
+      >Edit</button>
+      </div>
+  </div>))}
+
     </div>
   </div>
 </div>
@@ -60,15 +116,35 @@ export default function Creategroup() {
     <Modal.Body>
     <Formik
               initialValues={{
-                subscriberGroup:'',
+               name:'',
               }}
                     onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
                     // alert('You have successfully created a group');
+                   
+                    // resetForm();
+                    axios({
+                      method: 'post',
+                      url: 'https://martreach.herokuapp.com/api/subscriberGroup',
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${Token}`,
+                      },
+                      data:{
+                        name:values.name
+                      }
+                    })
+                    .then((response) => {
+                      alert("SAVED SUCCESSFULLY")
+                      
+                
+                    })
+                    .catch((err) => {
+                    alert("NOT SAVED")
                     alert(JSON.stringify(values))
-                    resetForm();
-                    dispatch(axios.post('https://martreach.herokuapp.com/api/subscriberGroup',values),)     
+                    });;
+                    // dispatch(axios.post('https://martreach.herokuapp.com/api/subscriberGroup',values),)     
                   }
               }>
 {({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) =>(
@@ -76,10 +152,10 @@ export default function Creategroup() {
     <div className="input-field my-4">
     <Formfield
         placeholder="Group  Name"
-        name='subscriberGroup'
+        name='name'
         type="text"
         onChange={handleChange}
-        value={values.subscriberGroup}/>
+        value={values.name}/>
    </div>
     <div className="input-field my-4">
     <Formfield
@@ -98,6 +174,78 @@ export default function Creategroup() {
     </Modal.Footer>
 
     </Modal>
+
+{/* __________________________________________________________________________________________________ */}
+
+    <Modal show={showedit} onHide={()=>setShowedit(false)}>
+    <Modal.Header closeButton style={{fontSize:'18px', fontWeight:'900'}} >
+        Enter the new name
+    </Modal.Header>
+    <Modal.Body>
+    <Formik
+              initialValues={{
+               name:'',
+              }}
+                    onSubmit=
+              {(values, { setSubmitting , resetForm}) => 
+                  {
+                    // alert('You have successfully created a group');
+                   
+                    // resetForm();
+                    axios({
+                      method: 'put',
+                      url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${Token}`,
+                      },
+                      data:{
+                        name:values.name
+                      }
+                    })
+                    .then((response) => {
+                      alert("SAVED SUCCESSFULLY")
+                      
+                
+                    })
+                    .catch((err) => {
+                    alert("NOT SAVED")
+                    alert(JSON.stringify(values))
+                    });;
+                    // dispatch(axios.post('https://martreach.herokuapp.com/api/subscriberGroup',values),)     
+                  }
+              }>
+{({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) =>(
+    <form className="subscribe" onSubmit={handleSubmit} >
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Group  Name"
+        name='name'
+        type="text"
+        onChange={handleChange}
+        value={values.name}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        type="Submit"
+        onClick={()=> setShowedit(!showedit)}/>
+        
+   </div>
+  </form>
+        
+        )}
+        
+        </Formik>
+    </Modal.Body>
+    <Modal.Footer>
+
+    </Modal.Footer>
+
+    </Modal>
+
+
+
+
         </>
     )
 }
