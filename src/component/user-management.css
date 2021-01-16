@@ -1,75 +1,48 @@
 .wrapper{
-    display: flex;
+    /* display: flex; */
     min-height: 100vh;
 }
-.sidebar{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
+.bttn{ float: right; width: 95px }
+
 .main{
     display: flex;
-    flex: 8;
-    background-color: #F4F5F7;
+    width: 75vw;
+    padding: 15px;
+    padding-left: 30px;
+    background-color: #8c30f53f;
     flex-direction: column;
+    float: right;
+    min-height: 100vh;
 }
 .title{
-    color:#8C30F5;
+    color:#8c30f5;
     text-align: center;
+    font-weight: 900;
+    margin-bottom: 32px;
 }
-.btn{
-    color: #F4F5F7;
-}
-
-
-.nav-item .active {
-  color: #18191f !important;
-}
-
-.row {
-  margin-left: unset;
-  margin-right: unset;
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
 }
 
-.user-profile {
-  top: 0;
-  right: 0;
+.row {margin: 0 -5px;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
-.stats {
-  height: 180px;
-  width: 250px;
-  margin: 2rem auto;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  color: #000;
-  box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.1);
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  text-align: start;
+  background-color: #f1f1f1;
 }
-
-#registeredUsers {
-  color: #594ce6;
-  font-weight: 600;
+.pic{
+  max-width: 50%;
 }
-
-#pageVisits {
-  color: #0aa236;
-  font-weight: 600;
-}
-
-#disabledUsers {
-  color: #ae1414;
-  font-weight: 600;
-}
-
-.stats .stat-name {
-  padding: 1rem;
-  height: 70%;
-}
-
-.stats .stat-name div {
-  background: #d5d1fb;
+.picd{
+  margin: 16px;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -77,75 +50,35 @@
   align-items: center;
   justify-content: center;
 }
-
-.stats .stat-name .visits {
-  background: #b2ecc3;
+.txt{
+  padding: 16px;
 }
-
-.stats .stat-name .disabled {
-  background: #e6caca;
-}
-
-.stats .stat-name div img {
-  max-width: 50%;
-  max-height: 50%;
-}
-
-.stats .stat-chart {
+.wave{
   height: 30%;
 }
-
-.stat-chart img {
+.waved{
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
-
-:root {
-  --primary-color: #fff;
-  --secondary-color: #8c30f5;
+.nav-item .active {
+  color: #18191f !important;
 }
 
-h1 {
-  color: #8c30f5;
-  font-weight: 600;
-  margin: 1rem;
-  margin-bottom: 2rem;
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
 
-h2 {
-  color: #8c30f5;
-}
-
+ 
 .user-management {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.row {
-  margin-left: unset;
-  margin-right: unset;
-}
-
-img {
-  border-radius: 50%;
-}
-
-.user-title {
-  width: 100%;
-}
-
-.user-title .btn {
-  float: right;
-  width: 108px;
-  height: 48px;
-  background: #8c30f5;
-}
-
-.user-title .btn:hover {
-  background: #6122aa;
 }
 
 .search {
@@ -163,9 +96,9 @@ img {
   width: 50%;
   border: solid 1px #000;
 }
-
+/*
 /* Form Styling */
-.form {
+/* .form {
   width: 100%;
   display: flex;
   padding: 1rem;
@@ -208,17 +141,17 @@ img {
 
 .form-input.radio input {
   width: 5% !important;
-}
+} */
 
 /* Button Styling */
-button {
+ /* button {
   border: none;
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
   width: 75px;
-}
+} */
 
 .addBtn {
   background: green;
@@ -279,10 +212,10 @@ button {
 
 .cancel {
   display: none;
-}
+} 
 
 /* Profile Styling */
-#main {
+/* #main {
   width: 50%;
 }
 
@@ -311,10 +244,10 @@ button {
   color: red;
   display: inline-block;
   margin-left: 0.2rem;
-}
+} */
 
 /* Media queries */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .form {
     width: 70%;
   }
@@ -326,9 +259,9 @@ button {
   .user-management {
     justify-content: unset;
     width: 100%;
-  }
+  } */
 
-  @media screen and (max-width: 550px) {
+  /* @media screen and (max-width: 550px) {
     h1 {
       font-size: 1.75rem;
     }
@@ -355,4 +288,4 @@ button {
       padding: 0.8rem;
     }
   }
-}
+} */
