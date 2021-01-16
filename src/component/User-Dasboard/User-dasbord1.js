@@ -61,7 +61,7 @@ export default function Userdasbord1() {
         <li className="nav-item flex">
           <Link className="nav-link" to="#">
             <i style={{ margin: '0 7px' }} className="fas fa-sliders-h"></i>
-            <Link to="/dashboard">Settings</Link>
+            <Link to="/dashboard/Settings">Settings</Link>
           </Link>
         </li>
         <li className="nav-item flex">

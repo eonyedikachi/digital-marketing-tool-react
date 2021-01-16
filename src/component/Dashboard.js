@@ -9,6 +9,7 @@ import savedlp from '../component/User-Dasboard/viewlandingeditor';
 import createet from '../component/createemailTep/createemailTemp1';
 import Audiencepage from '../component/Audiencepage';
 import Subscriptionpage from '../component/Subscriptionpage';
+import Settings from '../component/Settings';
 
 export default function Dashboard() {
   return (
@@ -25,6 +26,7 @@ export default function Dashboard() {
               path="/dashboard/Subscriptionpage"
               component={Subscriptionpage}
             />
+            <Route path="/dashboard/Settings" component={Settings} />
           </Switch>
         </Router>
         <Right />
