@@ -22,15 +22,12 @@ const Emailtemp1 = (props) => {
     emailEditorRef.current.editor.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
-      alert("saving");
-      alert(name);
+      alert("SAVING...");
       const image = {
         name,
         design,
         html,
       };
-      alert(JSON.stringify(image));
-
 
       axios({
         method: 'post',
@@ -110,7 +107,6 @@ const Emailtemp1 = (props) => {
       name: "",
     }}
     onSubmit={(values, { setSubmitting, resetForm }) => {
-      alert(JSON.stringify(values));
       setName(values.name);
       setShow(!show);
     }}

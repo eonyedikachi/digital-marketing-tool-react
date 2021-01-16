@@ -138,6 +138,7 @@ console.log(audience)
                         state: values.state,
                         city: values.city,
                         birthday: values.birthday,
+                        user_id: 1
                       }
                        
                     })
