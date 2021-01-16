@@ -1,0 +1,48 @@
+.sidebar {
+  display: flex;
+  width: 25vw;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 16px;
+}
+.linked{
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid black; */
+}
+.rightbar{
+  display: flex;
+  flex-direction: column;
+}
+.hr{
+  /* border-top: 1px dashed black; */
+  width: 100%;
+}
+.topic{
+  color: black;
+  font-weight: 900;
+font-size: xx-large;
+text-align: center;
+}
+
+.profilePic{
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+}
+.sticky{
+  height: auto;
+  width: 50px;
+  align-self: center;
+  padding-right: 16px;
+}
+.p{
+  display: flex;
+  float: left;
+  align-content: space-around;
+}
