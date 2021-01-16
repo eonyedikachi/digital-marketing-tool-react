@@ -128,9 +128,20 @@ color: #8c30f5
 
   .groupdelete{
     margin: 0 10px;
+    /* background-color: #dc3545; */
+    color: #dc3545;
   }
   .groupedit{
     margin:0 4px;
     padding:  0.375rem 0.75rem;
+    color: #007bff;
+  }
+  .groupdelete:hover{
+    
+    color: black;
+  }
+  .groupedit:hover{
+    
+    color:black;
   }
   /* 0.375rem 0.75rem; */

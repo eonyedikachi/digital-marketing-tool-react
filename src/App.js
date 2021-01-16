@@ -42,7 +42,7 @@ function App() {
           <Route path="/emailtemp2" component={emailtemp2} /> 
            <Route path="/emailtemp3" component={emailtemp3} />
           <Route path="/selecttemp" component={selectTemp} />
-          <Route path="/feedback" component={Feedback} />
+          <Route path="/admin/feedback" component={Feedback} />
           <Route path="/admin/dashboard" component={AdminUserDashboard} />
         </Switch>
       </Router>

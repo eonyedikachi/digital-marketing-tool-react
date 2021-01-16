@@ -55,41 +55,35 @@ console.log(audience)
           
             <div className="container" id style={{backgroundColor: '#F4F5F7'}}>
 
-                  <div className="Jumbotron">
-                    <div className="card p-3">
-                      <div className="card-body overflow-auto">
-                        <h5 className="card-title">Display View Contact</h5>
-                        <div className="row">
-                          <div className="col-md-12 text-right">
-                           <button onClick={()=> setShow(!show)} className="btn btn-primary  badge-pill" data-toggle="modal" data-target="#add" style={{background: '#6920bd', width: '10rem'}}>Add a Subscriber</button>
+              <div className="Jumbotron">
+              <div className="card p-3">
+                <div className="card-body overflow-auto">
+                
+                  <div className="row">
+                  <h5 style={{textAlign:"left"}} className="card-title col-md-6">View contact subscribers</h5>
+                    <div className="col-md-6 text-right">
+                    <button className="btn btn-primary  badge-pill" data-toggle="modal" data-target="#groups" style={{background: '#6920bd', width: '10rem'}}>Add a subscriber</button>
+                    <div className='col-md-6'></div>
 
-                          </div>
-                        </div>
-                        <br/>
-
-                        <table className="table table-dark table-bordered" style={{backgroundColor: '#fff', color: '#222'}}>
-
-                          <thead>
-                            <tr>
-                              <th scope="col">ID</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">FName</th>
-                              <th scope="col">LName</th>
-                              <th scope="col">Phone No</th>
-                              <th scope="col">Country</th>
-                              <th scope="col">State</th>
-                              <th scope="col">City</th>
-                              <th scope="col">BDay</th>
-                              <th className="text-right">Edit</th>
-                              <th className="text-right">Delete</th>
-                            </tr>
-                          </thead>
-                          <tbody id="contactTable"></tbody>
-                        </table>
-                      </div>
                     </div>
                   </div>
+                  <br/>
                 </div>
+
+               <div className="grouplist row">
+                <div className="col-md-8" >
+                <ul>
+                <li><i class="fas fa-users"></i>AMinu</li>
+                </ul>
+                </div>
+                <div className="col-md-4">
+               <i className="fas fa-trash-alt groupdelete"></i>
+            <i className="fas fa-user-edit groupedit"></i>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
           </section>
 
 

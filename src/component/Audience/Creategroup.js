@@ -36,6 +36,10 @@ export default function Creategroup() {
 
    console.log(group)
 
+   function refreshPage() {
+    window.location.reload(true);
+  }
+
     return (
         <>
         <div style={{width: '100%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
@@ -92,34 +96,18 @@ export default function Creategroup() {
             Authorization: `Bearer ${Token}`,
           }
         })
-       
-
-      )}}
-      
-      className="fas fa-trash-alt groupdelete"></i>
-      <button 
-      
-      onClick={()=> {if(window.confirm('Delete the item?'))(
-        axios({
-          method: 'delete',
-          url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Token}`,
-          }
+        .then((response) => {
+          refreshPage()
         })
        
 
       )}}
       
-      type="button" class="btn btn-danger groupdelete">Delete</button>
+      className="fas fa-trash-alt groupdelete"></i>
+   <i className="fas fa-user-edit groupedit"
+  onClick={()=>(setShowedit(!showedit), setGroupid(group.id))}
 
-
-<i className="fas fa-user-edit"></i>
-      <button type="button" class="btn btn-primary groupedit" 
-       
-      onClick={()=>(setShowedit(!showedit), setGroupid(group.id))}
-      >Edit</button>
+  ></i>
       </div>
   </div>))}
 
@@ -159,6 +147,7 @@ export default function Creategroup() {
                     })
                     .then((response) => {
                       alert("SAVED SUCCESSFULLY")
+                      
                       
                 
                     })
@@ -226,8 +215,8 @@ export default function Creategroup() {
                       }
                     })
                     .then((response) => {
+                      refreshPage()
                       alert("SAVED SUCCESSFULLY")
-                      alert(groupid)
                 
                     })
                     .catch((err) => {

@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./user-management.css";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import AdminLeftSidebar from "./adminleftsidebar";
+import AddUserModal from "./addusermodal";
+import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
 
 function Users() {
-  
   const token = localStorage.getItem("token");
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
       .get("https://martreach.herokuapp.com/api/users", {
         headers: {
-          Authorization:
-            `Bearer ${token}`},
+          Authorization: `Bearer ${token}`,
+        },
       })
       .then((response) => {
         setUsers(response.data);
@@ -22,21 +23,14 @@ function Users() {
       });
   }, []);
 
-
   console.log(users);
+
   return (
     <div className="wrapper">
-      <div className="sidebar">
-        <Link to="">Dashboard</Link>
-        <Link to="">User Management</Link>
-        <Link to="">Feedback</Link>
-        <p>Administrator</p>
-      </div>
+      <AdminLeftSidebar />
       <div className="main">
         <h1 className="title"> User Management</h1>
-
-        {/* <button className="btn">Add User</button> */}
-
+        <AddUserModal />
         <div>
           <div className="search">
             <input type="text" id="search" placeholder="Search by Username" />
@@ -59,17 +53,18 @@ function Users() {
             </h2>
           </div>
           <div className="col-md-6"></div>
-          <table className="table table-striped">
-            <thead className="thead-inverse">
+          <MDBTable hover>
+            <MDBTableHead>
               <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th />
               </tr>
-            </thead>
-            <tbody>
+            </MDBTableHead>
+            <MDBTableBody>
+              <td>1</td>
               {users.map((user) => (
                 <tr key={user.id}>
                   <td>
@@ -88,13 +83,9 @@ function Users() {
                   </td>
                 </tr>
               ))}
-            </tbody>
-          </table>
+            </MDBTableBody>
+          </MDBTable>
         </div>
-      </div>
-
-      <div className="sidebar">
-        <button>Sign Out</button>
       </div>
     </div>
   );
