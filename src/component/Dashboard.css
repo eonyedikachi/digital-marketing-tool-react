@@ -199,3 +199,11 @@ color: #8c30f5
 .selectbtn{
   margin: 1rem 0;
 }
+.launch{
+  font-size: larger;
+  color:green;
+}
+
+i:hover{
+  cursor: pointer;
+}

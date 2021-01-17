@@ -42,14 +42,14 @@ export default function Selectaud() {
            <div className="selectbtn">
            <button type="button" class="btn sendtoall" 
 
-                onClick={()=> console.log(inputvalue.current.value) }
-        //    onClick={()=>  axios({
-        //     method: 'post',
-        //     url: `https://martreach.herokuapp.com/api/subscriberGroup/assignGroup/${inputvalue.current.value}/${groupid}`,
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //       Authorization: `Bearer ${Token}`,
-        //     },
+                onClick={()=> console.log(inputvalue.curr) }
+           onClick={()=>  axios({
+            method: 'post',
+            url: `https://martreach.herokuapp.com/api/subscriberGroup/assignGroup/${inputvalue}/${groupid}`,
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${Token}`,
+            }})}
         //     data:{
         //       name:""
         //     }
@@ -82,7 +82,7 @@ export default function Selectaud() {
             <div className="col-md-2" ><h6>{audience.firstName}</h6></div>
             <div className="col-md-2" ><h6>{audience.lastName}</h6></div>
             <div className="col-md-2" ><h6>{audience.tel}</h6></div>
-            <div className="col-md-1" ><input onClick={()=>setInputvalue(checkboxref)} ref={checkboxref} type="checkbox" value={audience.id}/></div>
+            <div className="col-md-1" ><input onClick={()=>setInputvalue(audience.id)} ref={checkboxref} type="checkbox" value={audience.id}/></div>
             </div>))}
             </div>
 

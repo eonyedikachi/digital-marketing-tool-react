@@ -19,6 +19,7 @@ export default class Subscriptionpage extends Component {
   }
   render() {
     return (
+      <div  style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}}>
       <div
         style={{
           width: '62%',
@@ -52,6 +53,7 @@ export default class Subscriptionpage extends Component {
 
           {/* <ReactFormBuilder /> */}
         </div>
+      </div>
       </div>
     );
   }

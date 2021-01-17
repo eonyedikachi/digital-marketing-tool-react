@@ -4,11 +4,12 @@ import Formfield from './FormField'
 import { Formik, } from 'formik';
 import axios from 'axios';
 import {Modal} from 'react-bootstrap';
-import img1 from "./Images/emailTemp.png"
+import {useHistory} from 'react-router'
 
 
 export default function Campaign() {
-      
+
+    const history=useHistory()  
     const [show, setShow] = useState(false);
     const [selecttem, setSelecttem] = useState(false);
     const [selecttaud, setSelectaud] = useState(false);
@@ -77,13 +78,25 @@ export default function Campaign() {
         
         <>
         <div style={{width: '60%', backgroundColor: '#F4F5F7', margin: 'auto', minHeight: '100vh'}} className="campaign">
+
+      <div className="row">
+      <div className="col-md-8">
+      </div>
+      <div className="col-md-4">
+      <button style={{marginTop:'3rem'}} type="button" class="btn sendtoall " onClick={()=> history.push('/dashboard/Selectcampaign')}>View all Campaign</button>
+      </div>
+
+      </div>
+
          <h4><i class="fas fa-envelope-open-text"></i> Campaign</h4>
          <p>Promote a line of products,engage your subscribers by sharing your latest news, or announcing an
          event and Keep your subscribers </p>
 
+
+         <div className="show campa">
         <div className={selecttem ? "displaynone":"selecttem"}>
-         <button onClick={()=>(setShow(true),setstartcampaignbtn(false))} type="button" className={startcampaignbtn ? "btn startcampaignbtn btn-lg":"displaynone"}><i class="fas fa-rocket"></i>Start a Campaign!</button>
          </div>
+         <button onClick={()=>(setShow(true),setstartcampaignbtn(false))} type="button" className={startcampaignbtn ? "btn startcampaignbtn btn-lg":"displaynone"}><i class="fas fa-rocket"></i>Start a Campaign!</button>
          <div className={selecttem ? "selecttemp":"displaynone"} style={{ textAlign: "center", color: "#8c30f5"}}>
           <h5>Select template for {campaignname} campaign</h5>
           <div className="row roww">
@@ -129,10 +142,12 @@ export default function Campaign() {
       </div>
 
       <div>
-        
+
+      </div>
       </div>
       
         </div>
+
 
         <Modal show={show} onHide={()=>setShow(false)}>
     <Modal.Header closeButton style={{fontSize:'18px', fontWeight:'900'}} >
@@ -214,7 +229,7 @@ export default function Campaign() {
                       })
                       .then((response) => {
                         alert("SAVED SUCCESSFULLY")
-                        
+                        history.push("/dashboard/Selectcampaign")
                         
                   
                       })

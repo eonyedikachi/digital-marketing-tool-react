@@ -12,6 +12,7 @@ import Subscriptionpage from '../component/Subscriptionpage';
 import Settings from '../component/Settings';
 import campaign from '../component/Campaign';
 import selectaud from '../component/selectaud';
+import Selectcampaign from '../component/viewallcampaign'
 
 export default function Dashboard() {
   return (
@@ -31,6 +32,7 @@ export default function Dashboard() {
             <Route path="/dashboard/Settings" component={Settings} />
             <Route path="/dashboard/campaign" component={campaign} />
             <Route path="/dashboard/selectaud" component={selectaud} />
+            <Route path="/dashboard/Selectcampaign" component={Selectcampaign} />
           </Switch>
         </Router>
         <Right />
