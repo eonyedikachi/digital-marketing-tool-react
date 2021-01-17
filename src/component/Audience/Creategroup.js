@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 // import './Audiencepage.css'
+import {useHistory} from 'react-router'
 import {Link} from 'react-router-dom'
 import '../layout/Header.css';
 import {Modal} from 'react-bootstrap';
@@ -12,10 +13,12 @@ export default function Creategroup() {
 
   const Token = localStorage.getItem("Token");
     const dispatch = useDispatch()
+    const history = useHistory()
     const [show, setShow] = useState(false);
     const [showedit, setShowedit] = useState(false);
 
     const [group, setGroup] = useState([]);
+    const [groupid, setGroupid] = useState([]);
     useEffect(() => {
       axios
         .get("https://martreach.herokuapp.com/api/subscriberGroup", {
@@ -34,6 +37,10 @@ export default function Creategroup() {
     }, []);
 
    console.log(group)
+
+   function refreshPage() {
+    window.location.reload(true);
+  }
 
     return (
         <>
@@ -70,7 +77,6 @@ export default function Creategroup() {
         </div>
         <br/>
       </div>
-
       {group.map((group)=>(<div className="grouplist row">
       <div className="col-md-8" >
       <ul>
@@ -78,8 +84,10 @@ export default function Creategroup() {
       </ul>
       </div>
       <div className="col-md-4">
-      <button 
-      
+
+
+
+      <i
       onClick={()=> {if(window.confirm('Delete the item?'))(
         axios({
           method: 'delete',
@@ -89,15 +97,23 @@ export default function Creategroup() {
             Authorization: `Bearer ${Token}`,
           }
         })
+        .then((response) => {
+          refreshPage()
+        })
        
 
       )}}
       
-      type="button" class="btn btn-danger groupdelete">Delete</button>
-      <button type="button" class="btn btn-primary groupedit" 
-       
-      onClick={()=>(setShowedit(!showedit))}
-      >Edit</button>
+      className="fas fa-trash-alt groupdelete"></i>
+   <i className="fas fa-user-edit groupedit"
+  onClick={()=>(setShowedit(!showedit), setGroupid(group.id))}
+
+  ></i><i class="fas fa-plus groupadd"
+    
+    onClick={()=>( localStorage.setItem("groupid",group.id), localStorage.setItem("groupname",group.name),history.push("/dashboard/selectaud"))}
+    
+    
+    ></i>
       </div>
   </div>))}
 
@@ -137,6 +153,7 @@ export default function Creategroup() {
                     })
                     .then((response) => {
                       alert("SAVED SUCCESSFULLY")
+                      
                       
                 
                     })
@@ -194,7 +211,7 @@ export default function Creategroup() {
                     // resetForm();
                     axios({
                       method: 'put',
-                      url: `https://martreach.herokuapp.com/api/subscriberGroup/${group.id}`,
+                      url: `https://martreach.herokuapp.com/api/subscriberGroup/${groupid}`,
                       headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${Token}`,
@@ -204,13 +221,13 @@ export default function Creategroup() {
                       }
                     })
                     .then((response) => {
-                      alert("SAVED SUCCESSFULLY")
+                      refreshPage()
                       
                 
                     })
                     .catch((err) => {
                     alert("NOT SAVED")
-                    alert(JSON.stringify(values))
+                    alert(groupid)
                     });;
                     // dispatch(axios.post('https://martreach.herokuapp.com/api/subscriberGroup',values),)     
                   }

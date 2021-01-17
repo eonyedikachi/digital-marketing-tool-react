@@ -10,6 +10,8 @@ import createet from '../component/createemailTep/createemailTemp1';
 import Audiencepage from '../component/Audiencepage';
 import Subscriptionpage from '../component/Subscriptionpage';
 import Settings from '../component/Settings';
+import campaign from '../component/Campaign';
+import selectaud from '../component/selectaud';
 
 export default function Dashboard() {
   return (
@@ -27,6 +29,8 @@ export default function Dashboard() {
               component={Subscriptionpage}
             />
             <Route path="/dashboard/Settings" component={Settings} />
+            <Route path="/dashboard/campaign" component={campaign} />
+            <Route path="/dashboard/selectaud" component={selectaud} />
           </Switch>
         </Router>
         <Right />

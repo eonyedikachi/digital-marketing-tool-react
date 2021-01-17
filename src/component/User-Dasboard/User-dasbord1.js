@@ -46,7 +46,7 @@ export default function Userdasbord1() {
         <li className="nav-item flex">
           <Link className="nav-link" to="./post_email.html">
             <i style={{ margin: '0 7px' }} className="fas fa-envelope-open"></i>
-            <Link to="/dashboard">Campaign</Link>
+            <Link to="/dashboard/campaign">Campaign</Link>
           </Link>
         </li>
         <li className="nav-item flex">
