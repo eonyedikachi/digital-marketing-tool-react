@@ -39,8 +39,8 @@ function App() {
           <Route path="/Mailbox" component={Mailbox} />
           <Route path="/Templateeditor" component={Appp} />
           <Route path="/emailtemp1" component={emailtemp1} />
-          <Route path="/emailtemp2" component={emailtemp2} /> 
-           <Route path="/emailtemp3" component={emailtemp3} />
+          <Route path="/emailtemp2" component={emailtemp2} />
+          <Route path="/emailtemp3" component={emailtemp3} />
           <Route path="/selecttemp" component={selectTemp} />
           <Route path="/admin/feedback" component={Feedback} />
           <Route path="/admin/dashboard" component={AdminUserDashboard} />
