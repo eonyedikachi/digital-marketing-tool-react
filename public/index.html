@@ -28,11 +28,20 @@
     <!-- Font Awsome link  -->
     <script src="https://kit.fontawesome.com/0b544dd14e.js" crossorigin="anonymous"></script>
     <!-------------------------------------------------------------------------------------->
+
+ <!-- jQuery for FormBuilder -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+ <script src="https://formbuilder.online/assets/js/form-builder.min.js"></script>
+ <script src="https://formbuilder.online/assets/js/form-render.min.js"></script>
     <title>MartReach</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="build-wrap"></div>
+
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -43,6 +52,23 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+    jQuery(function($) {
+  var fbEditor = document.getElementById('build-wrap');
+  var formBuilder = $(fbEditor).formBuilder();
+
+  document.getElementById('getXML').addEventListener('click', function() {
+    alert(formBuilder.actions.getData('xml'));
+  });
+  document.getElementById('getJSON').addEventListener('click', function() {
+    alert(formBuilder.actions.getData('json'));
+  });
+  document.getElementById('getJS').addEventListener('click', function() {
+    alert('check console');
+    console.log(formBuilder.actions.getData());
+  });
+});
+  </script>
   <script>
   </script>
   </body>
