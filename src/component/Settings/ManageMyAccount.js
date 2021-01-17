@@ -86,25 +86,46 @@ export default function ManageMyAccount() {
                 <div>
                   <input
                     type="radio"
-                    value="Audiences"
+                    value="Campaigns"
                     name="radio"
-                    className="m-3"
+                    className="m-1"
                   />{' '}
-                  Audiences
+                  Campaigns
                   <input
                     type="radio"
-                    value="Audiences"
+                    value="Audience"
                     name="radio"
-                    className="m-3"
+                    className="m-1"
                   />{' '}
-                  Audiences
+                  Audience
                   <input
                     type="radio"
-                    value="Audiences"
+                    value="Reports"
                     name="radio"
-                    className="m-3"
+                    className="m-1"
                   />{' '}
-                  Audiences
+                  Reports
+                  <input
+                    type="radio"
+                    value="Templates"
+                    name="radio"
+                    className="m-1"
+                  />{' '}
+                  Templates
+                  <input
+                    type="radio"
+                    value="Gallery"
+                    name="radio"
+                    className="m-1"
+                  />{' '}
+                  Gallery
+                  <input
+                    type="radio"
+                    value="Events"
+                    name="radio"
+                    className="m-1"
+                  />{' '}
+                  Events
                 </div>
 
                 <button class="btn my-3 button">Verify Email Domain</button>
