@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./user-management.css";
 import axios from "axios";
 import AdminLeftSidebar from "./adminleftsidebar";
-import AddUserModal from "./addusermodal";
+import AddUserModal from "./UpdateUserModal";
 import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
+import UpdateUserModal from "./UpdateUserModal";
 
 function Users() {
   const token = localStorage.getItem("token");
   const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const [modalIsOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     axios
       .get("https://martreach.herokuapp.com/api/users", {
@@ -23,7 +27,25 @@ function Users() {
       });
   }, []);
 
-  console.log(users);
+  const updateUser = (user) => {
+    setUser(user);
+    setModalOpen(true);
+  };
+
+  const deleteUser = (id) => {
+    axios
+      .delete(`https://martreach.herokuapp.com/api/users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        alert("User deleted");
+      })
+      .catch((err) => {
+        alert("An error occurred while deleting user");
+      });
+  };
 
   return (
     <div className="wrapper">
@@ -31,6 +53,11 @@ function Users() {
       <div className="main">
         <h1 className="title"> User Management</h1>
         <AddUserModal />
+        <UpdateUserModal
+          initialUserDetails={user}
+          modalIsOpen={modalIsOpen}
+          setModalOpen={setModalOpen}
+        />
         <div>
           <div className="search">
             <input type="text" id="search" placeholder="Search by Username" />
@@ -64,15 +91,22 @@ function Users() {
               </tr>
             </MDBTableHead>
             <MDBTableBody>
-              <td>1</td>
-              {users.map((user) => (
+              {users.map((user, index) => (
                 <tr key={user.id}>
+                  <td>{index + 1}</td>
                   <td>
                     {user.firstName} {user.lastName}
                   </td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
                   <td>{user.roleName}</td>
+                  <td>
+                    <button onClick={() => updateUser(user)}>Edit</button>
+                  </td>
+                  <td>
+                    <button onClick={() => deleteUser(user.id)}>Delete</button>
+                  </td>
+
                   <td>
                     {/* <Link
                       to={`/user/${user.id}`}
@@ -90,4 +124,5 @@ function Users() {
     </div>
   );
 }
+
 export default Users;
