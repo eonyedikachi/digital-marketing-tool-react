@@ -130,11 +130,13 @@ color: #8c30f5
     margin: 0 10px;
     /* background-color: #dc3545; */
     color: #dc3545;
+    font-size: larger;
   }
   .groupedit{
     margin:0 4px;
     padding:  0.375rem 0.75rem;
     color: #007bff;
+    font-size: larger;
   }
   .groupdelete:hover{
     
@@ -144,4 +146,56 @@ color: #8c30f5
     
     color:black;
   }
+  .groupadd{
+    font-size: larger;
+    color: green;
+  }
+  .groupadd:hover{
+    color: black;
+  }
   /* 0.375rem 0.75rem; */
+  .audienceheading{
+    background-color: #8c30f5;
+  border-radius: 15px;
+  border: 4px white solid;
+  padding-top: 10px;
+  color:white;
+  padding-bottom: 10px;
+  }
+  .audienceheading div h6{
+    font-weight:900;
+  }
+.audiienceinfo{
+  background-color: rgb(244, 245, 247);
+  border-radius: 15px;
+  border: 1px black solid;
+  padding: 3px;
+}
+
+.audiienceinfo div h6{
+    color: #8c30f5;
+    font-weight: 500;
+    
+}
+.audiienceinfo div{
+  padding-right: 0;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.audienceheading div{
+  padding-right: 0;  
+  padding-left: 3px;  
+
+}
+.sendcamp{
+  color: #007bff;
+  font-weight: larger;
+}
+.audienceheading{
+  padding: 2rem 0;
+}
+.selectbtn{
+  margin: 1rem 0;
+}

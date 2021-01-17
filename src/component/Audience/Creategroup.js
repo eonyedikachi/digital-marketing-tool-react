@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 // import './Audiencepage.css'
+import {useHistory} from 'react-router'
 import {Link} from 'react-router-dom'
 import '../layout/Header.css';
 import {Modal} from 'react-bootstrap';
@@ -12,6 +13,7 @@ export default function Creategroup() {
 
   const Token = localStorage.getItem("Token");
     const dispatch = useDispatch()
+    const history = useHistory()
     const [show, setShow] = useState(false);
     const [showedit, setShowedit] = useState(false);
 
@@ -75,7 +77,6 @@ export default function Creategroup() {
         </div>
         <br/>
       </div>
-
       {group.map((group)=>(<div className="grouplist row">
       <div className="col-md-8" >
       <ul>
@@ -107,7 +108,12 @@ export default function Creategroup() {
    <i className="fas fa-user-edit groupedit"
   onClick={()=>(setShowedit(!showedit), setGroupid(group.id))}
 
-  ></i>
+  ></i><i class="fas fa-plus groupadd"
+    
+    onClick={()=>( localStorage.setItem("groupid",group.id), localStorage.setItem("groupname",group.name),history.push("/dashboard/selectaud"))}
+    
+    
+    ></i>
       </div>
   </div>))}
 
@@ -216,7 +222,7 @@ export default function Creategroup() {
                     })
                     .then((response) => {
                       refreshPage()
-                      alert("SAVED SUCCESSFULLY")
+                      
                 
                     })
                     .catch((err) => {

@@ -1,0 +1,79 @@
+.campaign h4{
+    color: #8c30f5;
+    margin-top: 7%;
+    text-align: center;  
+}
+
+.campaign p{
+    line-height: 2rem;
+    text-align: center;
+    padding:2%;
+}
+
+.startcampaignbtn{
+    background-color:#8c30f5;
+    margin:0 40% auto;
+    text-align: center;
+    color: white;
+}
+.startcampaignbtn i{
+   font-size: larger;
+}
+.displaynone{
+    display:none
+}
+.selectcamp{
+    text-align: center;
+    color: #8c30f5;
+}
+
+.tempimage{
+    height: 65%;
+    border: 1px solid #8c30f5;
+    border-radius: 10px;
+    margin: 1rem;
+    transition: 1s;
+}
+
+.tempimage:hover {
+    height: 100%;
+    opacity: 0.6;
+  }
+  .tempimage img {
+    width: 100%;
+    height: 100%;
+  }
+  .roww{
+      margin-left: 50px!important;
+  }
+  .sendtoall{
+      background-color:  #8c30f5;
+      color: white;
+  }
+  .selectaudd{
+      padding-top: 3rem;
+  }
+
+  .selectaudd div h6{
+      font-weight: 900;
+  }
+  .selecttemp h5{
+      text-align: center;
+      color:  #8c30f5;
+  }
+  .selectauddd h5 {
+    text-align: center;
+    color:  #8c30f5;
+  }
+  .selectaudd h6{
+    font-weight: 900;
+    color:#8c30f5
+  }
+
+  .paddingtop{
+     margin-top: 5px !important;
+  }
+
+  .paddingtop:hover{
+    border: 5px white solid;
+  }

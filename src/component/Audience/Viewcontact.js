@@ -13,7 +13,14 @@ export default function Viewcontact() {
     const Token = localStorage.getItem("Token");
     const [show, setShow] = useState(false);
     const [audience, setAudience] = useState([]);
+    const [showaudience, showAudience] = useState(false);
+    const [audienceid, showAudienceid] = useState('');
+   
 
+
+    function refreshPage() {
+    window.location.reload(true);
+  }
 
     useEffect(() => {
       axios
@@ -60,26 +67,53 @@ console.log(audience)
                 <div className="card-body overflow-auto">
                 
                   <div className="row">
-                  <h5 style={{textAlign:"left"}} className="card-title col-md-6">View contact subscribers</h5>
-                    <div className="col-md-6 text-right">
-                    <button className="btn btn-primary  badge-pill" data-toggle="modal" data-target="#groups" style={{background: '#6920bd', width: '10rem'}}>Add a subscriber</button>
-                    <div className='col-md-6'></div>
+                  <h5 style={{textAlign:"left"}}className="card-title col-md-4">View contact subscribers</h5>
+                    <div className="col-md-8 text-right">
+                    <button className="btn btn-primary  badge-pill" data-toggle="modal" data-target="#groups" style={{background: '#6920bd', width: '10rem'}} onClick={()=>setShow(!show)}>Add a subscriber</button>
 
                     </div>
                   </div>
                   <br/>
                 </div>
-
-               <div className="grouplist row">
-                <div className="col-md-8" >
-                <ul>
-                <li><i class="fas fa-users"></i>AMinu</li>
-                </ul>
-                </div>
-                <div className="col-md-4">
-               <i className="fas fa-trash-alt groupdelete"></i>
-            <i className="fas fa-user-edit groupedit"></i>
+              <div classNam="audiencecont">
+               <div className="audienceheading row ">
+                <div className="col-md-1" ><h6>NO</h6></div>
+                <div className="col-md-3" ><h6>Email</h6></div>
+                <div className="col-md-2" ><h6>Firstname</h6></div>
+                <div className="col-md-2" ><h6>Lastname</h6></div>
+                <div className="col-md-2" ><h6>Phone no</h6></div>
+                <div className="col-md-1" ><h6>Edit</h6></div>
+                <div className="col-md-1" ><h6>Delete</h6></div>
             </div>
+{audience.map((audience)=>(   <div className="row audiienceinfo">
+            <div className="col-md-1" ><h6>{audience.id}</h6></div>
+            <div className="col-md-3" ><h6>{audience.email}</h6></div>
+            <div className="col-md-2" ><h6>{audience.firstName}</h6></div>
+            <div className="col-md-2" ><h6>{audience.lastName}</h6></div>
+            <div className="col-md-2" ><h6>{audience.tel}</h6></div>
+            <div className="col-md-1" ><h6><i className="fas fa-user-edit groupedit"
+            
+            onClick={()=>(showAudience(!showaudience), showAudienceid(audience.id))}
+            ></i></h6></div>
+            <div className="col-md-1" ><h6><i className="fas fa-trash-alt groupdelete"
+            
+            onClick={()=> {if(window.confirm('Delete the item?'))(
+              axios({
+                method: 'delete',
+                url: `https://martreach.herokuapp.com/api/audience/${audience.id}`,
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${Token}`,
+                }
+              })
+              .then((response) => {
+                refreshPage()
+              })
+             
+      
+            )}}
+            ></i></h6></div>
+            </div>))}
             </div>
             </div>
             </div>
@@ -131,15 +165,13 @@ console.log(audience)
                         country: values.country,
                         state: values.state,
                         city: values.city,
-                        birthday: values.birthday,
-                        user_id: 1
+                        birthday: values.birthday
                       }
                        
                     })
                     .then((response) => {
-                      alert('SUBSCRIBER ADDED')
-                      
-                
+
+                      console.log(values.lastName, values.email)
                     })
                     .catch((err) => {
                     alert(" UNSUCCESSFUL")
@@ -147,15 +179,15 @@ console.log(audience)
                     });
 
 
-      axios({
-        method: 'post',
-        url: 'https://martreach.herokuapp.com/api/audience',
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${Token}`,
-        }
+      // axios({
+      //   method: 'post',
+      //   url: 'https://martreach.herokuapp.com/api/audience',
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${Token}`,
+      //   }
 
-      });
+      // });
 
       
   
@@ -249,6 +281,153 @@ console.log(audience)
 
             
         </Modal>  
+
+
+
+
+  {/* ////////////////////////////////////////////////// */}
+
+
+  <Modal show={showaudience} onHide={()=>showAudience(!showaudience)}>
+        <Modal.Header closeButton style={{fontSize:'18px', fontWeight:'900'}}>
+          Edit Subscribers
+        </Modal.Header>
+        <Modal.Body>
+        <Formik
+              initialValues={{
+                email:'',
+                firstName:'',
+                lastName:'',
+                tel:'',
+                country:'',
+                state:'',
+                city:'',
+                birthday:'',
+
+              }}
+                    onSubmit=
+              {(values, { setSubmitting , resetForm}) => 
+                  {
+                    // alert('You have successfully added a New Subscriber');
+                    alert(JSON.stringify(values))
+                    resetForm();
+                     
+                    
+                    axios({
+                      method: 'put',
+                      url: `https://martreach.herokuapp.com/api/audience/${audienceid}`,
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${Token}`,
+                      },
+                      data:  {
+                        firstName: values.firstName,
+                        lastName: values.lastName,
+                        email: values.email,
+                        tel: values.tel,
+                        country: values.country,
+                        state: values.state,
+                        city: values.city,
+                        birthday: values.birthday
+                      }
+                       
+                    })
+                    .then((response) => {
+
+                      showAudience(false)
+                    })
+                    .catch((err) => {
+                    alert(" UNSUCCESSFUL")
+                    // alert(values.firstName)
+                    });
+ }
+              }>
+{({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) =>(
+    <form className="subscribe" onSubmit={handleSubmit} >
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Enter Email Address"
+        name='email'
+        type="email"
+        onChange={handleChange}
+        value={values.email}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Firstname"
+        name='firstName'
+        type="text"
+        onChange={handleChange}
+        value={values.firstName}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Lastname"
+        name='lastName'
+        type="text"
+        onChange={handleChange}
+        value={values.lastName}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Phone Number"
+        name='tel'
+        type="text"
+        onChange={handleChange}
+        value={values.tel}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="Country"
+        name='country'
+        type="text"
+        onChange={handleChange}
+        value={values.country}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="State"
+        name='state'
+        type="text"
+        onChange={handleChange}
+        value={values.state}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="City"
+        name='city'
+        type="text"
+        onChange={handleChange}
+        value={values.city}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        placeholder="birthday"
+        name='birthday'
+        type="text"
+        onChange={handleChange}
+        value={values.birthday}/>
+   </div>
+    <div className="input-field my-4">
+    <Formfield
+        name='Submit'
+        type="Submit"
+
+        />
+   </div>
+  </form>
+        
+        )}
+        {/* //   <input type="email" name="email" id="footerEmail" placeholder="Enter Email Address" required />  */}
+        </Formik>
+        </Modal.Body>
+        <Modal.Footer>
+
+        </Modal.Footer>
+
+            
+        </Modal>  
+  
 
         </>
     )

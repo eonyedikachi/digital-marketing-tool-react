@@ -17,7 +17,7 @@ const Emailtemp1 = (props) => {
   const Token = localStorage.getItem("Token");
 
     const [designss, setDesignss] = useState([]);
- 
+
   const exportHtml = () => {
     emailEditorRef.current.editor.exportHtml((data) => {
       const { design, html } = data;
@@ -44,8 +44,7 @@ const Emailtemp1 = (props) => {
          
       });
 
-
-
+      
     });
   };
 
