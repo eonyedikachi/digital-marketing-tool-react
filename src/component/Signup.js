@@ -13,6 +13,8 @@ import axios from 'axios'
 import Header from '../component/layout/Header';
 import Footer from '../component/layout/Footer';
 import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 
@@ -114,21 +116,20 @@ export default function Signup() {
             .then((response) => {
               // setUsers(response.data);
               history.push("/Mailbox")
-              console.log(response)
-              console.log(response.data)
+              
             })
             .catch((err) => {
               // console.log(err);
-              alert(JSON.stringify(err.response.data))
+              // alert(JSON.stringify(err.response.data))
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${JSON.stringify(err.response.data)}`,
+                // footer: '<a href>Why do I have this issue?</a>'
+              })
             });
             
 
-            setTimeout(()=>{
-
-               alert(JSON.stringify(values, null, 2));
-               resetForm();
-               setSubmitting(false)
-            },1000)
           }
       }>
 

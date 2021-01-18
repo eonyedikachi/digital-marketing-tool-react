@@ -207,3 +207,15 @@ color: #8c30f5
 i:hover{
   cursor: pointer;
 }
+.stickynote{
+  width: 75%;
+  height: 10rem;
+  border: #8c30f5 solid;
+  background-color: #8c30f5 ;
+  border-radius: 7px;
+  padding: 0.5rem;
+  font-size:small;
+  margin-left: 20%;
+  margin-top: 1%;
+  color: white;
+}

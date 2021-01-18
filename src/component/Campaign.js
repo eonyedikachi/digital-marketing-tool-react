@@ -130,7 +130,7 @@ export default function Campaign() {
       </div>
 
       <div className="col-md-1">
-      <i class="fas sendcamp fa-paper-plane"
+      <i className="fas sendcamp fa-paper-plane"
       onClick={()=>  (setShowsubject(!showsubject), setGroupid(group.id))}
       ></i>
       </div>

@@ -17,7 +17,7 @@ export default function Userdasbord1() {
           </Link>
         </li>
         <li className="nav-item flex">
-          <Link className="nav-link" to="#">
+          <Link className="nav-link" to="/Templateeditor">
             <i style={{ margin: '0 7px' }} className="fas fa-home"></i>
             <Link to="/Templateeditor">Landing page</Link>
           </Link>
@@ -32,19 +32,19 @@ export default function Userdasbord1() {
           </Link>
         </li>
         <li className="nav-item flex">
-          <Link className="nav-link" to="#">
+          <Link className="nav-link" to="/dashboard/Audiencepage">
             <i style={{ margin: '0 7px' }} className="fas fa-id-card-alt"></i>
             <Link to="/dashboard/Audiencepage">Create Audience</Link>
           </Link>
         </li>
         <li className="nav-item flex">
-          <Link className="nav-link" to="#">
+          <Link className="nav-link" to="/dashboard/Subscriptionpage">
             <i style={{ margin: '0 7px' }} className="fas fa-check-square"></i>
             <Link to="/dashboard/Subscriptionpage">Subscription Form</Link>
           </Link>
         </li>
         <li className="nav-item flex">
-          <Link className="nav-link" to="./post_email.html">
+          <Link className="nav-link" to="/dashboard/campaign">
             <i style={{ margin: '0 7px' }} className="fas fa-envelope-open"></i>
             <Link to="/dashboard/campaign">Campaign</Link>
           </Link>
@@ -55,7 +55,7 @@ export default function Userdasbord1() {
               style={{ margin: '0 10px' }}
               className="fas fa-question-circle"
             ></i>
-            <Link to="/dashboard">Suggestion</Link>
+            <Link to="/dashboard/Suggestion">Suggestion</Link>
           </Link>
         </li>
         <li className="nav-item flex">

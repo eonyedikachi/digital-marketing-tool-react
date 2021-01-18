@@ -3,6 +3,10 @@ import Formfield from './FormField';
 import { Formik, } from 'formik';
 import axios from 'axios';
 import {useDispatch } from 'react-redux';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function Emailsub() {
     const dispatch=useDispatch()
@@ -16,7 +20,12 @@ export default function Emailsub() {
                     onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                    alert('You have subscribed to MartReach newsletter successfully');
+                    // alert('You have subscribed to MartReach newsletter successfully');
+                    Swal.fire(
+                      'Success',
+                      'You have subscribed to MartReach newsletter successfully',
+                      'success'
+                    )
                     resetForm();
                     dispatch(axios.post('https://martreach.herokuapp.com/api/newsletter',values),)     
                   }

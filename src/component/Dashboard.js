@@ -13,6 +13,7 @@ import Settings from '../component/Settings';
 import campaign from '../component/Campaign';
 import selectaud from '../component/selectaud';
 import Selectcampaign from '../component/viewallcampaign'
+import Suggestion from '../component/Suggestion'
 
 export default function Dashboard() {
   return (
@@ -33,6 +34,7 @@ export default function Dashboard() {
             <Route path="/dashboard/campaign" component={campaign} />
             <Route path="/dashboard/selectaud" component={selectaud} />
             <Route path="/dashboard/Selectcampaign" component={Selectcampaign} />
+            <Route path="/dashboard/Suggestion" component={Suggestion} />
           </Switch>
         </Router>
         <Right />

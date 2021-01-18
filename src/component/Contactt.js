@@ -9,6 +9,8 @@ import axios from 'axios'
 import {useDispatch } from 'react-redux';
 import Header from '../component/layout/Header';
 import Footer from '../component/layout/Footer';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
  function Contactt() {
@@ -55,7 +57,12 @@ import Footer from '../component/layout/Footer';
         onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                    alert('Thank you for contacting us');
+                    // alert('Thank you for contacting us');
+                    Swal.fire(
+                      'Thank you for contacting us',
+                      
+                      'success'
+                    )
                     resetForm()
                     dispatch(axios.post('https://martreach.herokuapp.com/api/contactUs',values),)
                     

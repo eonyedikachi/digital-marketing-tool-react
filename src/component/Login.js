@@ -10,6 +10,8 @@ import axios from 'axios';
 import {isLoggedin} from './actions/types';
 import {Modal} from 'react-bootstrap'
 import {useHistory } from 'react-router'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 
@@ -87,6 +89,13 @@ import {useHistory } from 'react-router'
                     .catch((err) => {
                 
                       alert(JSON.stringify(err.response.data))
+
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `${JSON.stringify(err.response.data)}`,})
+
+
                     });
                     
                     

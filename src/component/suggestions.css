@@ -1,0 +1,48 @@
+.heading {
+    text-align: center;
+    color: #8c30f5;
+    /* margin-top: 10px; */
+    font-weight: bolder;
+  }
+
+
+  /* .select-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} */
+  .selectcat h2 {
+    color: black;
+    font-size: 1.5rem;
+    margin-top: 10%;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.selectcat select {
+    width: 60%;
+    color: #8c30f5;
+    padding: 0.4rem;
+    border: #8c30f5 solid;
+    border-radius: 7px;
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+.mainsuggestion form textarea {
+    width: 60%;
+    height: 10rem;
+    border: #8c30f5 solid;
+    border-radius: 7px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.suggestionbtn{
+    width: 10%;
+    margin-top: 2%;
+    margin-left: 45%;
+}
+ 
