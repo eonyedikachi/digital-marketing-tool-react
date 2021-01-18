@@ -4,10 +4,10 @@ import Modal from "react-modal";
 
 const UpdateUserModal = ({ initialUserDetails, modalIsOpen, setModalOpen }) => {
   const updatedInitialDetails = {
-    firstName: initialUserDetails.firstName,
-    lastName: initialUserDetails.lastName,
-    email: initialUserDetails.email,
-    tel: initialUserDetails.tel,
+    firstName: initialUserDetails?.firstName,
+    lastName: initialUserDetails?.lastName,
+    email: initialUserDetails?.email,
+    tel: initialUserDetails?.tel,
   };
 
   const token = localStorage.getItem("token");
