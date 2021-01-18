@@ -7,10 +7,11 @@ import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
 import UpdateUserModal from "./UpdateUserModal";
 
 function Users() {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("Token");
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [modalIsOpen, setModalOpen] = useState(false);
+  const totalUsers = users.length;
 
   useEffect(() => {
     axios
@@ -46,7 +47,7 @@ function Users() {
         alert("An error occurred while deleting user");
       });
   };
-
+  console.log(totalUsers);
   return (
     <div className="wrapper">
       <AdminLeftSidebar />
