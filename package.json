@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://MD-ameenu.github.io/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-",
   "dependencies": {
+    "@react-latest-ui/react-sticky-notes": "^0.2.6",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
