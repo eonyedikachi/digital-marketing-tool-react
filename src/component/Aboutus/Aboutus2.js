@@ -3,7 +3,7 @@ import "./Aboutus2.css"
 import Aboutus2b from './Aboutus2b'
 import Malik from '../Images/Malik2.jpg'
 import Chinedu from '../Images/chinedu-samuel.jpg'
-import Glory from '../Images/caricature4.svg'
+import Glory from '../Images/Gloo.jpg'
 import Aminu from '../Images/Aminu.png'
 
 
@@ -25,7 +25,7 @@ import Aminu from '../Images/Aminu.png'
              namedescrip="Back-end Developer"/>
              <Aboutus2b
              img={Glory}
-             name="Glory a.k.a. Boss Lady  a.k.a. Super Woman"
+             name="Osaiteh"
              namedescrip="Front-end Developer"/>
              <Aboutus2b
              img={Aminu}
