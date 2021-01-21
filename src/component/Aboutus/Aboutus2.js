@@ -25,7 +25,7 @@ import Aminu from '../Images/AMINU.jpg';
              namedescrip="Back-end Developer"/>
              <Aboutus2b
              img={Glory}
-             name="Osaiteh"
+             name="Ogbebor Glory"
              namedescrip="Front-end Developer"/>
              <Aboutus2b
              img={Aminu}
