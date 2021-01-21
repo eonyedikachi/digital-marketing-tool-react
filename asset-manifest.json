@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.e78cbd78.chunk.css",
-    "main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.8a470c7a.chunk.js",
-    "main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.8a470c7a.chunk.js.map",
+    "main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.c611e591.chunk.js",
+    "main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.c611e591.chunk.js.map",
     "runtime-main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.4cd5b3ff.js",
     "runtime-main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.4cd5b3ff.js.map",
     "static/css/2.ef05586f.chunk.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/2.ef05586f.chunk.css",
@@ -14,7 +14,7 @@
     "static/css/2.ef05586f.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/2.ef05586f.chunk.css.map",
     "static/css/main.e78cbd78.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.e78cbd78.chunk.css.map",
     "static/js/2.aa02d254.chunk.js.LICENSE.txt": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.aa02d254.chunk.js.LICENSE.txt",
-    "static/media/Aminu.667153da.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/Aminu.667153da.png",
+    "static/media/AMINU.d4077ed8.jpg": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/AMINU.d4077ed8.jpg",
     "static/media/Gloo.8464cfc0.jpg": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/Gloo.8464cfc0.jpg",
     "static/media/Malik2.a85f5bd7.jpg": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/Malik2.a85f5bd7.jpg",
     "static/media/MartReach logo dark.7c65732f.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/MartReach logo dark.7c65732f.png",
@@ -43,6 +43,6 @@
     "static/css/2.ef05586f.chunk.css",
     "static/js/2.aa02d254.chunk.js",
     "static/css/main.e78cbd78.chunk.css",
-    "static/js/main.8a470c7a.chunk.js"
+    "static/js/main.c611e591.chunk.js"
   ]
 }
