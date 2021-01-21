@@ -3,8 +3,8 @@ import React ,{useState, useEffect} from 'react'
 import axios from "axios";
 import {Link} from 'react-router-dom'
 import img1 from '../Images/emailTemp1.png'
-import img2 from '../Images/emailTemp.png'
-import img3 from '../Images/emailTemp2.png'
+import img2 from '../Images/img1.png'
+import img3 from '../Images/img2.png'
 import img4 from '../Images/email_template.png'
 // import moduleName from '../Images'
 
