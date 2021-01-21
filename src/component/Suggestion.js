@@ -1,5 +1,9 @@
 import React from 'react'
 import "./suggestions.css"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function Suggestion() {
     return (
@@ -35,7 +39,15 @@ export default function Suggestion() {
         <form >
         <textarea id="comment" name="comment" placeholder="Enter your suggestion"></textarea>
         <br/>
-        <button type="button" class="btn sendtoall suggestionbtn">Send </button>
+        <button onClick={()=>
+    Swal.fire(
+        'Success',
+        'Your suggestions had been sent',
+        'success'
+      )
+
+        } type="button" class="btn sendtoall suggestionbtn">Send </button>
+
         </form>
         </div>
         </div>

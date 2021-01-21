@@ -1,5 +1,9 @@
 import React, {useState,useEffect, useRef} from 'react'
 import axios from "axios"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function Selectaud() {
 
@@ -49,13 +53,21 @@ export default function Selectaud() {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${Token}`,
-            }})}
+            }}).then((response) => {
+                  // alert("SAVED SUCCESSFULLY")
+          
+            
+            Swal.fire(
+              'Success',
+              'You have successfully added a new subscriber to this group',
+              'success'
+              )})}
+          
         //     data:{
         //       name:""
         //     }
         //   })
-        //   .then((response) => {
-        //     alert("SAVED SUCCESSFULLY")
+        //   
             
             
       

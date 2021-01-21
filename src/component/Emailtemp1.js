@@ -7,6 +7,11 @@ import Formfield from "./FormField";
 import { Formik } from "formik";
 
 import EmailEditor from 'react-email-editor';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal)
 
 const Emailtemp1 = (props) => {
   const emailEditorRef = useRef(null);
@@ -29,6 +34,35 @@ const Emailtemp1 = (props) => {
       };
      alert("SAVING")
 
+
+     let timerInterval
+     Swal.fire({
+       title: 'Saving!',
+       html: 'Saving created tmplates',
+       timer: 7000,
+       timerProgressBar: true,
+       didOpen: () => {
+         Swal.showLoading()
+         timerInterval = setInterval(() => {
+           const content = Swal.getContent()
+           if (content) {
+             const b = content.querySelector('b')
+             if (b) {
+               b.textContent = Swal.getTimerLeft()
+             }
+           }
+         }, 100)
+       },
+       willClose: () => {
+         clearInterval(timerInterval)
+       }
+     }).then((result) => {
+       /* Read more about handling dismissals below */
+       if (result.dismiss === Swal.DismissReason.timer) {
+         console.log('I was closed by the timer')
+       }
+     })
+
       axios({
         method: 'post',
         url: 'https://martreach.herokuapp.com/api/emailTemplates',
@@ -44,13 +78,20 @@ const Emailtemp1 = (props) => {
          
       })
       .then((response) => {
-        alert("SAVED SUCCESSFULLY")
+        // alert("SAVED SUCCESSFULLY")
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Template has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
         
   
       })
       .catch((err) => {
       alert("NOT SAVED")
-      });;
+      });
 
 
 

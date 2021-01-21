@@ -20,7 +20,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 
 
-
+const MySwal = withReactContent(Swal)
 
 
 
@@ -109,7 +109,7 @@ export default function Signup() {
       onSubmit=
       {(values, { setSubmitting , resetForm}) => 
           {
-            resetForm()
+            
             setSubmitting(false)
           
             axios.post('https://martreach.herokuapp.com/api/users/signup',values)
@@ -119,8 +119,10 @@ export default function Signup() {
               
             })
             .catch((err) => {
+              resetForm()
               // console.log(err);
               // alert(JSON.stringify(err.response.data))
+          
               Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

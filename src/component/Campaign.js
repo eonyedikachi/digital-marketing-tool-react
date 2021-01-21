@@ -5,6 +5,10 @@ import { Formik, } from 'formik';
 import axios from 'axios';
 import {Modal} from 'react-bootstrap';
 import {useHistory} from 'react-router'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 
 export default function Campaign() {
@@ -14,7 +18,7 @@ export default function Campaign() {
     const [selecttem, setSelecttem] = useState(false);
     const [selecttaud, setSelectaud] = useState(false);
     const [startcampaignbtn, setstartcampaignbtn] = useState(true);
-    const campaignname= localStorage.getItem("campaign name")
+    const [campaignname, setCampaignname] = useState([]);  
     const imgid= localStorage.getItem("imgid")
     const [group, setGroup] = useState([]);
     const [groupid, setGroupid] = useState([]);
@@ -161,7 +165,7 @@ export default function Campaign() {
                     onSubmit=
               {(values, { setSubmitting , resetForm}) => 
                   {
-                localStorage.setItem("campaign name",values.name)
+                    setCampaignname(values.name )
                   }
               }>
 {({ isSubmitting, values, errors, touched,handleChange,handleSubmit }) =>(
@@ -228,7 +232,13 @@ export default function Campaign() {
                         }
                       })
                       .then((response) => {
-                        alert("SAVED SUCCESSFULLY")
+                        // alert("SAVED SUCCESSFULLY")
+                        Swal.fire(
+                          'Success',
+                          'You have successfully created a campaign',
+                          'success'
+                        )
+                        
                         history.push("/dashboard/Selectcampaign")
                         
                   

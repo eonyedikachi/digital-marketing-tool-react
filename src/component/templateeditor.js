@@ -10,6 +10,11 @@ import { Formik } from "formik";
 import axios from "axios";
 
 import EmailEditor from "react-email-editor";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal)
 
 const Appp = (props) => {
   const emailEditorRef = useRef(null);
@@ -25,7 +30,34 @@ const Appp = (props) => {
       const { design, html } = data;
       console.log("exportHtml", design);
 
-      alert("SAVING...");
+      // alert("SAVING...");
+      let timerInterval
+Swal.fire({
+  title: 'Saving!',
+  html: 'Saving created tmplates',
+  timer: 7000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
       const image = {
         name,
         design,
@@ -47,7 +79,14 @@ const Appp = (props) => {
          
       })
       .then((response) => {
-        alert("SAVED SUCCESSFULLY")
+        // alert("SAVED SUCCESSFULLY")
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your Template has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
         
   
       })

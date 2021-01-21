@@ -14,7 +14,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
-
+const MySwal = withReactContent(Swal)
  export const  Login =({show, close}) => {
   
   useEffect(() => {
@@ -88,7 +88,7 @@ import withReactContent from 'sweetalert2-react-content'
                     })
                     .catch((err) => {
                 
-                      alert(JSON.stringify(err.response.data))
+                      // alert(JSON.stringify(err.response.data))
 
                       Swal.fire({
                         icon: 'error',

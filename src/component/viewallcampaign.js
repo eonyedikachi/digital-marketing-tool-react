@@ -8,6 +8,11 @@ import Formfield from './FormField'
 import { Formik, } from 'formik';
 import axios from 'axios';
 import {useDispatch } from 'react-redux'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 
 export default function Viewallcampaign() {
 
@@ -53,7 +58,11 @@ export default function Viewallcampaign() {
           }
         })
         .then((response) => {
-        
+          Swal.fire(
+            'Success',
+            'You have successfully deleted this campaign',
+            'success'
+          )
         })
        
 
@@ -72,7 +81,11 @@ export default function Viewallcampaign() {
           Authorization: `Bearer ${Token}`,
         }
       }).then((response) => {
-        alert("successfull")
+        Swal.fire(
+          'Success',
+          'You have successfully launched this campaign',
+          'success'
+        )
     })
   
   }></i>

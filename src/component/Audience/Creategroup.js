@@ -8,6 +8,10 @@ import Formfield from '../FormField'
 import { Formik, } from 'formik';
 import axios from 'axios';
 import {useDispatch } from 'react-redux';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function Creategroup() {
 
@@ -98,7 +102,11 @@ export default function Creategroup() {
           }
         })
         .then((response) => {
-          refreshPage()
+          Swal.fire(
+            'Success',
+            'You have  successfully deleted this user',
+            'success'
+          )
         })
        
 
@@ -152,8 +160,12 @@ export default function Creategroup() {
                       }
                     })
                     .then((response) => {
-                      alert("SAVED SUCCESSFULLY")
-                      
+                      Swal.fire(
+                        'Success',
+                        'You have created group this user',
+                        'success'
+                      )
+                
                       
                 
                     })
@@ -221,8 +233,11 @@ export default function Creategroup() {
                       }
                     })
                     .then((response) => {
-                      refreshPage()
-                      
+                      Swal.fire(
+                        'Success',
+                        'You have  successfully edited this user',
+                        'success'
+                      )
                 
                     })
                     .catch((err) => {

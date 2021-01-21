@@ -7,6 +7,10 @@ import Formfield from '../FormField'
 import { Formik, } from 'formik';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 export default function Viewcontact() {
     const dispatch = useDispatch()
@@ -107,7 +111,11 @@ console.log(audience)
                 }
               })
               .then((response) => {
-                refreshPage()
+                Swal.fire(
+                  'Success',
+                  'You have successfully deleted this user',
+                  'success'
+                )
               })
              
       
@@ -146,7 +154,7 @@ console.log(audience)
               {(values, { setSubmitting , resetForm}) => 
                   {
                     // alert('You have successfully added a New Subscriber');
-                    alert(JSON.stringify(values))
+                    // alert(JSON.stringify(values))
                     resetForm();
                      
                     
@@ -171,7 +179,11 @@ console.log(audience)
                     })
                     .then((response) => {
 
-                      console.log(values.lastName, values.email)
+                      Swal.fire(
+                        'Congrats',
+                        'You have successfully added a new subscriber',
+                        'success'
+                      )
                     })
                     .catch((err) => {
                     alert(" UNSUCCESSFUL")
@@ -309,7 +321,7 @@ console.log(audience)
               {(values, { setSubmitting , resetForm}) => 
                   {
                     // alert('You have successfully added a New Subscriber');
-                    alert(JSON.stringify(values))
+                  
                     resetForm();
                      
                     
@@ -333,7 +345,11 @@ console.log(audience)
                        
                     })
                     .then((response) => {
-
+                      Swal.fire(
+                        'Success',
+                        'You have successfully edited this user',
+                        'success'
+                      )
                       showAudience(false)
                     })
                     .catch((err) => {
