@@ -1,15 +1,34 @@
-import React  from "react";
+import React, { useEffect, useState }  from "react";
 import AdminLeftSidebar from "./adminleftsidebar";
 import AdminRightSidebar from "./adminrightsidebar";
 import wave from "./Images/wave.svg";
 import wave2 from "./Images/wave2.svg";
 import wave3 from "./Images/wave3.svg";
 import website from "./Images/website.svg";
-import users from "./Images/users.svg";
+import axios from "axios";
+import lusers from "./Images/users.svg";
 import breaking from "./Images/breaking.svg";
 import './user-management'
 
 function AdminUserDashboard() {
+const token = localStorage.getItem("Token");
+const [users, setUsers] = useState([]);
+const totalUsers = users.length;
+
+  useEffect(() => {
+    axios
+      .get("https://martreach.herokuapp.com/api/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div className="wrapper">
       <AdminLeftSidebar />
@@ -20,10 +39,10 @@ function AdminUserDashboard() {
           <div class="column">
             <div class="card">
               <div style={{ backgroundColor: "#D5D1FB" }} className="picd">
-                <img className="pic" src={users} alt="users" />
+                <img className="pic" src={lusers} alt="users" />
               </div>
               <div className="txt">
-                <h3 style={{ color: "#634CE6" }}>12</h3>
+                <h3 style={{ color: "#634CE6" }}>{totalUsers}</h3>
                 <p>Users</p>
               </div>
               <div className="wave">

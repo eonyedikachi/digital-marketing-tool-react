@@ -4,13 +4,14 @@ import Modal from "react-modal";
 
 const UpdateUserModal = ({ initialUserDetails, modalIsOpen, setModalOpen }) => {
   const updatedInitialDetails = {
-    firstName: initialUserDetails.firstName,
-    lastName: initialUserDetails.lastName,
-    email: initialUserDetails.email,
-    tel: initialUserDetails.tel,
+    firstName: initialUserDetails?.firstName,
+    lastName: initialUserDetails?.lastName,
+    userName: initialUserDetails?.username,
+    email: initialUserDetails?.email,
+    role: initialUserDetails?.userrole,
   };
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("Token");
   const [userDetails, setUserDetails] = useState(updatedInitialDetails || {});
 
   const onInputChanged = (e, field) => {
@@ -52,9 +53,9 @@ const UpdateUserModal = ({ initialUserDetails, modalIsOpen, setModalOpen }) => {
 
   return (
     <div>
-      {
+      {/* {
         /using inline style temporarily because I'm too lazy to figure out why classes weren't working/
-      }
+      } */}
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalOpen(false)}>
         <div
@@ -76,6 +77,13 @@ const UpdateUserModal = ({ initialUserDetails, modalIsOpen, setModalOpen }) => {
             />
           </div>
           <div>
+            <label style={labelStyle}>Username: </label>
+            <input
+              onChange={(e) => onInputChanged(e, "username")}
+              value={userDetails.username}
+            />
+          </div>
+          <div>
             <label style={labelStyle}>Email: </label>
             <input
               onChange={(e) => onInputChanged(e, "email")}
@@ -83,10 +91,10 @@ const UpdateUserModal = ({ initialUserDetails, modalIsOpen, setModalOpen }) => {
             />
           </div>
           <div>
-            <label style={labelStyle}>Phone: </label>
+            <label style={labelStyle}>Role: </label>
             <input
-              onChange={(e) => onInputChanged(e, "tel")}
-              value={userDetails.tel}
+              onChange={(e) => onInputChanged(e, "userrole")}
+              value={userDetails.role}
             />
           </div>
           <div>
