@@ -80,9 +80,20 @@ import withReactContent from 'sweetalert2-react-content'
                       }
                       
                       localStorage.setItem("Token", `${response.data.accessToken}`)
-                      localStorage.setItem("firstName", `${response.data.data.firstName}`)
+                      localStorage.setItem(
+                        "uId",
+                        `${response.data.data.userId}`
+                      );
+                      localStorage.setItem(
+                        "firstName",
+                        `${response.data.data.firstName}`
+                      );
                       localStorage.setItem("lastName", `${response.data.data.lastName}`)
                       localStorage.setItem("email", `${response.data.data.email}`)
+                      localStorage.setItem(
+                        "pic",
+                        `${response.data.data.picture}`
+                      );
                       
 
                     })
