@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.939d09e1.chunk.css",
-    "main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.5cab7fcf.chunk.js",
-    "main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.5cab7fcf.chunk.js.map",
-    "runtime-main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.26caf6a7.js",
-    "runtime-main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.26caf6a7.js.map",
+    "main.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.9b587604.chunk.css",
+    "main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.fd96f015.chunk.js",
+    "main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/main.fd96f015.chunk.js.map",
+    "runtime-main.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.4cd5b3ff.js",
+    "runtime-main.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/runtime-main.4cd5b3ff.js.map",
     "static/css/2.ef05586f.chunk.css": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/2.ef05586f.chunk.css",
-    "static/js/2.65922915.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.65922915.chunk.js",
-    "static/js/2.65922915.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.65922915.chunk.js.map",
-    "static/js/3.e2af6c46.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/3.e2af6c46.chunk.js",
-    "static/js/3.e2af6c46.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/3.e2af6c46.chunk.js.map",
+    "static/js/2.aa02d254.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.aa02d254.chunk.js",
+    "static/js/2.aa02d254.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.aa02d254.chunk.js.map",
+    "static/js/3.0ed429d3.chunk.js": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/3.0ed429d3.chunk.js",
+    "static/js/3.0ed429d3.chunk.js.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/3.0ed429d3.chunk.js.map",
     "index.html": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/index.html",
     "static/css/2.ef05586f.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/2.ef05586f.chunk.css.map",
-    "static/css/main.939d09e1.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.939d09e1.chunk.css.map",
-    "static/js/2.65922915.chunk.js.LICENSE.txt": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.65922915.chunk.js.LICENSE.txt",
+    "static/css/main.9b587604.chunk.css.map": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/css/main.9b587604.chunk.css.map",
+    "static/js/2.aa02d254.chunk.js.LICENSE.txt": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/js/2.aa02d254.chunk.js.LICENSE.txt",
     "static/media/Aminu.667153da.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/Aminu.667153da.png",
     "static/media/Malik2.a85f5bd7.jpg": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/Malik2.a85f5bd7.jpg",
     "static/media/MartReach logo dark.7c65732f.png": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/MartReach logo dark.7c65732f.png",
@@ -39,10 +39,10 @@
     "static/media/website.44f2a499.svg": "/DIGITAL-MARKETING-TOOL-REACT-MIGRATION-/static/media/website.44f2a499.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.26caf6a7.js",
+    "static/js/runtime-main.4cd5b3ff.js",
     "static/css/2.ef05586f.chunk.css",
-    "static/js/2.65922915.chunk.js",
-    "static/css/main.939d09e1.chunk.css",
-    "static/js/main.5cab7fcf.chunk.js"
+    "static/js/2.aa02d254.chunk.js",
+    "static/css/main.9b587604.chunk.css",
+    "static/js/main.fd96f015.chunk.js"
   ]
 }
