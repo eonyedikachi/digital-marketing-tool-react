@@ -19,6 +19,7 @@ import emailtemp1 from './component/Emailtemp1';
 import emailtemp2 from './component/Emailtemp2';
 import emailtemp3 from './component/Emailtemp3';
 import Feedback from "./component/feedback";
+import SuggestionDetails from "./component/SuggestionDetails"
 import AdminUserDashboard from './component/adminuserdashboard';
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/emailtemp3" component={emailtemp3} />
           <Route path="/selecttemp" component={selectTemp} />
           <Route path="/admin/feedback" component={Feedback} />
+          <Route path="/admin/suggestion/:id" component={SuggestionDetails} />
           <Route path="/admin/dashboard" component={AdminUserDashboard} />
         </Switch>
       </Router>
