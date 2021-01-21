@@ -132,13 +132,14 @@ Swal.fire({
         <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
         <footer>
           <div className="container">
-            <div className="footer .dash-footer">
-              <div onClick={() => history.push("/dashboard/")}>
+            <div className="">
+            <div className="footer .dash-footer row">
+              <div className="col-lg-7" onClick={() => history.push("/dashboard/")}>
                 <i className="fas fa-chevron-left"></i>
                 <input type="button" value="Back" className="back-button" />
               </div>
 
-              <div onClick={() => history.push("/dashboard/savedlp")}>
+              <div className="col-lg-2" onClick={() => history.push("/dashboard/savedlp")}>
                 <input
                   type="button"
                   value="View saved templates"
@@ -146,6 +147,7 @@ Swal.fire({
                 />
                 <i className="fas fa-chevron-right"></i>
               </div>
+            </div>
             </div>
           </div>
         </footer>

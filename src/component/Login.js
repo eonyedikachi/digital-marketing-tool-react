@@ -169,6 +169,7 @@ const MySwal = withReactContent(Swal)
                             className="login-btn btn my-3"
                             type="submit"
                             id="Login"
+                            value="Login"
                             defaultValue="Login"
                             
                             />
