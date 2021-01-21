@@ -1,4 +1,6 @@
-import React from 'react';
+import React ,{useState, useEffect} from 'react'
+// import {useSelector} from 'react-redux'
+import axios from "axios";
 import {Link} from 'react-router-dom'
 import img1 from '../Images/emailTemp1.png'
 import img2 from '../Images/emailTemp.png'
@@ -6,7 +8,36 @@ import img3 from '../Images/emailTemp2.png'
 import img4 from '../Images/email_template.png'
 // import moduleName from '../Images'
 
-export default function createemailTem2() {
+export default function CreateemailTem2() {
+
+    const [url, setUrl] = useState([]);
+    const Token = localStorage.getItem("Token")
+    useEffect(() => {
+        axios
+          .get("https://martreach.herokuapp.com/api/emailTemplates/designs", {
+            headers: {
+              Authorization:  `Bearer ${Token}`
+                
+            },
+          })
+          .then((response) => {
+            setUrl(response.data);
+            // console.log(response.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }, []);
+
+      console.log(url)
+
+    //   const image1= url[1].img
+    // const image2 = url[1].img
+
+    // console.log(url[1].img)
+
+ 
+
     return (
         <div>
           <main className="emailTemp">

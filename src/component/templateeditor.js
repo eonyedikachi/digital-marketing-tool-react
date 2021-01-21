@@ -124,7 +124,7 @@ Swal.fire({
         <div>
           {/* <button className="btn-primary" >TAP TO Save</button> */}
           <button className="btn-primary" onClick={() => setShow(!show)}>
-            Enter Name
+            Save
           </button>
         </div>
         {/* <button className="btn-primary" onClick={dispatch}>dispatch</button> */}
@@ -134,18 +134,24 @@ Swal.fire({
           <div className="container">
             <div className="">
             <div className="footer .dash-footer row">
-              <div className="col-lg-7" onClick={() => history.push("/dashboard/")}>
-                <i className="fas fa-chevron-left"></i>
-                <input type="button" value="Back" className="back-button" />
+            <div className="col-lg-6" onClick={() => history.push("/dashboard/")}>
+            <button type="button" class="btn sendtoall"> 
+              <i className="fas fa-chevron-left"></i>Back
+              </button>   
               </div>
 
-              <div className="col-lg-2" onClick={() => history.push("/dashboard/savedlp")}>
+              {/* <div className="col-lg-2" onClick={() => history.push("/dashboard/savedlp")}>
                 <input
                   type="button"
                   value="View saved templates"
                   className=""
                 />
                 <i className="fas fa-chevron-right"></i>
+              </div> */}
+              <div className="col-lg-2" onClick={() => history.push("/dashboard/savedlp")}>
+            <button type="button" class="btn sendtoall"> 
+            View saved<i className="fas fa-chevron-right"></i>
+              </button>   
               </div>
             </div>
             </div>

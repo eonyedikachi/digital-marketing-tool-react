@@ -17,6 +17,7 @@ export default function Viewlandingeditor() {
     const email = localStorage.getItem("email")
 
     const [url, setUrl] = useState([]);
+    
   useEffect(() => {
     axios
       .get("https://martreach.herokuapp.com/api/emailTemplates", {
