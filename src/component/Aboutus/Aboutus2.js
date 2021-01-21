@@ -4,7 +4,7 @@ import Aboutus2b from './Aboutus2b'
 import Malik from '../Images/Malik2.jpg'
 import Chinedu from '../Images/chinedu-samuel.jpg'
 import Glory from '../Images/Gloo.jpg'
-import Aminu from '../Images/Aminu.png'
+import Aminu from '../Images/AMINU.jpg';
 
 
 
