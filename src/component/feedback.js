@@ -56,7 +56,7 @@ const [suggestions, setSuggestions] = useState([]);
 
                   <td>
                     <Link onClick ={(id) => (localStorage.setItem('sId', suggestion.id))}
-                      to={`/suggestion/${suggestion.id}`}
+                      to={`/admin/suggestion/${suggestion.id}`}
                       className="btn btn-secondary btn-sm"
                     >
                       <i className="fa fa-arrow-circle-right"></i> Details
